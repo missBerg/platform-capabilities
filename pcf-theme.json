@@ -1,0 +1,107 @@
+{
+  "defaultVertexStyle": {
+    "rounded": "1",
+    "whiteSpace": "wrap",
+    "html": "1",
+    "arcSize": "8",
+    "fillColor": "#E8EEF7",
+    "strokeColor": "#2E5C9E",
+    "strokeWidth": "1.5",
+    "fontColor": "#1F3A68",
+    "fontFamily": "Helvetica",
+    "fontSize": "12",
+    "align": "center",
+    "verticalAlign": "middle",
+    "shadow": "0"
+  },
+  "defaultEdgeStyle": {
+    "endArrow": "block",
+    "endFill": "1",
+    "html": "1",
+    "rounded": "0",
+    "strokeColor": "#2E5C9E",
+    "strokeWidth": "1.5",
+    "fontColor": "#1F3A68",
+    "fontFamily": "Helvetica",
+    "fontSize": "11"
+  },
+  "defaultColorSchemes": [
+    {
+      "fill": "#E8EEF7",
+      "stroke": "#2E5C9E",
+      "font": "#1F3A68",
+      "title": "PCF Subtle"
+    },
+    {
+      "fill": "#2E5C9E",
+      "stroke": "#1F3A68",
+      "font": "#FFFFFF",
+      "title": "PCF Primary"
+    },
+    {
+      "fill": "#FAF5EC",
+      "stroke": "#B5915A",
+      "font": "#7A5A2A",
+      "title": "PCF Decision"
+    },
+    {
+      "fill": "#F7ECEC",
+      "stroke": "#A85959",
+      "font": "#6B2A2A",
+      "title": "PCF Risk"
+    },
+    {
+      "fill": "#ECEFF4",
+      "stroke": "#64748B",
+      "font": "#334155",
+      "title": "PCF Neutral"
+    },
+    {
+      "fill": "#64748B",
+      "stroke": "#334155",
+      "font": "#FFFFFF",
+      "title": "PCF Neutral Dark"
+    }
+  ],
+  "fontCss": "@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');",
+  "customFonts": [
+    {"fontFamily": "Architects Daughter", "fontUrl": "https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap"}
+  ],
+  "customPresetColors": [
+    "1F3A68",
+    "2E5C9E",
+    "4A75B1",
+    "7A99C7",
+    "E8EEF7",
+    "B5915A",
+    "B57E3A",
+    "A85959",
+    "5A7A5A",
+    "6B7280",
+    "334155",
+    "64748B",
+    "ECEFF4"
+  ],
+  "customLibraries": [
+    {
+      "id": "pcf-components",
+      "title": "PCF Working Group — Components",
+      "url": "https://raw.githubusercontent.com/missBerg/platform-capabilities/main/pcf-components.xml"
+    },
+    {
+      "id": "pcf-components-sketch",
+      "title": "PCF Working Group — Sketch",
+      "url": "https://raw.githubusercontent.com/missBerg/platform-capabilities/main/pcf-components-sketch.xml"
+    },
+    {
+      "id": "pcf-icons",
+      "title": "PCF Working Group — Icons",
+      "url": "https://raw.githubusercontent.com/missBerg/platform-capabilities/main/pcf-icons.xml"
+    },
+    {
+      "id": "pcf-icons-sketch",
+      "title": "PCF Working Group — Icons (Sketch)",
+      "url": "https://raw.githubusercontent.com/missBerg/platform-capabilities/main/pcf-icons-sketch.xml"
+    }
+  ]
+}
