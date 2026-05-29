@@ -54,6 +54,44 @@ The font (`Architects Daughter`) is pulled from Google Fonts automatically via
 the `fontCss` / `customFonts` entries — pair it with the **Sketch** libraries
 for a cohesive hand-drawn deck.
 
+## Diagrams in this repo
+
+The [`diagrams/`](diagrams/) folder holds example diagrams built from the PCF
+components. Draw.io stores each shape's full style *inline*, so these files
+always **render with the PCF look** — open them anywhere, no setup required.
+
+What a `.drawio` file *can't* record is which shape libraries are open in the
+editor (that's app state, not file state). So to edit a diagram with the PCF
+palettes docked in the left panel, use one of the two routes below.
+
+### Open in the browser (zero install)
+
+These links open the diagram in diagrams.net **with all four PCF libraries
+pre-loaded** via the `clibs` URL parameter:
+
+<!-- regenerate with: python3 scripts/make-open-links.py -->
+
+| Diagram | Open in diagrams.net (libraries pre-loaded) |
+| ------- | -------------------------------------------- |
+| `platform-with-capabilities.drawio` | [Open](https://app.diagrams.net/?clibs=Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components-sketch.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons-sketch.xml#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fdiagrams%2Fplatform-with-capabilities.drawio) |
+
+> Opened this way the diagram loads read-only from GitHub — use **File → Save
+> as** (or *Make a Copy*) to start editing your own version. Add new diagrams to
+> `diagrams/` and run `python3 scripts/make-open-links.py` to regenerate this
+> table.
+
+### Edit in VS Code (round-trips to the repo)
+
+The repo ships a [`.vscode/settings.json`](.vscode/settings.json) that wires the
+four PCF libraries into the **[Draw.io Integration](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio)**
+extension (`hediet.vscode-drawio`).
+
+1. Install the extension and clone this repo.
+2. Open any `diagrams/*.drawio` file — it opens in the embedded Draw.io editor.
+3. The PCF libraries appear in the shapes panel (look for the **PCF — …**
+   entries). Edits save straight back to the file in your clone, so diagrams
+   stay version-controlled.
+
 ## What's inside
 
 ### Components (`pcf-components.xml`)
@@ -95,12 +133,14 @@ This bundles every SVG under `icons/<group>/` into `pcf-icons.xml` and
 ## Repository layout
 
 ```
-icons/                  Source SVGs (actors, callouts, ops, status)
-scripts/                build-icon-library.py — bundles SVGs into libraries
-pcf-components.xml       Component shape library (clean)
+icons/                   Source SVGs (actors, callouts, ops, status)
+scripts/                 build-icon-library.py — bundles SVGs into libraries
+                         make-open-links.py    — generates diagrams.net deep links
+diagrams/                Example diagrams built from the PCF components
+.vscode/settings.json    Wires the libraries into the VS Code Draw.io extension
+pcf-components.xml        Component shape library (clean)
 pcf-components-sketch.xml Component shape library (sketch)
-pcf-icons.xml            Icon library (clean, generated)
-pcf-icons-sketch.xml     Icon library (sketch, generated)
-pcf-theme.json           Draw.io configuration: styles + libraries + fonts
-test/                    Example diagram using the library
+pcf-icons.xml             Icon library (clean, generated)
+pcf-icons-sketch.xml      Icon library (sketch, generated)
+pcf-theme.json            Draw.io configuration: styles + libraries + fonts
 ```

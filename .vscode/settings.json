@@ -1,0 +1,24 @@
+{
+  "hediet.vscode-drawio.customLibraries": [
+    {
+      "entryId": "pcf-components",
+      "libName": "PCF — Components",
+      "file": "${workspaceFolder}/pcf-components.xml"
+    },
+    {
+      "entryId": "pcf-components-sketch",
+      "libName": "PCF — Components (Sketch)",
+      "file": "${workspaceFolder}/pcf-components-sketch.xml"
+    },
+    {
+      "entryId": "pcf-icons",
+      "libName": "PCF — Icons",
+      "file": "${workspaceFolder}/pcf-icons.xml"
+    },
+    {
+      "entryId": "pcf-icons-sketch",
+      "libName": "PCF — Icons (Sketch)",
+      "file": "${workspaceFolder}/pcf-icons-sketch.xml"
+    }
+  ]
+}
