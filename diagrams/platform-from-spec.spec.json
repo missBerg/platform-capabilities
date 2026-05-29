@@ -1,0 +1,27 @@
+{
+  "title": "Platform with Capabilities",
+  "flavour": "sketch",
+  "direction": "LR",
+  "lanes": ["Producers", "Capability", "Consumers"],
+  "nodes": [
+    { "id": "dev",       "type": "icon", "icon": "human",    "label": "Developer", "lane": "Producers", "section": "Capability Producers" },
+    { "id": "agentProd", "type": "icon", "icon": "ai-agent", "label": "AI Agent",  "lane": "Producers", "section": "Capability Producers" },
+    { "id": "prodApi",   "type": "producer-api", "label": "Producer API",          "lane": "Producers", "section": "Capability Producers" },
+
+    { "id": "capDef",    "type": "rectangle-grey-dark", "label": "Capability Definition", "lane": "Capability", "icon": "cog" },
+    { "id": "instances", "type": "fleet", "label": "Instances", "sublabel": "N instances of a capability", "lane": "Capability" },
+
+    { "id": "consApi",   "type": "consumer-api", "label": "Consumer API", "lane": "Consumers", "section": "Capability Consumers" },
+    { "id": "portal",    "type": "icon", "icon": "computer", "label": "Portal",   "lane": "Consumers", "section": "Capability Consumers" },
+    { "id": "agentCons", "type": "icon", "icon": "ai-agent", "label": "AI Agent", "lane": "Consumers", "section": "Capability Consumers" }
+  ],
+  "edges": [
+    { "source": "dev",       "target": "prodApi",   "type": "provides" },
+    { "source": "agentProd", "target": "prodApi",   "type": "provides" },
+    { "source": "prodApi",   "target": "capDef",    "type": "provides" },
+    { "source": "capDef",    "target": "instances", "type": "reconciles", "label": "Create & Manage" },
+    { "source": "instances", "target": "consApi",   "type": "provides",   "label": "Discover & Use" },
+    { "source": "consApi",   "target": "portal",    "type": "provides" },
+    { "source": "consApi",   "target": "agentCons", "type": "provides" }
+  ]
+}

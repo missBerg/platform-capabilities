@@ -63,10 +63,6 @@
       "title": "PCF Neutral Dark"
     }
   ],
-  "fontCss": "@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');",
-  "customFonts": [
-    {"fontFamily": "Architects Daughter", "fontUrl": "https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap"}
-  ],
   "customPresetColors": [
     "1F3A68",
     "2E5C9E",

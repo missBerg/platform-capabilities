@@ -10,3 +10,7 @@ venv/
 # Draw.io backups
 *.bkp
 *.dtmp
+
+# Rendered diagram previews (build artifacts from scripts/render.py)
+diagrams/*.png
+diagrams/*.svg

@@ -2,7 +2,7 @@
 
 A Draw.io / diagrams.net shape library for diagramming platform capabilities,
 services, ownership, and operational state. It ships a consistent visual
-language (the **PCF** palette and "Architects Daughter" sketch font) so
+language (the **PCF** palette and a hand-drawn **Comic Sans MS** sketch font) so
 diagrams across a working group look like they came from the same hand.
 
 The library comes in two flavours:
@@ -50,9 +50,8 @@ the best option for a team: everyone gets the same defaults.
 3. Click **Apply** and reload. The four PCF libraries auto-load on every
    diagram, and new shapes/edges inherit the PCF style by default.
 
-The font (`Architects Daughter`) is pulled from Google Fonts automatically via
-the `fontCss` / `customFonts` entries — pair it with the **Sketch** libraries
-for a cohesive hand-drawn deck.
+The **Sketch** libraries use **Comic Sans MS** — a system font, so nothing is
+downloaded — for a cohesive hand-drawn deck.
 
 ## Diagrams in this repo
 
@@ -91,6 +90,31 @@ extension (`hediet.vscode-drawio`).
 3. The PCF libraries appear in the shapes panel (look for the **PCF — …**
    entries). Edits save straight back to the file in your clone, so diagrams
    stay version-controlled.
+
+## Generate a diagram from a spec
+
+Prefer not to drag shapes around by hand? Describe a diagram as a small JSON
+spec and let the generator lay it out with the PCF styles. It parses
+`pcf-components.xml` / `pcf-icons.xml` as the source of truth, so output never
+drifts from the library.
+
+```bash
+# 1. write a spec (see diagrams/platform-from-spec.spec.json for a full example)
+# 2. generate the .drawio
+python3 scripts/build-diagram.py diagrams/platform-from-spec.spec.json
+# 3. render to an image and review it
+python3 scripts/render.py diagrams/platform-from-spec.drawio       # -> .png
+```
+
+A spec lists `nodes` (each with a component `type` or an `icon`), `edges`
+(`provides` / `depends` / `exchanges` / `reconciles`), and `lanes` that drive a
+clean left-to-right or top-down layout; `section` groups wrap nodes in a
+container. Full schema and the type/icon slug lists live in
+[`.claude/skills/pcf-diagram/SKILL.md`](.claude/skills/pcf-diagram/SKILL.md).
+
+Rendering needs the draw.io desktop app (`brew install --cask drawio`); the
+generator itself is pure Python stdlib. Validate the libraries with
+`python3 scripts/build-diagram.py --self-check`.
 
 ## What's inside
 
@@ -134,7 +158,9 @@ This bundles every SVG under `icons/<group>/` into `pcf-icons.xml` and
 
 ```
 icons/                   Source SVGs (actors, callouts, ops, status)
-scripts/                 build-icon-library.py — bundles SVGs into libraries
+scripts/                 build-diagram.py      — spec.json -> .drawio generator
+                         render.py             — .drawio -> PNG/SVG (draw.io CLI)
+                         build-icon-library.py — bundles SVGs into libraries
                          make-open-links.py    — generates diagrams.net deep links
 diagrams/                Example diagrams built from the PCF components
 .vscode/settings.json    Wires the libraries into the VS Code Draw.io extension
