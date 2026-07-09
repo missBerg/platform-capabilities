@@ -1,0 +1,241 @@
+{
+  "title": "A capability-enabling platform",
+  "flavour": "sketch",
+  "direction": "LR",
+  "lanes": [
+    "Capability producers",
+    "GapA",
+    "The platform",
+    "GapB",
+    "Capability consumers"
+  ],
+  "nodes": [
+    {
+      "id": "secteam",
+      "type": "capability-owner",
+      "label": "Security team",
+      "sublabel": "produces & operates",
+      "lane": "Capability producers",
+      "section": "Specialist teams"
+    },
+    {
+      "id": "prodGapA",
+      "type": "spacer",
+      "lane": "Capability producers",
+      "w": 10,
+      "h": 60,
+      "section": "Specialist teams"
+    },
+    {
+      "id": "datateam",
+      "type": "capability-owner",
+      "label": "Data team",
+      "sublabel": "produces & operates",
+      "lane": "Capability producers",
+      "section": "Specialist teams"
+    },
+    {
+      "id": "prodGapB",
+      "type": "spacer",
+      "lane": "Capability producers",
+      "w": 10,
+      "h": 60,
+      "section": "Specialist teams"
+    },
+    {
+      "id": "dbteam",
+      "type": "capability-owner",
+      "label": "Database team",
+      "sublabel": "produces & operates",
+      "lane": "Capability producers",
+      "section": "Specialist teams"
+    },
+    {
+      "id": "prodTrail",
+      "type": "spacer",
+      "lane": "Capability producers",
+      "w": 10,
+      "h": 70,
+      "section": "Specialist teams"
+    },
+    {
+      "id": "gapA",
+      "type": "spacer",
+      "lane": "GapA",
+      "w": 90,
+      "h": 10
+    },
+    {
+      "id": "capsec",
+      "type": "capability",
+      "label": "Secrets management",
+      "sublabel": "contributed capability",
+      "lane": "The platform",
+      "icon": "lock",
+      "section": "Capability catalog"
+    },
+    {
+      "id": "capstream",
+      "type": "capability",
+      "label": "Stream processing",
+      "sublabel": "contributed capability",
+      "lane": "The platform",
+      "icon": "pipeline",
+      "section": "Capability catalog"
+    },
+    {
+      "id": "capdb",
+      "type": "capability",
+      "label": "Managed databases",
+      "sublabel": "contributed capability",
+      "lane": "The platform",
+      "icon": "gear",
+      "section": "Capability catalog"
+    },
+    {
+      "id": "layerGap",
+      "type": "spacer",
+      "lane": "The platform",
+      "w": 10,
+      "h": 90
+    },
+    {
+      "id": "layerTopGap",
+      "type": "spacer",
+      "lane": "The platform",
+      "w": 10,
+      "h": 25,
+      "section": "Thin shared layer - run by platform operators"
+    },
+    {
+      "id": "governance",
+      "type": "sub-capability",
+      "label": "Policy & governance",
+      "sublabel": "controls inherited by construction",
+      "lane": "The platform",
+      "icon": "shield",
+      "section": "Thin shared layer - run by platform operators"
+    },
+    {
+      "id": "discovery",
+      "type": "sub-capability",
+      "label": "Discovery & catalog",
+      "sublabel": "every capability findable",
+      "lane": "The platform",
+      "icon": "dashboard",
+      "section": "Thin shared layer - run by platform operators"
+    },
+    {
+      "id": "contracts",
+      "type": "sub-capability",
+      "label": "Contracts & identity",
+      "sublabel": "one way in, stable identifiers",
+      "lane": "The platform",
+      "icon": "key",
+      "section": "Thin shared layer - run by platform operators"
+    },
+    {
+      "id": "observability",
+      "type": "sub-capability",
+      "label": "Observability",
+      "sublabel": "evidence, role-legible",
+      "lane": "The platform",
+      "icon": "bell",
+      "section": "Thin shared layer - run by platform operators"
+    },
+    {
+      "id": "gapB",
+      "type": "spacer",
+      "lane": "GapB",
+      "w": 90,
+      "h": 10
+    },
+    {
+      "id": "appteam",
+      "type": "capability-consumer",
+      "label": "App team",
+      "sublabel": "discover, request, manage, retire",
+      "lane": "Capability consumers"
+    },
+    {
+      "id": "consGapA",
+      "type": "spacer",
+      "lane": "Capability consumers",
+      "w": 10,
+      "h": 60
+    },
+    {
+      "id": "mlteam",
+      "type": "capability-consumer",
+      "label": "ML team",
+      "sublabel": "discover, request, manage, retire",
+      "lane": "Capability consumers"
+    },
+    {
+      "id": "consGapB",
+      "type": "spacer",
+      "lane": "Capability consumers",
+      "w": 10,
+      "h": 60
+    },
+    {
+      "id": "webteam",
+      "type": "capability-consumer",
+      "label": "Web team",
+      "sublabel": "discover, request, manage, retire",
+      "lane": "Capability consumers"
+    }
+  ],
+  "edges": [
+    {
+      "source": "secteam",
+      "target": "capsec",
+      "type": "provides",
+      "label": "contribute via contract",
+      "labelPosition": -0.3,
+      "labelOffset": -16
+    },
+    {
+      "source": "datateam",
+      "target": "capstream",
+      "type": "provides",
+      "entry": "left"
+    },
+    {
+      "source": "dbteam",
+      "target": "capdb",
+      "type": "provides",
+      "entry": "left"
+    },
+    {
+      "source": "capsec",
+      "target": "appteam",
+      "type": "provides",
+      "label": "self-serve via API",
+      "labelPosition": -0.3,
+      "labelOffset": -16
+    },
+    {
+      "source": "capstream",
+      "target": "mlteam",
+      "type": "provides",
+      "entry": "left"
+    },
+    {
+      "source": "capdb",
+      "target": "webteam",
+      "type": "provides",
+      "entry": "left"
+    },
+    {
+      "source": "governance",
+      "target": "capdb",
+      "type": "reconciles",
+      "label": "inherited by every capability",
+      "labelPosition": 0.55,
+      "labelOffset": 16,
+      "exit": "top",
+      "entry": "bottom"
+    }
+  ]
+}

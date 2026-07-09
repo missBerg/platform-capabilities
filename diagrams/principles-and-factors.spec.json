@@ -1,0 +1,236 @@
+{
+  "title": "Principles & Factors \u2014 the mental model",
+  "flavour": "sketch",
+  "direction": "LR",
+  "lanes": [
+    "The capability promises",
+    "GapA",
+    "The five factors",
+    "GapB",
+    "The platform promises"
+  ],
+  "nodes": [
+    {
+      "id": "capHead",
+      "type": "capability",
+      "label": "The capability",
+      "sublabel": "produced & owned by one team",
+      "lane": "The capability promises",
+      "icon": "cog"
+    },
+    {
+      "id": "capGap",
+      "type": "spacer",
+      "lane": "The capability promises",
+      "w": 10,
+      "h": 30
+    },
+    {
+      "id": "cprinA",
+      "type": "tag",
+      "label": "Product-scoped",
+      "lane": "The capability promises",
+      "section": "Capability principles"
+    },
+    {
+      "id": "cprinB",
+      "type": "tag",
+      "label": "Self-service",
+      "lane": "The capability promises",
+      "section": "Capability principles"
+    },
+    {
+      "id": "cprinC",
+      "type": "tag",
+      "label": "Operationally owned",
+      "lane": "The capability promises",
+      "section": "Capability principles",
+      "w": 180
+    },
+    {
+      "id": "capNoteGap",
+      "type": "spacer",
+      "lane": "The capability promises",
+      "w": 10,
+      "h": 380
+    },
+    {
+      "id": "capNote",
+      "type": "note",
+      "label": "Principles describe what good looks like",
+      "lane": "The capability promises"
+    },
+    {
+      "id": "gapA",
+      "type": "spacer",
+      "lane": "GapA",
+      "w": 80,
+      "h": 10
+    },
+    {
+      "id": "factHead",
+      "type": "policy",
+      "label": "The five factors",
+      "sublabel": "binary tests - all five required",
+      "lane": "The five factors",
+      "icon": "success",
+      "w": 220,
+      "h": 90
+    },
+    {
+      "id": "factGap",
+      "type": "spacer",
+      "lane": "The five factors",
+      "w": 10,
+      "h": 30
+    },
+    {
+      "id": "fOne",
+      "type": "sub-capability",
+      "label": "Defined Contract",
+      "sublabel": "one versioned entry point",
+      "lane": "The five factors",
+      "section": "The tests"
+    },
+    {
+      "id": "fTwo",
+      "type": "sub-capability",
+      "label": "Declarative Inputs",
+      "sublabel": "outcomes, not steps",
+      "lane": "The five factors",
+      "section": "The tests"
+    },
+    {
+      "id": "fThree",
+      "type": "sub-capability",
+      "label": "Encapsulated Dependencies",
+      "sublabel": "owns what it delivers",
+      "lane": "The five factors",
+      "section": "The tests",
+      "w": 215
+    },
+    {
+      "id": "fFour",
+      "type": "sub-capability",
+      "label": "Stable Reconciliation",
+      "sublabel": "safe to apply again & again",
+      "lane": "The five factors",
+      "section": "The tests"
+    },
+    {
+      "id": "fFive",
+      "type": "sub-capability",
+      "label": "Operational Evidence",
+      "sublabel": "state anyone authorized can see",
+      "lane": "The five factors",
+      "section": "The tests"
+    },
+    {
+      "id": "factNoteGap",
+      "type": "spacer",
+      "lane": "The five factors",
+      "w": 10,
+      "h": 40
+    },
+    {
+      "id": "factNote",
+      "type": "note",
+      "label": "Factors make the promises testable - pass or fail, no partial credit",
+      "lane": "The five factors"
+    },
+    {
+      "id": "gapB",
+      "type": "spacer",
+      "lane": "GapB",
+      "w": 80,
+      "h": 10
+    },
+    {
+      "id": "platHead",
+      "type": "platform",
+      "label": "The platform",
+      "sublabel": "hosts the capability catalog",
+      "lane": "The platform promises"
+    },
+    {
+      "id": "platGap",
+      "type": "spacer",
+      "lane": "The platform promises",
+      "w": 10,
+      "h": 30
+    },
+    {
+      "id": "pprinA",
+      "type": "tag-blue",
+      "label": "Extensible",
+      "lane": "The platform promises",
+      "section": "Platform principles"
+    },
+    {
+      "id": "pprinB",
+      "type": "tag-blue",
+      "label": "Composable",
+      "lane": "The platform promises",
+      "section": "Platform principles"
+    },
+    {
+      "id": "pprinC",
+      "type": "tag-blue",
+      "label": "Declarative",
+      "lane": "The platform promises",
+      "section": "Platform principles"
+    },
+    {
+      "id": "pprinD",
+      "type": "tag-blue",
+      "label": "Governable",
+      "lane": "The platform promises",
+      "section": "Platform principles"
+    },
+    {
+      "id": "pprinE",
+      "type": "tag-blue",
+      "label": "Observable",
+      "lane": "The platform promises",
+      "section": "Platform principles"
+    },
+    {
+      "id": "pprinF",
+      "type": "tag-blue",
+      "label": "Evolvable",
+      "lane": "The platform promises",
+      "section": "Platform principles"
+    },
+    {
+      "id": "platNoteGap",
+      "type": "spacer",
+      "lane": "The platform promises",
+      "w": 10,
+      "h": 170
+    },
+    {
+      "id": "platNote",
+      "type": "note",
+      "label": "Commitments the platform can only keep for conformant capabilities",
+      "lane": "The platform promises"
+    }
+  ],
+  "edges": [
+    {
+      "source": "capHead",
+      "target": "factHead",
+      "type": "provides",
+      "label": "proves its promises through",
+      "labelPosition": 0,
+      "labelOffset": -16
+    },
+    {
+      "source": "factHead",
+      "target": "platHead",
+      "type": "provides",
+      "label": "evidence the platform can commit on",
+      "labelPosition": 0,
+      "labelOffset": -16
+    }
+  ]
+}
