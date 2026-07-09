@@ -1,0 +1,173 @@
+{
+  "title": "Factor 4 \u2014 Stable Reconciliation",
+  "flavour": "sketch",
+  "direction": "LR",
+  "lanes": [
+    "Platform reality",
+    "GapA",
+    "Declared state",
+    "GapB",
+    "Capability",
+    "GapC",
+    "Result"
+  ],
+  "nodes": [
+    {
+      "id": "trigTopGap",
+      "type": "spacer",
+      "lane": "Platform reality",
+      "w": 10,
+      "h": 25,
+      "section": "The same state arrives again and again"
+    },
+    {
+      "id": "trigRetry",
+      "type": "tag",
+      "label": "retry",
+      "lane": "Platform reality",
+      "section": "The same state arrives again and again"
+    },
+    {
+      "id": "trigRollout",
+      "type": "tag",
+      "label": "fleet rollout",
+      "lane": "Platform reality",
+      "section": "The same state arrives again and again"
+    },
+    {
+      "id": "trigRecover",
+      "type": "tag",
+      "label": "recovery",
+      "lane": "Platform reality",
+      "section": "The same state arrives again and again"
+    },
+    {
+      "id": "trigDrift",
+      "type": "tag",
+      "label": "drift correction",
+      "lane": "Platform reality",
+      "section": "The same state arrives again and again"
+    },
+    {
+      "id": "gapA",
+      "type": "spacer",
+      "lane": "GapA",
+      "w": 70,
+      "h": 10
+    },
+    {
+      "id": "padDecl",
+      "type": "spacer",
+      "lane": "Declared state",
+      "w": 10,
+      "h": 50
+    },
+    {
+      "id": "declared",
+      "type": "reference",
+      "label": "Same desired state",
+      "sublabel": "applied repeatedly",
+      "lane": "Declared state"
+    },
+    {
+      "id": "gapB",
+      "type": "spacer",
+      "lane": "GapB",
+      "w": 70,
+      "h": 10
+    },
+    {
+      "id": "padCap",
+      "type": "spacer",
+      "lane": "Capability",
+      "w": 10,
+      "h": 50
+    },
+    {
+      "id": "cap",
+      "type": "capability",
+      "label": "Capability",
+      "sublabel": "converges - never duplicates",
+      "lane": "Capability",
+      "icon": "cog"
+    },
+    {
+      "id": "gapC",
+      "type": "spacer",
+      "lane": "GapC",
+      "w": 90,
+      "h": 10
+    },
+    {
+      "id": "result",
+      "type": "data-store",
+      "label": "Same intended result",
+      "sublabel": "no side effects, no manual repair",
+      "lane": "Result"
+    },
+    {
+      "id": "resGap",
+      "type": "spacer",
+      "lane": "Result",
+      "w": 10,
+      "h": 80
+    },
+    {
+      "id": "costNote",
+      "type": "risk-gap",
+      "label": "If unsafe to reapply",
+      "sublabel": "platform must add bespoke state tracking & sequencing",
+      "lane": "Result"
+    }
+  ],
+  "edges": [
+    {
+      "source": "trigRetry",
+      "target": "declared",
+      "type": "provides"
+    },
+    {
+      "source": "trigRollout",
+      "target": "declared",
+      "type": "provides"
+    },
+    {
+      "source": "trigRecover",
+      "target": "declared",
+      "type": "provides"
+    },
+    {
+      "source": "trigDrift",
+      "target": "declared",
+      "type": "provides"
+    },
+    {
+      "source": "declared",
+      "target": "cap",
+      "type": "provides",
+      "label": "apply, apply, apply...",
+      "labelPosition": 0,
+      "labelOffset": -16
+    },
+    {
+      "source": "cap",
+      "target": "result",
+      "type": "reconciles",
+      "label": "converge",
+      "labelPosition": -0.4,
+      "labelOffset": -16,
+      "exit": "right",
+      "entry": "left"
+    },
+    {
+      "source": "result",
+      "target": "cap",
+      "type": "reconciles",
+      "label": "observe & correct drift",
+      "labelPosition": -0.5,
+      "labelOffset": 22,
+      "exit": "bottom",
+      "entry": "bottom"
+    }
+  ]
+}

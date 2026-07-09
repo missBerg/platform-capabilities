@@ -1,0 +1,145 @@
+{
+  "title": "The Platform Marketplace \u2014 three roles, one thin layer",
+  "flavour": "sketch",
+  "direction": "LR",
+  "lanes": [
+    "Capability producers",
+    "GapA",
+    "Platform marketplace",
+    "GapB",
+    "Capability consumers"
+  ],
+  "nodes": [
+    {
+      "id": "secprod",
+      "type": "capability-owner",
+      "label": "Security team",
+      "sublabel": "produces & owns the capability",
+      "lane": "Capability producers",
+      "section": "Specialist teams"
+    },
+    {
+      "id": "prodGap",
+      "type": "spacer",
+      "lane": "Capability producers",
+      "w": 10,
+      "h": 60,
+      "section": "Specialist teams"
+    },
+    {
+      "id": "dataprod",
+      "type": "capability-owner",
+      "label": "Data team",
+      "sublabel": "produces & owns the capability",
+      "lane": "Capability producers",
+      "section": "Specialist teams"
+    },
+    {
+      "id": "prodTrailGap",
+      "type": "spacer",
+      "lane": "Capability producers",
+      "w": 10,
+      "h": 70,
+      "section": "Specialist teams"
+    },
+    {
+      "id": "gapA",
+      "type": "spacer",
+      "lane": "GapA",
+      "w": 80,
+      "h": 10
+    },
+    {
+      "id": "capsec",
+      "type": "capability",
+      "label": "Secrets management",
+      "sublabel": "contributed capability",
+      "lane": "Platform marketplace",
+      "icon": "lock",
+      "section": "The thin, consistent layer"
+    },
+    {
+      "id": "capdata",
+      "type": "capability",
+      "label": "Stream processing",
+      "sublabel": "contributed capability",
+      "lane": "Platform marketplace",
+      "icon": "pipeline",
+      "section": "The thin, consistent layer"
+    },
+    {
+      "id": "mktGap",
+      "type": "spacer",
+      "lane": "Platform marketplace",
+      "w": 10,
+      "h": 40,
+      "section": "The thin, consistent layer"
+    },
+    {
+      "id": "operators",
+      "type": "capability-owner",
+      "label": "Platform operators",
+      "sublabel": "discover - compose - govern",
+      "lane": "Platform marketplace",
+      "section": "The thin, consistent layer"
+    },
+    {
+      "id": "gapB",
+      "type": "spacer",
+      "lane": "GapB",
+      "w": 80,
+      "h": 10
+    },
+    {
+      "id": "appteam",
+      "type": "capability-consumer",
+      "label": "App team",
+      "sublabel": "discovers, requests, uses",
+      "lane": "Capability consumers"
+    },
+    {
+      "id": "consGap",
+      "type": "spacer",
+      "lane": "Capability consumers",
+      "w": 10,
+      "h": 60
+    },
+    {
+      "id": "mlteam",
+      "type": "capability-consumer",
+      "label": "ML team",
+      "sublabel": "discovers, requests, uses",
+      "lane": "Capability consumers"
+    }
+  ],
+  "edges": [
+    {
+      "source": "secprod",
+      "target": "capsec",
+      "type": "provides",
+      "label": "contribute via contract",
+      "labelPosition": -0.3,
+      "labelOffset": -16
+    },
+    {
+      "source": "dataprod",
+      "target": "capdata",
+      "type": "provides",
+      "entry": "left"
+    },
+    {
+      "source": "capsec",
+      "target": "appteam",
+      "type": "provides",
+      "label": "self-service via API",
+      "labelPosition": -0.3,
+      "labelOffset": -16
+    },
+    {
+      "source": "capdata",
+      "target": "mlteam",
+      "type": "provides",
+      "entry": "left"
+    }
+  ]
+}

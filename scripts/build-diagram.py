@@ -145,8 +145,15 @@ def make_label(text: str, sublabel: str | None, bold: bool) -> str:
 
 
 def place_stamp(stamp: Stamp, x: float, y: float, nid: str,
-                label: str | None, sublabel: str | None) -> list:
-    """Clone a stamp's cells at (x, y); primary cell gets id=nid."""
+                label: str | None, sublabel: str | None,
+                w: float | None = None, h: float | None = None) -> list:
+    """Clone a stamp's cells at (x, y); primary cell gets id=nid.
+
+    A `w`/`h` override scales every cell proportionally so multi-cell stamps
+    (ports, decorations) keep their relative arrangement.
+    """
+    sx = (w / stamp.w) if w else 1.0
+    sy = (h / stamp.h) if h else 1.0
     out, sub = [], 0
     for i, tmpl in enumerate(stamp.cells):
         cell = copy.deepcopy(tmpl)
@@ -159,10 +166,14 @@ def place_stamp(stamp: Stamp, x: float, y: float, nid: str,
         cell.set("parent", "1")
         geo = cell.find("mxGeometry")
         if geo is not None:
-            gx = float(geo.get("x", "0"))
-            gy = float(geo.get("y", "0"))
+            gx = float(geo.get("x", "0")) * sx
+            gy = float(geo.get("y", "0")) * sy
             geo.set("x", fmt(x + gx))
             geo.set("y", fmt(y + gy))
+            if geo.get("width") is not None:
+                geo.set("width", fmt(float(geo.get("width")) * sx))
+            if geo.get("height") is not None:
+                geo.set("height", fmt(float(geo.get("height")) * sy))
         out.append(cell)
     if label is not None:
         out[stamp.label_index].set("value", make_label(label, sublabel, stamp.label_bold))
@@ -182,8 +193,15 @@ def make_icon_cell(nid: str, uri: str, x: float, y: float, w: float, h: float,
     return cell
 
 
+_SIDE_POINTS = {"left": (0, 0.5), "right": (1, 0.5), "top": (0.5, 0), "bottom": (0.5, 1)}
+
+
 def make_edge_cell(eid: str, stamp: Stamp, src: str, tgt: str,
-                   label: str | None, sketch: bool) -> ET.Element:
+                   label: str | None, sketch: bool,
+                   label_pos: float | None = None,
+                   label_off: float | None = None,
+                   exit_side: str | None = None,
+                   entry_side: str | None = None) -> ET.Element:
     cell = copy.deepcopy(stamp.cells[0])
     cell.set("id", eid)
     cell.set("parent", "1")
@@ -193,6 +211,12 @@ def make_edge_cell(eid: str, stamp: Stamp, src: str, tgt: str,
     style = "edgeStyle=orthogonalEdgeStyle;" + (cell.get("style") or "")
     if sketch:
         style += "sketch=1;curveFitting=1;jiggle=2;curved=1;"
+    if exit_side:
+        ex, ey = _SIDE_POINTS[exit_side]
+        style += f"exitX={ex};exitY={ey};exitDx=0;exitDy=0;"
+    if entry_side:
+        ex, ey = _SIDE_POINTS[entry_side]
+        style += f"entryX={ex};entryY={ey};entryDx=0;entryDy=0;"
     cell.set("style", style)
     if label:
         cell.set("value", html.escape(label))
@@ -200,6 +224,13 @@ def make_edge_cell(eid: str, stamp: Stamp, src: str, tgt: str,
     if geo is not None:                               # drop sample endpoints
         for pt in list(geo.findall("mxPoint")):
             geo.remove(pt)
+        if label_pos is not None:                     # slide label along edge
+            geo.set("relative", "1")
+            geo.set("x", str(label_pos))
+        if label_off is not None:                     # lift label off the line
+            geo.set("relative", "1")
+            ET.SubElement(geo, "mxPoint",
+                          {"x": "0", "y": fmt(label_off), "as": "offset"})
     return cell
 
 
@@ -253,6 +284,8 @@ def validate_spec(spec: dict, stamps: dict, icons: dict) -> None:
         if ntype == "icon":
             if slugify(n.get("icon", "")) not in icons:
                 raise ValueError(f"unknown icon: {n.get('icon')!r}")
+        elif ntype == "spacer":
+            pass                                      # invisible layout filler
         elif ntype not in stamps:
             raise ValueError(f"unknown node type: {ntype!r}")
         if n.get("icon") and ntype != "icon":
@@ -268,11 +301,18 @@ def validate_spec(spec: dict, stamps: dict, icons: dict) -> None:
         etype = e.get("type", "provides")
         if etype not in stamps:
             raise ValueError(f"unknown edge type: {etype!r}")
+        for side in ("exit", "entry"):
+            v = e.get(side)
+            if v is not None and v not in ("left", "right", "top", "bottom"):
+                raise ValueError(f"edge {side} must be left/right/top/bottom, got {v!r}")
 
 
 def node_size(n: dict, stamps: dict) -> tuple:
-    if n.get("type", "rectangle-blue-light") == "icon":
+    ntype = n.get("type", "rectangle-blue-light")
+    if ntype == "icon":
         return float(n.get("w", 48)), float(n.get("h", 48))
+    if ntype == "spacer":
+        return float(n.get("w", 20)), float(n.get("h", 20))
     st = stamps[n["type"]]
     return float(n.get("w", st.w)), float(n.get("h", st.h))
 
@@ -378,12 +418,15 @@ def generate(spec: dict) -> str:
     for n in spec["nodes"]:
         nid = n["id"]
         x, y, w, h = rects[nid]
+        if n.get("type") == "spacer":                  # occupies grid space only
+            continue
         if n.get("type") == "icon":
             uri = icons[slugify(n["icon"])]
             cells.append(make_icon_cell(nid, uri, x, y, w, h, n.get("label"), font))
         else:
             cells.extend(place_stamp(stamps[n["type"]], x, y, nid,
-                                     n.get("label"), n.get("sublabel")))
+                                     n.get("label"), n.get("sublabel"),
+                                     n.get("w"), n.get("h")))
             if n.get("icon"):                          # corner badge
                 badge = slugify(n["icon"]) + ("-yellow" if n.get("iconColor") == "yellow" else "")
                 cells.append(make_icon_cell(f"{nid}-icon", icons[badge],
@@ -391,7 +434,9 @@ def generate(spec: dict) -> str:
     # edges last
     for i, e in enumerate(spec.get("edges", [])):
         cells.append(make_edge_cell(f"pcf-edge-{i}", stamps[e.get("type", "provides")],
-                                    e["source"], e["target"], e.get("label"), sketch))
+                                    e["source"], e["target"], e.get("label"), sketch,
+                                    e.get("labelPosition"), e.get("labelOffset"),
+                                    e.get("exit"), e.get("entry")))
 
     # page size to fit content
     maxx = max((float(c.find("mxGeometry").get("x", "0")) + float(c.find("mxGeometry").get("width", "0"))

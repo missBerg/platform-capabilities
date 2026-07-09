@@ -1,0 +1,143 @@
+{
+  "title": "Factor 3 \u2014 Encapsulated Dependencies",
+  "flavour": "sketch",
+  "direction": "LR",
+  "lanes": [
+    "Consumer side",
+    "GapA",
+    "The capability",
+    "GapB",
+    "The outcome"
+  ],
+  "nodes": [
+    {
+      "id": "consumer",
+      "type": "capability-consumer",
+      "label": "Consumer",
+      "lane": "Consumer side"
+    },
+    {
+      "id": "consGap",
+      "type": "spacer",
+      "lane": "Consumer side",
+      "w": 10,
+      "h": 80
+    },
+    {
+      "id": "prereq",
+      "type": "external-system",
+      "label": "Prerequisite",
+      "sublabel": "consumer-managed, named in the contract",
+      "lane": "Consumer side",
+      "section": "Stays the consumer's responsibility"
+    },
+    {
+      "id": "gapA",
+      "type": "spacer",
+      "lane": "GapA",
+      "w": 90,
+      "h": 10
+    },
+    {
+      "id": "cap",
+      "type": "capability",
+      "label": "Database capability",
+      "sublabel": "delivers the complete outcome",
+      "lane": "The capability",
+      "icon": "shield",
+      "w": 220,
+      "h": 90
+    },
+    {
+      "id": "capSecGap",
+      "type": "spacer",
+      "lane": "The capability",
+      "w": 10,
+      "h": 50
+    },
+    {
+      "id": "depStore",
+      "type": "sub-capability",
+      "label": "Backing storage",
+      "lane": "The capability",
+      "section": "Owned & hidden dependencies"
+    },
+    {
+      "id": "depBackup",
+      "type": "sub-capability",
+      "label": "Backups & recovery",
+      "lane": "The capability",
+      "section": "Owned & hidden dependencies"
+    },
+    {
+      "id": "depGuard",
+      "type": "sub-capability",
+      "label": "Encryption, isolation, audit",
+      "lane": "The capability",
+      "section": "Owned & hidden dependencies"
+    },
+    {
+      "id": "gapB",
+      "type": "spacer",
+      "lane": "GapB",
+      "w": 90,
+      "h": 10
+    },
+    {
+      "id": "outcome",
+      "type": "outcome",
+      "label": "Working database",
+      "sublabel": "connection details & credentials included",
+      "lane": "The outcome",
+      "w": 230
+    },
+    {
+      "id": "outGap",
+      "type": "spacer",
+      "lane": "The outcome",
+      "w": 10,
+      "h": 40
+    },
+    {
+      "id": "guarantees",
+      "type": "note",
+      "label": "Guarantees built into every instance by construction - not assembled by each consumer",
+      "lane": "The outcome"
+    }
+  ],
+  "edges": [
+    {
+      "source": "consumer",
+      "target": "cap",
+      "type": "provides",
+      "label": "declare the outcome needed",
+      "labelPosition": -0.3,
+      "labelOffset": -16
+    },
+    {
+      "source": "consumer",
+      "target": "prereq",
+      "type": "depends",
+      "exit": "bottom",
+      "entry": "top"
+    },
+    {
+      "source": "cap",
+      "target": "depStore",
+      "type": "reconciles",
+      "label": "selects, provisions, manages",
+      "labelPosition": 0.6,
+      "labelOffset": 22,
+      "exit": "bottom",
+      "entry": "top"
+    },
+    {
+      "source": "cap",
+      "target": "outcome",
+      "type": "provides",
+      "label": "complete result - no bridging work",
+      "labelPosition": 0,
+      "labelOffset": -16
+    }
+  ]
+}

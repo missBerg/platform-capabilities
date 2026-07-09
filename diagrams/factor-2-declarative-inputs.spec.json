@@ -1,0 +1,145 @@
+{
+  "title": "Factor 2 \u2014 Declarative Inputs",
+  "flavour": "sketch",
+  "direction": "LR",
+  "lanes": [
+    "Consumer",
+    "GapA",
+    "The request",
+    "GapB",
+    "The capability"
+  ],
+  "nodes": [
+    {
+      "id": "consumer",
+      "type": "capability-consumer",
+      "label": "Consumer",
+      "sublabel": "states what should be true",
+      "lane": "Consumer"
+    },
+    {
+      "id": "consGap",
+      "type": "spacer",
+      "lane": "Consumer",
+      "w": 10,
+      "h": 60
+    },
+    {
+      "id": "imperative",
+      "type": "risk-gap",
+      "label": "Imperative inputs",
+      "sublabel": "consumer must know steps & ordering - no longer self-serve",
+      "lane": "Consumer"
+    },
+    {
+      "id": "gapA",
+      "type": "spacer",
+      "lane": "GapA",
+      "w": 80,
+      "h": 10
+    },
+    {
+      "id": "declared",
+      "type": "reference",
+      "label": "Desired outcome",
+      "sublabel": "a state to maintain, not an action to run",
+      "lane": "The request"
+    },
+    {
+      "id": "reqGap",
+      "type": "spacer",
+      "lane": "The request",
+      "w": 10,
+      "h": 30
+    },
+    {
+      "id": "propEngine",
+      "type": "tag-blue",
+      "label": "engine",
+      "lane": "The request",
+      "section": "Stable properties"
+    },
+    {
+      "id": "propSize",
+      "type": "tag-blue",
+      "label": "size",
+      "lane": "The request",
+      "section": "Stable properties"
+    },
+    {
+      "id": "propDura",
+      "type": "tag-blue",
+      "label": "durability",
+      "lane": "The request",
+      "section": "Stable properties"
+    },
+    {
+      "id": "propBackup",
+      "type": "tag-blue",
+      "label": "backup policy",
+      "lane": "The request",
+      "section": "Stable properties"
+    },
+    {
+      "id": "gapB",
+      "type": "spacer",
+      "lane": "GapB",
+      "w": 80,
+      "h": 10
+    },
+    {
+      "id": "cap",
+      "type": "capability",
+      "label": "Database capability",
+      "sublabel": "owns the translation, over time",
+      "lane": "The capability",
+      "icon": "cog"
+    },
+    {
+      "id": "capSecGap",
+      "type": "spacer",
+      "lane": "The capability",
+      "w": 10,
+      "h": 30
+    },
+    {
+      "id": "stepProv",
+      "type": "rectangle-grey-light",
+      "label": "Provisioning steps",
+      "lane": "The capability",
+      "section": "Internal - never the consumer's problem"
+    },
+    {
+      "id": "stepOrder",
+      "type": "rectangle-grey-light",
+      "label": "Dependency ordering",
+      "lane": "The capability",
+      "section": "Internal - never the consumer's problem"
+    },
+    {
+      "id": "stepRecover",
+      "type": "rectangle-grey-light",
+      "label": "Recovery procedures",
+      "lane": "The capability",
+      "section": "Internal - never the consumer's problem"
+    }
+  ],
+  "edges": [
+    {
+      "source": "consumer",
+      "target": "declared",
+      "type": "provides",
+      "label": "declares",
+      "labelPosition": 0,
+      "labelOffset": -14
+    },
+    {
+      "source": "declared",
+      "target": "cap",
+      "type": "reconciles",
+      "label": "applied & reconciled as conditions change",
+      "labelPosition": 0,
+      "labelOffset": -16
+    }
+  ]
+}

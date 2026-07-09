@@ -1,0 +1,35 @@
+{
+  "title": "The Platform Participation Contract — a two-sided exchange",
+  "flavour": "sketch",
+  "direction": "LR",
+  "lanes": ["The capability commits", "GapA", "The contract", "GapB", "The platform commits"],
+  "nodes": [
+    { "id": "cap", "type": "capability", "label": "Contributed capability", "sublabel": "produced by a specialist team", "lane": "The capability commits", "icon": "cog" },
+    { "id": "capPrinA", "type": "tag", "label": "Product-scoped", "lane": "The capability commits", "section": "Capability principles" },
+    { "id": "capPrinB", "type": "tag", "label": "Self-service", "lane": "The capability commits", "section": "Capability principles" },
+    { "id": "capPrinC", "type": "tag", "label": "Operationally owned", "lane": "The capability commits", "section": "Capability principles", "w": 180 },
+    { "id": "capGap", "type": "spacer", "lane": "The capability commits", "w": 10, "h": 20 },
+    { "id": "capReward", "type": "note", "label": "In return: governance, discoverability, and interoperability solved once", "lane": "The capability commits" },
+
+    { "id": "gapA", "type": "spacer", "lane": "GapA", "w": 80, "h": 10 },
+
+    { "id": "padContract", "type": "spacer", "lane": "The contract", "w": 10, "h": 110 },
+    { "id": "contract", "type": "policy", "label": "Participation contract", "sublabel": "what each side must uphold", "lane": "The contract", "icon": "key", "w": 220, "h": 90 },
+
+    { "id": "gapB", "type": "spacer", "lane": "GapB", "w": 80, "h": 10 },
+
+    { "id": "plat", "type": "platform", "label": "Platform", "sublabel": "hosts the capability catalog", "lane": "The platform commits" },
+    { "id": "platPrinA", "type": "tag-blue", "label": "Extensible", "lane": "The platform commits", "section": "Platform principles" },
+    { "id": "platPrinB", "type": "tag-blue", "label": "Composable", "lane": "The platform commits", "section": "Platform principles" },
+    { "id": "platPrinC", "type": "tag-blue", "label": "Declarative", "lane": "The platform commits", "section": "Platform principles" },
+    { "id": "platPrinD", "type": "tag-blue", "label": "Governable", "lane": "The platform commits", "section": "Platform principles" },
+    { "id": "platPrinE", "type": "tag-blue", "label": "Observable", "lane": "The platform commits", "section": "Platform principles" },
+    { "id": "platPrinF", "type": "tag-blue", "label": "Evolvable", "lane": "The platform commits", "section": "Platform principles" },
+    { "id": "platGap", "type": "spacer", "lane": "The platform commits", "w": 10, "h": 20 },
+    { "id": "platReward", "type": "note", "label": "In return: capabilities it can host without unsustainable operational burden", "lane": "The platform commits" }
+  ],
+  "edges": [
+    { "source": "cap", "target": "contract", "type": "exchanges", "label": "conforms: the five factors", "labelPosition": -0.25, "labelOffset": -16 },
+    { "source": "plat", "target": "contract", "type": "exchanges", "label": "upholds: six operating principles", "labelPosition": -0.25, "labelOffset": -16 }
+  ]
+}

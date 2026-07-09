@@ -1,0 +1,196 @@
+{
+  "title": "Factor 5 \u2014 Operational Evidence",
+  "flavour": "sketch",
+  "direction": "LR",
+  "lanes": [
+    "Authorized actors",
+    "Evidence surface",
+    "Gap",
+    "Self-serve answers"
+  ],
+  "nodes": [
+    {
+      "id": "actorTopGap",
+      "type": "spacer",
+      "lane": "Authorized actors",
+      "w": 10,
+      "h": 25,
+      "section": "Each answers their own questions"
+    },
+    {
+      "id": "consumer",
+      "type": "icon",
+      "icon": "human",
+      "label": "Consumer",
+      "lane": "Authorized actors",
+      "section": "Each answers their own questions"
+    },
+    {
+      "id": "producer",
+      "type": "icon",
+      "icon": "team",
+      "label": "Producer",
+      "lane": "Authorized actors",
+      "section": "Each answers their own questions"
+    },
+    {
+      "id": "operator",
+      "type": "icon",
+      "icon": "gear",
+      "label": "Platform operator",
+      "lane": "Authorized actors",
+      "section": "Each answers their own questions"
+    },
+    {
+      "id": "governance",
+      "type": "icon",
+      "icon": "shield",
+      "label": "Governance",
+      "lane": "Authorized actors",
+      "section": "Each answers their own questions"
+    },
+    {
+      "id": "padSurface",
+      "type": "spacer",
+      "lane": "Evidence surface",
+      "w": 10,
+      "h": 110
+    },
+    {
+      "id": "surface",
+      "type": "platform",
+      "label": "Operational evidence",
+      "sublabel": "authoritative - self-serve - no privileged access",
+      "lane": "Evidence surface",
+      "icon": "dashboard",
+      "w": 230,
+      "h": 90
+    },
+    {
+      "id": "surfGap",
+      "type": "spacer",
+      "lane": "Evidence surface",
+      "w": 10,
+      "h": 40
+    },
+    {
+      "id": "verifies",
+      "type": "note",
+      "label": "This factor is what makes the other four verifiable",
+      "lane": "Evidence surface"
+    },
+    {
+      "id": "gapA",
+      "type": "spacer",
+      "lane": "Gap",
+      "w": 120,
+      "h": 10
+    },
+    {
+      "id": "docs",
+      "type": "documentation",
+      "label": "Documentation",
+      "sublabel": "purpose - ownership - support - policy",
+      "lane": "Self-serve answers",
+      "section": "What should be true",
+      "w": 190,
+      "h": 90
+    },
+    {
+      "id": "ansGap",
+      "type": "spacer",
+      "lane": "Self-serve answers",
+      "w": 10,
+      "h": 40
+    },
+    {
+      "id": "sigHealth",
+      "type": "rectangle-grey-light",
+      "label": "Health & status",
+      "lane": "Self-serve answers",
+      "section": "What is actually true"
+    },
+    {
+      "id": "sigLife",
+      "type": "rectangle-grey-light",
+      "label": "Lifecycle stage",
+      "lane": "Self-serve answers",
+      "section": "What is actually true"
+    },
+    {
+      "id": "sigComply",
+      "type": "rectangle-grey-light",
+      "label": "Compliance state",
+      "lane": "Self-serve answers",
+      "section": "What is actually true"
+    },
+    {
+      "id": "sigFleet",
+      "type": "rectangle-grey-light",
+      "label": "Fleet rollout & drift",
+      "lane": "Self-serve answers",
+      "section": "What is actually true"
+    }
+  ],
+  "edges": [
+    {
+      "source": "consumer",
+      "target": "surface",
+      "type": "exchanges"
+    },
+    {
+      "source": "producer",
+      "target": "surface",
+      "type": "exchanges"
+    },
+    {
+      "source": "operator",
+      "target": "surface",
+      "type": "exchanges",
+      "label": "ask & act",
+      "labelPosition": -0.75,
+      "labelOffset": 18
+    },
+    {
+      "source": "governance",
+      "target": "surface",
+      "type": "exchanges",
+      "entry": "left"
+    },
+    {
+      "source": "surface",
+      "target": "docs",
+      "type": "provides",
+      "exit": "right",
+      "entry": "left"
+    },
+    {
+      "source": "surface",
+      "target": "sigHealth",
+      "type": "provides",
+      "exit": "right",
+      "entry": "left"
+    },
+    {
+      "source": "surface",
+      "target": "sigLife",
+      "type": "provides",
+      "exit": "right",
+      "entry": "left"
+    },
+    {
+      "source": "surface",
+      "target": "sigComply",
+      "type": "provides",
+      "exit": "right",
+      "entry": "left"
+    },
+    {
+      "source": "surface",
+      "target": "sigFleet",
+      "type": "provides",
+      "exit": "right",
+      "entry": "left"
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "title": "Platform Challenges at Scale \u2014 the central bottleneck",
+  "flavour": "sketch",
+  "direction": "LR",
+  "lanes": [
+    "Demand",
+    "GapA",
+    "Centralized model",
+    "GapB",
+    "Cost"
+  ],
+  "nodes": [
+    {
+      "id": "secteam",
+      "type": "capability-owner",
+      "label": "Security team",
+      "sublabel": "knows secrets management best",
+      "lane": "Demand",
+      "section": "Specialists"
+    },
+    {
+      "id": "secGap",
+      "type": "spacer",
+      "lane": "Demand",
+      "w": 10,
+      "h": 60,
+      "section": "Specialists"
+    },
+    {
+      "id": "datateam",
+      "type": "capability-owner",
+      "label": "Data team",
+      "sublabel": "knows stream processing best",
+      "lane": "Demand",
+      "section": "Specialists"
+    },
+    {
+      "id": "secTrailGap",
+      "type": "spacer",
+      "lane": "Demand",
+      "w": 10,
+      "h": 70,
+      "section": "Specialists"
+    },
+    {
+      "id": "demandGap",
+      "type": "spacer",
+      "lane": "Demand",
+      "w": 10,
+      "h": 70
+    },
+    {
+      "id": "consumers",
+      "type": "capability-consumer",
+      "label": "Consumer teams",
+      "sublabel": "growing capability requests",
+      "lane": "Demand"
+    },
+    {
+      "id": "gapA",
+      "type": "spacer",
+      "lane": "GapA",
+      "w": 60,
+      "h": 10
+    },
+    {
+      "id": "padQueue",
+      "type": "spacer",
+      "lane": "Centralized model",
+      "w": 10,
+      "h": 120
+    },
+    {
+      "id": "queue",
+      "type": "platform",
+      "label": "Central platform team",
+      "sublabel": "generalists - one queue for every change",
+      "lane": "Centralized model",
+      "icon": "clock",
+      "w": 260,
+      "h": 110
+    },
+    {
+      "id": "gapB",
+      "type": "spacer",
+      "lane": "GapB",
+      "w": 70,
+      "h": 10
+    },
+    {
+      "id": "bottleneck",
+      "type": "risk-gap",
+      "label": "Bottleneck",
+      "sublabel": "demand grows faster than the team can absorb",
+      "lane": "Cost"
+    },
+    {
+      "id": "orphaned",
+      "type": "risk-gap",
+      "label": "Orphaned ownership",
+      "sublabel": "owned without domain expertise, or by no one",
+      "lane": "Cost"
+    },
+    {
+      "id": "fragmentation",
+      "type": "risk-gap",
+      "label": "Fragmentation",
+      "sublabel": "teams build outside the platform instead",
+      "lane": "Cost"
+    }
+  ],
+  "edges": [
+    {
+      "source": "secteam",
+      "target": "queue",
+      "type": "provides",
+      "label": "route through central code & process",
+      "labelPosition": -0.35,
+      "labelOffset": -16
+    },
+    {
+      "source": "datateam",
+      "target": "queue",
+      "type": "provides"
+    },
+    {
+      "source": "consumers",
+      "target": "queue",
+      "type": "provides",
+      "label": "every request, same queue",
+      "labelPosition": -0.35,
+      "labelOffset": 16
+    },
+    {
+      "source": "queue",
+      "target": "bottleneck",
+      "type": "depends",
+      "exit": "right",
+      "entry": "left"
+    },
+    {
+      "source": "queue",
+      "target": "orphaned",
+      "type": "depends",
+      "exit": "right",
+      "entry": "left"
+    },
+    {
+      "source": "queue",
+      "target": "fragmentation",
+      "type": "depends",
+      "exit": "right",
+      "entry": "left"
+    }
+  ]
+}

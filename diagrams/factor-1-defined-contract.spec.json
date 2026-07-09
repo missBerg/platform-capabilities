@@ -1,0 +1,176 @@
+{
+  "title": "Factor 1 \u2014 Defined Contract",
+  "flavour": "sketch",
+  "direction": "LR",
+  "lanes": [
+    "Consumers arrive via",
+    "GapA",
+    "One contract",
+    "GapB",
+    "Behind the contract"
+  ],
+  "nodes": [
+    {
+      "id": "ifaceTopGap",
+      "type": "spacer",
+      "lane": "Consumers arrive via",
+      "w": 10,
+      "h": 25,
+      "section": "Interface choices, not requirements"
+    },
+    {
+      "id": "cli",
+      "type": "icon",
+      "icon": "computer",
+      "label": "CLI",
+      "lane": "Consumers arrive via",
+      "section": "Interface choices, not requirements"
+    },
+    {
+      "id": "portal",
+      "type": "icon",
+      "icon": "dashboard",
+      "label": "Web portal",
+      "lane": "Consumers arrive via",
+      "section": "Interface choices, not requirements"
+    },
+    {
+      "id": "idp",
+      "type": "icon",
+      "icon": "code",
+      "label": "Developer portal",
+      "lane": "Consumers arrive via",
+      "section": "Interface choices, not requirements"
+    },
+    {
+      "id": "agent",
+      "type": "icon",
+      "icon": "ai-agent",
+      "label": "AI agent",
+      "lane": "Consumers arrive via",
+      "section": "Interface choices, not requirements"
+    },
+    {
+      "id": "gapA",
+      "type": "spacer",
+      "lane": "GapA",
+      "w": 90,
+      "h": 10
+    },
+    {
+      "id": "padContract",
+      "type": "spacer",
+      "lane": "One contract",
+      "w": 10,
+      "h": 50
+    },
+    {
+      "id": "contract",
+      "type": "consumer-api",
+      "label": "Versioned contract",
+      "sublabel": "single entry point - stable identifier",
+      "lane": "One contract",
+      "icon": "key",
+      "w": 220,
+      "h": 100
+    },
+    {
+      "id": "contractGap",
+      "type": "spacer",
+      "lane": "One contract",
+      "w": 10,
+      "h": 60
+    },
+    {
+      "id": "versioning",
+      "type": "note",
+      "label": "Changes ship as new versions - the existing contract is never broken",
+      "lane": "One contract"
+    },
+    {
+      "id": "secondEntry",
+      "type": "risk-gap",
+      "label": "Second entry point",
+      "sublabel": "fails the factor",
+      "lane": "One contract"
+    },
+    {
+      "id": "gapB",
+      "type": "spacer",
+      "lane": "GapB",
+      "w": 90,
+      "h": 10
+    },
+    {
+      "id": "cap",
+      "type": "capability",
+      "label": "Capability",
+      "sublabel": "provision - configure - update - observe",
+      "lane": "Behind the contract",
+      "icon": "cog"
+    },
+    {
+      "id": "capSecGap",
+      "type": "spacer",
+      "lane": "Behind the contract",
+      "w": 10,
+      "h": 30
+    },
+    {
+      "id": "implLang",
+      "type": "rectangle-grey-light",
+      "label": "Languages & runtimes",
+      "lane": "Behind the contract",
+      "section": "Producer's free choice, invisible to consumers"
+    },
+    {
+      "id": "implInfra",
+      "type": "rectangle-grey-light",
+      "label": "Infrastructure",
+      "lane": "Behind the contract",
+      "section": "Producer's free choice, invisible to consumers"
+    },
+    {
+      "id": "implAuto",
+      "type": "rectangle-grey-light",
+      "label": "Automation",
+      "lane": "Behind the contract",
+      "section": "Producer's free choice, invisible to consumers"
+    }
+  ],
+  "edges": [
+    {
+      "source": "cli",
+      "target": "contract",
+      "type": "provides",
+      "label": "all interactions",
+      "labelPosition": -0.35,
+      "labelOffset": -16
+    },
+    {
+      "source": "portal",
+      "target": "contract",
+      "type": "provides"
+    },
+    {
+      "source": "idp",
+      "target": "contract",
+      "type": "provides"
+    },
+    {
+      "source": "agent",
+      "target": "contract",
+      "type": "provides"
+    },
+    {
+      "source": "contract",
+      "target": "cap",
+      "type": "provides",
+      "label": "stable surface, any environment",
+      "labelPosition": -0.4,
+      "labelOffset": -18,
+      "exit": "right",
+      "entry": "left"
+    }
+  ]
+}
