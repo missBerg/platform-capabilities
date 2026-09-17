@@ -29,21 +29,16 @@ ATTR_RE = re.compile(r'(\w+)\s*=\s*"([^"]*)"')
 # diagrams. Files not listed here sort after these, alphabetically.
 PREFERRED = [
     "challenge-central-bottleneck",
-    "implications-no-capabilities",
     "ecosystem-architecture-lineage",
     "capability-definition",
-    "ecosystem-marketplace",
-    "capability-enabling-platform",
+    "ecosystem-roles",
     "participation-contract",
-    "principles-and-factors",
     "factors-overview",
     "factor-1-defined-contract",
     "factor-2-declarative-inputs",
     "factor-3-encapsulated-dependencies",
     "factor-4-stable-reconciliation",
     "factor-5-operational-evidence",
-    "platform-from-spec",
-    "platform-with-capabilities",
 ]
 
 

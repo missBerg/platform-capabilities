@@ -221,8 +221,9 @@ def make_edge_cell(eid: str, stamp: Stamp, src: str, tgt: str,
     cell.set("source", src)
     cell.set("target", tgt)
     style = "edgeStyle=orthogonalEdgeStyle;" + (cell.get("style") or "")
+    style += "curved=1;"
     if sketch:
-        style += "sketch=1;curveFitting=1;jiggle=2;curved=1;"
+        style += "sketch=1;curveFitting=1;jiggle=2;"
     if exit_side:
         ex, ey = _SIDE_POINTS[exit_side]
         style += f"exitX={ex};exitY={ey};exitDx=0;exitDy=0;"
