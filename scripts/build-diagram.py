@@ -135,11 +135,22 @@ def parse_icons(path: Path) -> dict:
 # --------------------------------------------------------------------------- #
 # Cell emission
 # --------------------------------------------------------------------------- #
-def make_label(text: str, sublabel: str | None, bold: bool) -> str:
+def sublabel_color(style: str) -> str:
+    """Grey on light fills, pale blue on dark fills (luminance < 160)."""
+    m = re.search(r"fillColor=#([0-9A-Fa-f]{6})", style or "")
+    if m:
+        r, g, b = (int(m.group(1)[i:i + 2], 16) for i in (0, 2, 4))
+        if 0.2126 * r + 0.7152 * g + 0.0722 * b < 160:
+            return "#D6E0F0"
+    return "#4B5563"
+
+
+def make_label(text: str, sublabel: str | None, bold: bool,
+               style: str = "") -> str:
     """Build the HTML label string (ET escapes it once more on serialize)."""
     main = f"<b>{html.escape(text)}</b>" if bold else html.escape(text)
     if sublabel:
-        main += (f'<br><font style="font-size: 11px" color="#6B7280">'
+        main += (f'<br><font style="font-size: 11px" color="{sublabel_color(style)}">'
                  f'{html.escape(sublabel)}</font>')
     return main
 
@@ -176,7 +187,8 @@ def place_stamp(stamp: Stamp, x: float, y: float, nid: str,
                 geo.set("height", fmt(float(geo.get("height")) * sy))
         out.append(cell)
     if label is not None:
-        out[stamp.label_index].set("value", make_label(label, sublabel, stamp.label_bold))
+        out[stamp.label_index].set("value", make_label(label, sublabel, stamp.label_bold,
+                                                     out[stamp.label_index].get("style", "")))
     return out
 
 

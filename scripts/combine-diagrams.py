@@ -30,6 +30,8 @@ ATTR_RE = re.compile(r'(\w+)\s*=\s*"([^"]*)"')
 PREFERRED = [
     "challenge-central-bottleneck",
     "implications-no-capabilities",
+    "ecosystem-architecture-lineage",
+    "capability-definition",
     "ecosystem-marketplace",
     "capability-enabling-platform",
     "participation-contract",
