@@ -337,6 +337,8 @@ def layout(spec: dict, stamps: dict) -> dict:
     """Assign each node an absolute (x, y, w, h). Returns {id: rect}."""
     nodes = spec.get("nodes", [])
     direction = spec.get("direction", "LR")
+    lane_gap = spec.get("laneGap", LANE_GAP)
+    row_gap = spec.get("rowGap", ROW_GAP)
     # Reserve room for the title and, when sections are used, for the container
     # header/padding that sits *above* the first row of nodes.
     has_section = any(n.get("section") for n in nodes)
@@ -365,8 +367,8 @@ def layout(spec: dict, stamps: dict) -> dict:
             for n in ns:
                 w, h = node_size(n, stamps)
                 rects[n["id"]] = (x, y + (lane_h - h) / 2, w, h)
-                x += w + LANE_GAP
-            y += lane_h + ROW_GAP
+                x += w + lane_gap
+            y += lane_h + row_gap
     else:  # LR
         x = MARGIN
         for k in lane_keys:
@@ -377,8 +379,8 @@ def layout(spec: dict, stamps: dict) -> dict:
                 w, h = node_size(n, stamps)
                 rects[n["id"]] = (x + (lane_w - w) / 2, y, w, h)
                 eff = h + (ICON_LABEL_PAD if n.get("type") == "icon" and n.get("label") else 0)
-                y += eff + ROW_GAP
-            x += lane_w + LANE_GAP
+                y += eff + row_gap
+            x += lane_w + lane_gap
     return rects
 
 

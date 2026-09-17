@@ -37,6 +37,33 @@ def find_binary() -> str | None:
     return shutil.which("drawio") or shutil.which("draw.io")
 
 
+PDF_COLUMN_PT = 468  # US Letter, 1in margins: the width a figure is scaled to
+
+
+def pdf_report(infile: Path) -> None:
+    """Print the effective point size of the smallest font at PDF column width."""
+    import re
+    import xml.etree.ElementTree as ET
+    root = ET.parse(infile).getroot()
+    xs, fonts = [], set()
+    for c in root.iter("mxCell"):
+        g = c.find("mxGeometry")
+        if c.get("vertex") != "1" or g is None or not c.get("value"):
+            continue
+        x, w = float(g.get("x", 0)), float(g.get("width", 0))
+        xs += [x, x + w]
+        m = re.search(r"fontSize=(\d+)", c.get("style", ""))
+        if m:
+            fonts.add(int(m.group(1)))
+        fonts.update(int(f) for f in re.findall(r"font-size: ?(\d+)px", c.get("value")))
+    if not xs or not fonts:
+        return
+    width = max(xs) - min(xs)
+    pt = PDF_COLUMN_PT / width * min(fonts)
+    flag = "" if pt >= 7 else "  <-- below 7pt, widen fonts or narrow the canvas"
+    print(f"pdf-check: width {width:.0f} units, smallest font {min(fonts)}px -> {pt:.1f}pt at {PDF_COLUMN_PT}pt column{flag}")
+
+
 def export(binary: str, infile: Path, fmt: str, scale: str, border: str) -> int:
     out = infile.with_suffix(f".{fmt}")
     cmd = [binary, "--export", "--format", fmt, "--scale", scale,
@@ -61,6 +88,7 @@ def main() -> int:
         print(f"no such file: {infile}")
         return 1
     fmt, scale, border = "png", "2", "20"
+    pdf_check = False
     i = 1
     while i < len(args):
         if args[i] == "--format":
@@ -69,8 +97,12 @@ def main() -> int:
             scale = args[i + 1]; i += 2
         elif args[i] == "--border":
             border = args[i + 1]; i += 2
+        elif args[i] == "--pdf-check":
+            pdf_check = True; i += 1
         else:
             print(f"unknown argument: {args[i]}"); return 2
+    if pdf_check:
+        pdf_report(infile)
     binary = find_binary()
     if not binary:
         print("draw.io not found. Install it with:  brew install --cask drawio\n"
