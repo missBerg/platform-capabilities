@@ -1,0 +1,156 @@
+{
+  "flavour": "clean",
+  "direction": "LR",
+  "laneGap": 60,
+  "rowGap": 36,
+  "lanes": [
+    "Producers",
+    "Layer",
+    "Consumers"
+  ],
+  "nodes": [
+    {
+      "id": "padP",
+      "type": "spacer",
+      "lane": "Producers",
+      "w": 10,
+      "h": 190
+    },
+    {
+      "id": "secprod",
+      "type": "capability-owner",
+      "label": "Security team",
+      "lane": "Producers",
+      "section": "Producers"
+    },
+    {
+      "id": "g1",
+      "type": "spacer",
+      "lane": "Producers",
+      "w": 10,
+      "h": 40
+    },
+    {
+      "id": "dataprod",
+      "type": "capability-owner",
+      "label": "Data team",
+      "lane": "Producers",
+      "section": "Producers"
+    },
+    {
+      "id": "operators",
+      "type": "capability-owner",
+      "label": "Platform operators",
+      "sublabel": "platform team",
+      "lane": "Layer",
+      "section": "The thin, consistent layer"
+    },
+    {
+      "id": "g3",
+      "type": "spacer",
+      "lane": "Layer",
+      "w": 10,
+      "h": 40
+    },
+    {
+      "id": "capsec",
+      "type": "capability",
+      "label": "Secrets management",
+      "lane": "Layer",
+      "icon": "lock",
+      "section": "The thin, consistent layer",
+      "w": 200,
+      "h": 80
+    },
+    {
+      "id": "capdata",
+      "type": "capability",
+      "label": "Stream processing",
+      "lane": "Layer",
+      "icon": "pipeline",
+      "section": "The thin, consistent layer",
+      "w": 200,
+      "h": 80
+    },
+    {
+      "id": "padC",
+      "type": "spacer",
+      "lane": "Consumers",
+      "w": 10,
+      "h": 190
+    },
+    {
+      "id": "appteam",
+      "type": "capability-consumer",
+      "label": "App team",
+      "lane": "Consumers",
+      "section": "Consumers"
+    },
+    {
+      "id": "g2",
+      "type": "spacer",
+      "lane": "Consumers",
+      "w": 10,
+      "h": 40
+    },
+    {
+      "id": "mlteam",
+      "type": "capability-consumer",
+      "label": "ML team",
+      "lane": "Consumers",
+      "section": "Consumers"
+    },
+    {
+      "id": "spP",
+      "type": "spacer",
+      "lane": "Producers",
+      "w": 10,
+      "h": 24,
+      "section": "Producers"
+    },
+    {
+      "id": "spC",
+      "type": "spacer",
+      "lane": "Consumers",
+      "w": 10,
+      "h": 24,
+      "section": "Consumers"
+    }
+  ],
+  "edges": [
+    {
+      "source": "secprod",
+      "target": "capsec",
+      "type": "provides",
+      "label": "contribute via contract",
+      "labelOffset": -16,
+      "exit": "right",
+      "entry": "left",
+      "labelPosition": 0.4
+    },
+    {
+      "source": "dataprod",
+      "target": "capdata",
+      "type": "provides",
+      "exit": "right",
+      "entry": "left"
+    },
+    {
+      "source": "capsec",
+      "target": "appteam",
+      "type": "provides",
+      "label": "self-serve via API",
+      "labelOffset": -16,
+      "exit": "right",
+      "entry": "left",
+      "labelPosition": 0.4
+    },
+    {
+      "source": "capdata",
+      "target": "mlteam",
+      "type": "provides",
+      "exit": "right",
+      "entry": "left"
+    }
+  ]
+}

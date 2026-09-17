@@ -1,107 +1,103 @@
 {
-  "flavour": "sketch",
+  "flavour": "clean",
   "direction": "LR",
+  "laneGap": 50,
+  "rowGap": 36,
   "lanes": [
-    "Demand",
-    "GapA",
-    "Centralized model",
-    "GapB",
-    "Cost"
+    "Teams",
+    "Central",
+    "Results"
   ],
   "nodes": [
     {
       "id": "secteam",
       "type": "capability-owner",
       "label": "Security team",
-      "sublabel": "secrets management",
-      "lane": "Demand",
+      "lane": "Teams",
       "section": "Specialists"
     },
     {
-      "id": "secGap",
+      "id": "g1",
       "type": "spacer",
-      "lane": "Demand",
+      "lane": "Teams",
       "w": 10,
-      "h": 60,
-      "section": "Specialists"
+      "h": 20
     },
     {
       "id": "datateam",
       "type": "capability-owner",
       "label": "Data team",
-      "sublabel": "stream processing",
-      "lane": "Demand",
+      "lane": "Teams",
       "section": "Specialists"
     },
     {
-      "id": "secTrailGap",
+      "id": "g2",
       "type": "spacer",
-      "lane": "Demand",
+      "lane": "Teams",
       "w": 10,
-      "h": 70,
-      "section": "Specialists"
-    },
-    {
-      "id": "demandGap",
-      "type": "spacer",
-      "lane": "Demand",
-      "w": 10,
-      "h": 70
+      "h": 20
     },
     {
       "id": "consumers",
       "type": "capability-consumer",
       "label": "Consumer teams",
-      "lane": "Demand"
+      "lane": "Teams"
     },
     {
-      "id": "gapA",
+      "id": "padQ",
       "type": "spacer",
-      "lane": "GapA",
-      "w": 60,
-      "h": 10
-    },
-    {
-      "id": "padQueue",
-      "type": "spacer",
-      "lane": "Centralized model",
+      "lane": "Central",
       "w": 10,
-      "h": 120
+      "h": 130
     },
     {
       "id": "queue",
       "type": "platform",
       "label": "Central platform team",
       "sublabel": "one queue for every change",
-      "lane": "Centralized model",
+      "lane": "Central",
       "icon": "clock",
-      "w": 260,
-      "h": 110
+      "w": 210,
+      "h": 90
     },
     {
-      "id": "gapB",
+      "id": "padR",
       "type": "spacer",
-      "lane": "GapB",
-      "w": 70,
-      "h": 10
+      "lane": "Results",
+      "w": 10,
+      "h": 70
     },
     {
-      "id": "bottleneck",
+      "id": "r1",
       "type": "risk-gap",
-      "label": "Bottleneck",
-      "lane": "Cost"
+      "label": "Incompatible contracts",
+      "lane": "Results",
+      "w": 200,
+      "h": 50
     },
     {
-      "id": "orphaned",
+      "id": "r2",
       "type": "risk-gap",
-      "label": "Orphaned ownership",
-      "lane": "Cost"
+      "label": "Inconsistent experience",
+      "lane": "Results",
+      "w": 200,
+      "h": 50
     },
     {
-      "id": "fragmentation",
+      "id": "r3",
       "type": "risk-gap",
-      "label": "Fragmentation",
-      "lane": "Cost"
+      "label": "Duplicated effort",
+      "lane": "Results",
+      "w": 200,
+      "h": 50
+    },
+    {
+      "id": "r4",
+      "type": "risk-gap",
+      "label": "Multiplied operational load",
+      "lane": "Results",
+      "w": 200,
+      "h": 50
     }
   ],
   "edges": [
@@ -109,40 +105,47 @@
       "source": "secteam",
       "target": "queue",
       "type": "provides",
-      "label": "central code & process",
-      "labelPosition": -0.35,
-      "labelOffset": -16
+      "exit": "right",
+      "entry": "left"
     },
     {
       "source": "datateam",
       "target": "queue",
-      "type": "provides"
+      "type": "provides",
+      "exit": "right",
+      "entry": "left"
     },
     {
       "source": "consumers",
       "target": "queue",
       "type": "provides",
-      "label": "same queue",
-      "labelPosition": -0.35,
-      "labelOffset": 16
+      "exit": "right",
+      "entry": "left"
     },
     {
       "source": "queue",
-      "target": "bottleneck",
+      "target": "r1",
       "type": "depends",
       "exit": "right",
       "entry": "left"
     },
     {
       "source": "queue",
-      "target": "orphaned",
+      "target": "r2",
       "type": "depends",
       "exit": "right",
       "entry": "left"
     },
     {
       "source": "queue",
-      "target": "fragmentation",
+      "target": "r3",
+      "type": "depends",
+      "exit": "right",
+      "entry": "left"
+    },
+    {
+      "source": "queue",
+      "target": "r4",
       "type": "depends",
       "exit": "right",
       "entry": "left"

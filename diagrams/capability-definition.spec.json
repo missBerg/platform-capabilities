@@ -1,87 +1,74 @@
 {
   "flavour": "clean",
-  "direction": "LR",
+  "direction": "TB",
+  "laneGap": 60,
+  "rowGap": 40,
   "lanes": [
-    "Consumer",
-    "GapA",
-    "The capability",
-    "GapB",
-    "Outcome"
+    "Flow",
+    "Gap",
+    "Facets"
   ],
   "nodes": [
     {
       "id": "consumer",
       "type": "capability-consumer",
       "label": "Consumer",
-      "lane": "Consumer"
-    },
-    {
-      "id": "gapA",
-      "type": "spacer",
-      "lane": "GapA",
-      "w": 80,
-      "h": 10
+      "lane": "Flow"
     },
     {
       "id": "cap",
       "type": "capability",
       "label": "A capability",
       "sublabel": "self-contained service",
-      "lane": "The capability",
+      "lane": "Flow",
       "icon": "cog",
-      "w": 260,
-      "h": 90
+      "w": 220,
+      "h": 80
     },
     {
-      "id": "capGap",
+      "id": "outcome",
+      "type": "outcome",
+      "label": "A user outcome",
+      "lane": "Flow",
+      "w": 190,
+      "h": 80
+    },
+    {
+      "id": "gapRow",
       "type": "spacer",
-      "lane": "The capability",
+      "lane": "Gap",
       "w": 10,
-      "h": 40
+      "h": 50
     },
     {
       "id": "api",
       "type": "sub-capability",
       "label": "Defined API",
       "sublabel": "provision, configure, observe",
-      "lane": "The capability",
+      "lane": "Facets",
+      "icon": "key",
       "section": "Defined by",
-      "w": 240,
-      "icon": "key"
+      "w": 180
     },
     {
       "id": "lifecycle",
       "type": "sub-capability",
       "label": "Managed lifecycle",
       "sublabel": "create, update, retire",
-      "lane": "The capability",
+      "lane": "Facets",
+      "icon": "clock",
       "section": "Defined by",
-      "w": 240,
-      "icon": "clock"
+      "w": 180
     },
     {
       "id": "contract",
       "type": "sub-capability",
-      "label": "Place in the participation contract",
+      "label": "Place in the contract",
       "sublabel": "governed and discoverable",
-      "lane": "The capability",
+      "lane": "Facets",
+      "icon": "shield",
       "section": "Defined by",
-      "w": 240,
-      "icon": "shield"
-    },
-    {
-      "id": "gapB",
-      "type": "spacer",
-      "lane": "GapB",
-      "w": 80,
-      "h": 10
-    },
-    {
-      "id": "outcome",
-      "type": "outcome",
-      "label": "A user outcome",
-      "lane": "Outcome",
-      "w": 220
+      "w": 180
     }
   ],
   "edges": [
@@ -90,16 +77,18 @@
       "target": "cap",
       "type": "provides",
       "label": "requests",
-      "labelPosition": 0,
-      "labelOffset": -16
+      "labelOffset": -18,
+      "exit": "right",
+      "entry": "left"
     },
     {
       "source": "cap",
       "target": "outcome",
       "type": "provides",
       "label": "delivers",
-      "labelPosition": 0,
-      "labelOffset": -16
+      "labelOffset": -18,
+      "exit": "right",
+      "entry": "left"
     }
   ]
 }

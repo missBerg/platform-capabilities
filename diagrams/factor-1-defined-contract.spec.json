@@ -1,28 +1,20 @@
 {
-  "flavour": "sketch",
+  "flavour": "clean",
   "direction": "LR",
+  "laneGap": 60,
+  "rowGap": 36,
   "lanes": [
-    "Consumers arrive via",
-    "GapA",
-    "One contract",
-    "GapB",
-    "Behind the contract"
+    "Interfaces",
+    "API",
+    "Capability"
   ],
   "nodes": [
-    {
-      "id": "ifaceTopGap",
-      "type": "spacer",
-      "lane": "Consumers arrive via",
-      "w": 10,
-      "h": 25,
-      "section": "Interface choices"
-    },
     {
       "id": "cli",
       "type": "icon",
       "icon": "computer",
       "label": "CLI",
-      "lane": "Consumers arrive via",
+      "lane": "Interfaces",
       "section": "Interface choices"
     },
     {
@@ -30,15 +22,15 @@
       "type": "icon",
       "icon": "dashboard",
       "label": "Web portal",
-      "lane": "Consumers arrive via",
+      "lane": "Interfaces",
       "section": "Interface choices"
     },
     {
       "id": "idp",
       "type": "icon",
       "icon": "code",
-      "label": "Developer portal",
-      "lane": "Consumers arrive via",
+      "label": "Dev portal",
+      "lane": "Interfaces",
       "section": "Interface choices"
     },
     {
@@ -46,122 +38,95 @@
       "type": "icon",
       "icon": "ai-agent",
       "label": "AI agent",
-      "lane": "Consumers arrive via",
+      "lane": "Interfaces",
       "section": "Interface choices"
     },
     {
-      "id": "gapA",
+      "id": "padA",
       "type": "spacer",
-      "lane": "GapA",
-      "w": 90,
-      "h": 10
-    },
-    {
-      "id": "padContract",
-      "type": "spacer",
-      "lane": "One contract",
+      "lane": "API",
       "w": 10,
-      "h": 50
+      "h": 190
     },
     {
-      "id": "contract",
-      "type": "consumer-api",
+      "id": "api",
+      "type": "sub-capability",
       "label": "Versioned API",
       "sublabel": "single entry point",
-      "lane": "One contract",
+      "lane": "API",
       "icon": "key",
-      "w": 220,
-      "h": 100
+      "w": 200,
+      "h": 70
     },
     {
-      "id": "contractGap",
+      "id": "padC",
       "type": "spacer",
-      "lane": "One contract",
+      "lane": "Capability",
       "w": 10,
-      "h": 60
-    },
-    {
-      "id": "secondEntry",
-      "type": "risk-gap",
-      "label": "Second entry point",
-      "sublabel": "fails the factor",
-      "lane": "One contract"
-    },
-    {
-      "id": "gapB",
-      "type": "spacer",
-      "lane": "GapB",
-      "w": 90,
-      "h": 10
+      "h": 185
     },
     {
       "id": "cap",
       "type": "capability",
       "label": "Capability",
-      "sublabel": "provision - configure - update - observe",
-      "lane": "Behind the contract",
-      "icon": "cog"
+      "sublabel": "implementation is the producer's choice",
+      "lane": "Capability",
+      "icon": "cog",
+      "w": 210,
+      "h": 80
     },
     {
-      "id": "capSecGap",
+      "id": "gapF",
       "type": "spacer",
-      "lane": "Behind the contract",
+      "lane": "Capability",
       "w": 10,
-      "h": 30
+      "h": 40
     },
     {
-      "id": "implLang",
-      "type": "rectangle-grey-light",
-      "label": "Languages & runtimes",
-      "lane": "Behind the contract",
-      "section": "Implementation"
-    },
-    {
-      "id": "implInfra",
-      "type": "rectangle-grey-light",
-      "label": "Infrastructure",
-      "lane": "Behind the contract",
-      "section": "Implementation"
-    },
-    {
-      "id": "implAuto",
-      "type": "rectangle-grey-light",
-      "label": "Automation",
-      "lane": "Behind the contract",
-      "section": "Implementation"
+      "id": "fail",
+      "type": "risk-gap",
+      "label": "Second entry point",
+      "sublabel": "fails the factor",
+      "lane": "Capability",
+      "w": 200,
+      "h": 56
     }
   ],
   "edges": [
     {
       "source": "cli",
-      "target": "contract",
+      "target": "api",
       "type": "provides",
-      "label": "all interactions",
-      "labelPosition": -0.35,
-      "labelOffset": -16
+      "exit": "right",
+      "entry": "left"
     },
     {
       "source": "portal",
-      "target": "contract",
-      "type": "provides"
+      "target": "api",
+      "type": "provides",
+      "exit": "right",
+      "entry": "left"
     },
     {
       "source": "idp",
-      "target": "contract",
-      "type": "provides"
+      "target": "api",
+      "type": "provides",
+      "exit": "right",
+      "entry": "left"
     },
     {
       "source": "agent",
-      "target": "contract",
-      "type": "provides"
+      "target": "api",
+      "type": "provides",
+      "exit": "right",
+      "entry": "left"
     },
     {
-      "source": "contract",
+      "source": "api",
       "target": "cap",
       "type": "provides",
       "label": "any environment",
-      "labelPosition": -0.4,
-      "labelOffset": -18,
+      "labelOffset": -16,
       "exit": "right",
       "entry": "left"
     }

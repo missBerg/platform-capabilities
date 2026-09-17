@@ -1,227 +1,57 @@
 {
-  "flavour": "sketch",
-  "direction": "LR",
+  "flavour": "clean",
+  "direction": "TB",
+  "laneGap": 16,
+  "rowGap": 36,
   "lanes": [
-    "Capability factors",
-    "GapA",
-    "Capability principles",
-    "GapB",
-    "Platform principles",
-    "GapC",
-    "Organizational outcomes"
+    "Factors"
   ],
   "nodes": [
     {
-      "id": "fhead",
-      "type": "capability",
-      "label": "Five capability factors",
-      "sublabel": "binary tests",
-      "lane": "Capability factors"
-    },
-    {
-      "id": "fGapHead",
-      "type": "spacer",
-      "lane": "Capability factors",
-      "w": 10,
-      "h": 30
-    },
-    {
-      "id": "factA",
-      "type": "tag",
-      "label": "Defined Contract",
-      "lane": "Capability factors",
-      "section": "The tests",
-      "w": 220
-    },
-    {
-      "id": "factB",
-      "type": "tag",
-      "label": "Declarative Inputs",
-      "lane": "Capability factors",
-      "section": "The tests",
-      "w": 220
-    },
-    {
-      "id": "factC",
-      "type": "tag",
-      "label": "Encapsulated Dependencies",
-      "lane": "Capability factors",
-      "section": "The tests",
-      "w": 220
-    },
-    {
-      "id": "factD",
-      "type": "tag",
-      "label": "Stable Reconciliation",
-      "lane": "Capability factors",
-      "section": "The tests",
-      "w": 220
-    },
-    {
-      "id": "factE",
-      "type": "tag",
-      "label": "Operational Evidence",
-      "lane": "Capability factors",
-      "section": "The tests",
-      "w": 220
-    },
-    {
-      "id": "gapA",
-      "type": "spacer",
-      "lane": "GapA",
-      "w": 60,
-      "h": 10
-    },
-    {
-      "id": "chead",
+      "id": "f1",
       "type": "sub-capability",
-      "label": "Capability principles",
-      "lane": "Capability principles"
+      "label": "1. Defined Contract",
+      "sublabel": "one versioned API",
+      "lane": "Factors",
+      "w": 124,
+      "h": 84
     },
     {
-      "id": "cGapHead",
-      "type": "spacer",
-      "lane": "Capability principles",
-      "w": 10,
-      "h": 30
+      "id": "f2",
+      "type": "sub-capability",
+      "label": "2. Declarative Inputs",
+      "sublabel": "outcomes, not steps",
+      "lane": "Factors",
+      "w": 124,
+      "h": 84
     },
     {
-      "id": "cprinA",
-      "type": "tag",
-      "label": "Product-scoped",
-      "lane": "Capability principles",
-      "section": "Embodied"
+      "id": "f3",
+      "type": "sub-capability",
+      "label": "3. Encapsulated Dependencies",
+      "sublabel": "owns what it needs",
+      "lane": "Factors",
+      "w": 124,
+      "h": 84
     },
     {
-      "id": "cprinB",
-      "type": "tag",
-      "label": "Self-service",
-      "lane": "Capability principles",
-      "section": "Embodied"
+      "id": "f4",
+      "type": "sub-capability",
+      "label": "4. Stable Reconciliation",
+      "sublabel": "safe to reapply",
+      "lane": "Factors",
+      "w": 124,
+      "h": 84
     },
     {
-      "id": "cprinC",
-      "type": "tag",
-      "label": "Operationally owned",
-      "lane": "Capability principles",
-      "section": "Embodied",
-      "w": 180
-    },
-    {
-      "id": "gapB",
-      "type": "spacer",
-      "lane": "GapB",
-      "w": 60,
-      "h": 10
-    },
-    {
-      "id": "phead",
-      "type": "platform",
-      "label": "Platform principles",
-      "lane": "Platform principles"
-    },
-    {
-      "id": "pGapHead",
-      "type": "spacer",
-      "lane": "Platform principles",
-      "w": 10,
-      "h": 30
-    },
-    {
-      "id": "pprinA",
-      "type": "tag-blue",
-      "label": "Extensible",
-      "lane": "Platform principles",
-      "section": "Upheld"
-    },
-    {
-      "id": "pprinB",
-      "type": "tag-blue",
-      "label": "Composable",
-      "lane": "Platform principles",
-      "section": "Upheld"
-    },
-    {
-      "id": "pprinC",
-      "type": "tag-blue",
-      "label": "Declarative",
-      "lane": "Platform principles",
-      "section": "Upheld"
-    },
-    {
-      "id": "pprinD",
-      "type": "tag-blue",
-      "label": "Governable",
-      "lane": "Platform principles",
-      "section": "Upheld"
-    },
-    {
-      "id": "pprinE",
-      "type": "tag-blue",
-      "label": "Observable",
-      "lane": "Platform principles",
-      "section": "Upheld"
-    },
-    {
-      "id": "pprinF",
-      "type": "tag-blue",
-      "label": "Stable",
-      "lane": "Platform principles",
-      "section": "Upheld"
-    },
-    {
-      "id": "gapC",
-      "type": "spacer",
-      "lane": "GapC",
-      "w": 60,
-      "h": 10
-    },
-    {
-      "id": "ohead",
-      "type": "outcome",
-      "label": "Adapt quickly",
-      "lane": "Organizational outcomes",
-      "w": 220
-    },
-    {
-      "id": "obuild",
-      "type": "outcome",
-      "label": "Build confidently",
-      "lane": "Organizational outcomes",
-      "w": 220
-    },
-    {
-      "id": "ooperate",
-      "type": "outcome",
-      "label": "Operate sustainably",
-      "lane": "Organizational outcomes",
-      "w": 220
+      "id": "f5",
+      "type": "sub-capability",
+      "label": "5. Operational Evidence",
+      "sublabel": "authoritative, self-serve",
+      "lane": "Factors",
+      "w": 124,
+      "h": 84
     }
   ],
-  "edges": [
-    {
-      "source": "fhead",
-      "target": "chead",
-      "type": "provides",
-      "label": "prove",
-      "labelPosition": 0,
-      "labelOffset": -14
-    },
-    {
-      "source": "chead",
-      "target": "phead",
-      "type": "provides",
-      "label": "enable",
-      "labelPosition": 0,
-      "labelOffset": -14
-    },
-    {
-      "source": "phead",
-      "target": "ohead",
-      "type": "provides",
-      "label": "deliver",
-      "labelPosition": -0.3,
-      "labelOffset": -14
-    }
-  ]
+  "edges": []
 }

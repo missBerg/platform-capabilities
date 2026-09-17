@@ -1,11 +1,11 @@
 {
-  "flavour": "sketch",
+  "flavour": "clean",
   "direction": "LR",
+  "laneGap": 50,
+  "rowGap": 36,
   "lanes": [
     "Consumer side",
-    "GapA",
     "The capability",
-    "GapB",
     "The outcome"
   ],
   "nodes": [
@@ -20,7 +20,7 @@
       "type": "spacer",
       "lane": "Consumer side",
       "w": 10,
-      "h": 80
+      "h": 40
     },
     {
       "id": "prereq",
@@ -28,14 +28,8 @@
       "label": "Prerequisite",
       "sublabel": "consumer-managed",
       "lane": "Consumer side",
-      "section": "Consumer's responsibility"
-    },
-    {
-      "id": "gapA",
-      "type": "spacer",
-      "lane": "GapA",
-      "w": 90,
-      "h": 10
+      "section": "Consumer's responsibility",
+      "w": 170
     },
     {
       "id": "cap",
@@ -43,57 +37,66 @@
       "label": "Database capability",
       "lane": "The capability",
       "icon": "shield",
-      "w": 220,
-      "h": 90
+      "w": 200,
+      "h": 80
     },
     {
       "id": "capSecGap",
       "type": "spacer",
       "lane": "The capability",
       "w": 10,
-      "h": 50
+      "h": 30
     },
     {
       "id": "depStore",
       "type": "sub-capability",
       "label": "Backing storage",
       "lane": "The capability",
-      "section": "Owned dependencies"
+      "section": "Owned dependencies",
+      "w": 180,
+      "h": 44
     },
     {
       "id": "depBackup",
       "type": "sub-capability",
       "label": "Backups & recovery",
       "lane": "The capability",
-      "section": "Owned dependencies"
+      "section": "Owned dependencies",
+      "w": 180,
+      "h": 44
     },
     {
       "id": "depGuard",
       "type": "sub-capability",
       "label": "Encryption, isolation, audit",
       "lane": "The capability",
-      "section": "Owned dependencies"
-    },
-    {
-      "id": "gapB",
-      "type": "spacer",
-      "lane": "GapB",
-      "w": 90,
-      "h": 10
+      "section": "Owned dependencies",
+      "w": 180,
+      "h": 44
     },
     {
       "id": "outcome",
       "type": "outcome",
       "label": "Working database",
       "lane": "The outcome",
-      "w": 230
+      "w": 180,
+      "h": 80
     },
     {
       "id": "outGap",
       "type": "spacer",
       "lane": "The outcome",
       "w": 10,
-      "h": 40
+      "h": 150
+    },
+    {
+      "id": "fail",
+      "type": "risk-gap",
+      "label": "Manual assembly",
+      "sublabel": "fails the factor",
+      "lane": "The outcome",
+      "w": 200,
+      "h": 56
     }
   ],
   "edges": [
@@ -102,8 +105,10 @@
       "target": "cap",
       "type": "provides",
       "label": "declares outcome",
-      "labelPosition": -0.3,
-      "labelOffset": -16
+      "labelPosition": 0,
+      "labelOffset": -18,
+      "exit": "right",
+      "entry": "left"
     },
     {
       "source": "consumer",
@@ -116,9 +121,6 @@
       "source": "cap",
       "target": "depStore",
       "type": "reconciles",
-      "label": "selects, provisions, manages",
-      "labelPosition": 0.6,
-      "labelOffset": 22,
       "exit": "bottom",
       "entry": "top"
     },
@@ -127,8 +129,9 @@
       "target": "outcome",
       "type": "provides",
       "label": "complete result",
-      "labelPosition": 0,
-      "labelOffset": -16
+      "labelOffset": -18,
+      "exit": "right",
+      "entry": "left"
     }
   ]
 }

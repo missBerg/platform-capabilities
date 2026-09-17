@@ -3,7 +3,6 @@
   "direction": "LR",
   "lanes": [
     "Borrowed from",
-    "GapA",
     "The platform ecosystem architecture"
   ],
   "nodes": [
@@ -35,13 +34,6 @@
       "h": 90
     },
     {
-      "id": "gapA",
-      "type": "spacer",
-      "lane": "GapA",
-      "w": 120,
-      "h": 10
-    },
-    {
       "id": "padTop",
       "type": "spacer",
       "lane": "The platform ecosystem architecture",
@@ -64,18 +56,22 @@
       "target": "platform",
       "type": "provides",
       "label": "consistency",
-      "labelPosition": -0.35,
+      "labelPosition": -0.5,
       "labelOffset": -16,
-      "entry": "left"
+      "entry": "left",
+      "exit": "right"
     },
     {
       "source": "micro",
       "target": "platform",
       "type": "provides",
       "label": "independence",
-      "labelPosition": -0.35,
+      "labelPosition": -0.5,
       "labelOffset": 16,
-      "entry": "left"
+      "entry": "left",
+      "exit": "right"
     }
-  ]
+  ],
+  "laneGap": 60,
+  "rowGap": 36
 }

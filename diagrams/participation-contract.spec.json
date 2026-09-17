@@ -1,134 +1,135 @@
 {
-  "flavour": "sketch",
+  "flavour": "clean",
   "direction": "LR",
+  "laneGap": 40,
+  "rowGap": 36,
   "lanes": [
-    "The capability commits",
-    "GapA",
-    "The contract",
-    "GapB",
-    "The platform commits"
+    "Capability",
+    "Contract",
+    "Platform"
   ],
   "nodes": [
     {
       "id": "cap",
       "type": "capability",
       "label": "Contributed capability",
-      "lane": "The capability commits",
-      "icon": "cog"
+      "lane": "Capability",
+      "icon": "cog",
+      "w": 200,
+      "h": 70
     },
     {
-      "id": "capPrinA",
-      "type": "tag",
+      "id": "g1",
+      "type": "spacer",
+      "lane": "Capability",
+      "w": 10,
+      "h": 40
+    },
+    {
+      "id": "cp1",
+      "type": "sub-capability",
       "label": "Product-scoped",
-      "lane": "The capability commits",
-      "section": "Capability principles"
-    },
-    {
-      "id": "capPrinB",
-      "type": "tag",
-      "label": "Self-service",
-      "lane": "The capability commits",
-      "section": "Capability principles"
-    },
-    {
-      "id": "capPrinC",
-      "type": "tag",
-      "label": "Operationally owned",
-      "lane": "The capability commits",
+      "lane": "Capability",
       "section": "Capability principles",
-      "w": 180
+      "w": 180,
+      "h": 44
     },
     {
-      "id": "capGap",
-      "type": "spacer",
-      "lane": "The capability commits",
-      "w": 10,
-      "h": 20
+      "id": "cp2",
+      "type": "sub-capability",
+      "label": "Self-service",
+      "lane": "Capability",
+      "section": "Capability principles",
+      "w": 180,
+      "h": 44
     },
     {
-      "id": "gapA",
-      "type": "spacer",
-      "lane": "GapA",
-      "w": 80,
-      "h": 10
+      "id": "cp3",
+      "type": "sub-capability",
+      "label": "Operationally owned",
+      "lane": "Capability",
+      "section": "Capability principles",
+      "w": 180,
+      "h": 44
     },
     {
-      "id": "padContract",
-      "type": "spacer",
-      "lane": "The contract",
-      "w": 10,
-      "h": 110
+      "id": "factors",
+      "type": "tag-blue",
+      "label": "proven by the five factors",
+      "lane": "Capability",
+      "w": 200
     },
     {
       "id": "contract",
       "type": "policy",
       "label": "Participation contract",
-      "lane": "The contract",
+      "lane": "Contract",
       "icon": "key",
-      "w": 220,
-      "h": 90
-    },
-    {
-      "id": "gapB",
-      "type": "spacer",
-      "lane": "GapB",
-      "w": 80,
-      "h": 10
+      "w": 190,
+      "h": 70
     },
     {
       "id": "plat",
       "type": "platform",
       "label": "Platform",
-      "lane": "The platform commits"
+      "lane": "Platform",
+      "w": 200,
+      "h": 70
     },
     {
-      "id": "platPrinA",
+      "id": "g2",
+      "type": "spacer",
+      "lane": "Platform",
+      "w": 10,
+      "h": 40
+    },
+    {
+      "id": "pp1",
       "type": "tag-blue",
       "label": "Extensible",
-      "lane": "The platform commits",
-      "section": "Platform principles"
+      "lane": "Platform",
+      "section": "Platform principles",
+      "w": 160
     },
     {
-      "id": "platPrinB",
+      "id": "pp2",
       "type": "tag-blue",
       "label": "Composable",
-      "lane": "The platform commits",
-      "section": "Platform principles"
+      "lane": "Platform",
+      "section": "Platform principles",
+      "w": 160
     },
     {
-      "id": "platPrinC",
+      "id": "pp3",
       "type": "tag-blue",
       "label": "Declarative",
-      "lane": "The platform commits",
-      "section": "Platform principles"
+      "lane": "Platform",
+      "section": "Platform principles",
+      "w": 160
     },
     {
-      "id": "platPrinD",
+      "id": "pp4",
       "type": "tag-blue",
       "label": "Governable",
-      "lane": "The platform commits",
-      "section": "Platform principles"
+      "lane": "Platform",
+      "section": "Platform principles",
+      "w": 160
     },
     {
-      "id": "platPrinE",
+      "id": "pp5",
       "type": "tag-blue",
       "label": "Observable",
-      "lane": "The platform commits",
-      "section": "Platform principles"
+      "lane": "Platform",
+      "section": "Platform principles",
+      "w": 160
     },
     {
-      "id": "platPrinF",
+      "id": "pp6",
       "type": "tag-blue",
       "label": "Stable",
-      "lane": "The platform commits",
-      "section": "Platform principles"
-    },
-    {
-      "id": "platGap",
-      "type": "spacer",
-      "lane": "The platform commits",
-      "w": 10,
-      "h": 20
+      "lane": "Platform",
+      "section": "Platform principles",
+      "w": 160
     }
   ],
   "edges": [
@@ -137,16 +138,16 @@
       "target": "contract",
       "type": "exchanges",
       "label": "five factors",
-      "labelPosition": -0.25,
-      "labelOffset": -16
+      "labelOffset": -16,
+      "route": "straight"
     },
     {
       "source": "plat",
       "target": "contract",
       "type": "exchanges",
       "label": "six principles",
-      "labelPosition": -0.25,
-      "labelOffset": -16
+      "labelOffset": -16,
+      "route": "straight"
     }
   ]
 }

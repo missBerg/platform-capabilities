@@ -1,160 +1,131 @@
 {
-  "flavour": "sketch",
+  "flavour": "clean",
   "direction": "LR",
+  "laneGap": 50,
+  "rowGap": 36,
   "lanes": [
-    "Platform reality",
-    "GapA",
-    "Declared state",
-    "GapB",
+    "Triggers",
     "Capability",
-    "GapC",
     "Result"
   ],
   "nodes": [
     {
-      "id": "trigTopGap",
-      "type": "spacer",
-      "lane": "Platform reality",
-      "w": 10,
-      "h": 25,
-      "section": "Triggers"
-    },
-    {
-      "id": "trigRetry",
-      "type": "tag",
+      "id": "t1",
+      "type": "tag-blue",
       "label": "retry",
-      "lane": "Platform reality",
-      "section": "Triggers"
+      "lane": "Triggers",
+      "section": "Same state, applied again",
+      "w": 130
     },
     {
-      "id": "trigRollout",
-      "type": "tag",
+      "id": "t2",
+      "type": "tag-blue",
       "label": "fleet rollout",
-      "lane": "Platform reality",
-      "section": "Triggers"
+      "lane": "Triggers",
+      "section": "Same state, applied again",
+      "w": 130
     },
     {
-      "id": "trigRecover",
-      "type": "tag",
+      "id": "t3",
+      "type": "tag-blue",
       "label": "recovery",
-      "lane": "Platform reality",
-      "section": "Triggers"
+      "lane": "Triggers",
+      "section": "Same state, applied again",
+      "w": 130
     },
     {
-      "id": "trigDrift",
-      "type": "tag",
+      "id": "t4",
+      "type": "tag-blue",
       "label": "drift correction",
-      "lane": "Platform reality",
-      "section": "Triggers"
-    },
-    {
-      "id": "gapA",
-      "type": "spacer",
-      "lane": "GapA",
-      "w": 70,
-      "h": 10
-    },
-    {
-      "id": "padDecl",
-      "type": "spacer",
-      "lane": "Declared state",
-      "w": 10,
-      "h": 50
-    },
-    {
-      "id": "declared",
-      "type": "reference",
-      "label": "Same desired state",
-      "sublabel": "applied repeatedly",
-      "lane": "Declared state"
-    },
-    {
-      "id": "gapB",
-      "type": "spacer",
-      "lane": "GapB",
-      "w": 70,
-      "h": 10
+      "lane": "Triggers",
+      "section": "Same state, applied again",
+      "w": 130
     },
     {
       "id": "padCap",
       "type": "spacer",
       "lane": "Capability",
       "w": 10,
-      "h": 50
+      "h": 90
     },
     {
       "id": "cap",
       "type": "capability",
       "label": "Capability",
-      "sublabel": "converges",
+      "sublabel": "converges, never duplicates",
       "lane": "Capability",
-      "icon": "cog"
+      "icon": "cog",
+      "w": 210,
+      "h": 80
     },
     {
-      "id": "gapC",
+      "id": "padRes",
       "type": "spacer",
-      "lane": "GapC",
-      "w": 90,
-      "h": 10
+      "lane": "Result",
+      "w": 10,
+      "h": 90
     },
     {
       "id": "result",
       "type": "data-store",
       "label": "Same intended result",
       "sublabel": "no side effects",
-      "lane": "Result"
+      "lane": "Result",
+      "w": 200,
+      "h": 80
     },
     {
       "id": "resGap",
       "type": "spacer",
       "lane": "Result",
       "w": 10,
-      "h": 80
+      "h": 30
     },
     {
-      "id": "costNote",
+      "id": "fail",
       "type": "risk-gap",
-      "label": "If unsafe to reapply",
+      "label": "Unsafe to reapply",
       "sublabel": "fails the factor",
-      "lane": "Result"
+      "lane": "Result",
+      "w": 180,
+      "h": 56
     }
   ],
   "edges": [
     {
-      "source": "trigRetry",
-      "target": "declared",
-      "type": "provides"
-    },
-    {
-      "source": "trigRollout",
-      "target": "declared",
-      "type": "provides"
-    },
-    {
-      "source": "trigRecover",
-      "target": "declared",
-      "type": "provides"
-    },
-    {
-      "source": "trigDrift",
-      "target": "declared",
-      "type": "provides"
-    },
-    {
-      "source": "declared",
+      "source": "t1",
       "target": "cap",
       "type": "provides",
-      "label": "apply, apply, apply...",
-      "labelPosition": 0,
-      "labelOffset": -16
+      "exit": "right",
+      "entry": "left"
+    },
+    {
+      "source": "t2",
+      "target": "cap",
+      "type": "provides",
+      "exit": "right",
+      "entry": "left"
+    },
+    {
+      "source": "t3",
+      "target": "cap",
+      "type": "provides",
+      "exit": "right",
+      "entry": "left"
+    },
+    {
+      "source": "t4",
+      "target": "cap",
+      "type": "provides",
+      "exit": "right",
+      "entry": "left"
     },
     {
       "source": "cap",
       "target": "result",
-      "type": "reconciles",
+      "type": "exchanges",
       "label": "converge",
-      "labelPosition": -0.4,
-      "labelOffset": -16,
+      "labelOffset": -18,
       "exit": "right",
       "entry": "left"
     },
@@ -163,10 +134,9 @@
       "target": "cap",
       "type": "reconciles",
       "label": "corrects drift",
-      "labelPosition": -0.5,
-      "labelOffset": 22,
       "exit": "bottom",
-      "entry": "bottom"
+      "entry": "bottom",
+      "labelOffset": 18
     }
   ]
 }

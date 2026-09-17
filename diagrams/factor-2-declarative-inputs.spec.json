@@ -1,12 +1,12 @@
 {
-  "flavour": "sketch",
+  "flavour": "clean",
   "direction": "LR",
+  "laneGap": 50,
+  "rowGap": 36,
   "lanes": [
     "Consumer",
-    "GapA",
-    "The request",
-    "GapB",
-    "The capability"
+    "Desired",
+    "Capability"
   ],
   "nodes": [
     {
@@ -16,110 +16,112 @@
       "lane": "Consumer"
     },
     {
-      "id": "consGap",
+      "id": "padF",
       "type": "spacer",
       "lane": "Consumer",
       "w": 10,
-      "h": 60
+      "h": 30
     },
     {
       "id": "imperative",
       "type": "risk-gap",
       "label": "Imperative inputs",
       "sublabel": "fails the factor",
-      "lane": "Consumer"
-    },
-    {
-      "id": "gapA",
-      "type": "spacer",
-      "lane": "GapA",
-      "w": 80,
-      "h": 10
+      "lane": "Consumer",
+      "w": 180,
+      "h": 56
     },
     {
       "id": "declared",
       "type": "reference",
       "label": "Desired outcome",
       "sublabel": "what should be true",
-      "lane": "The request"
+      "lane": "Desired",
+      "w": 200,
+      "h": 70
     },
     {
-      "id": "reqGap",
+      "id": "g1",
       "type": "spacer",
-      "lane": "The request",
+      "lane": "Desired",
       "w": 10,
-      "h": 30
+      "h": 40
     },
     {
-      "id": "propEngine",
+      "id": "p1",
       "type": "tag-blue",
       "label": "engine",
-      "lane": "The request",
-      "section": "Stable properties"
+      "lane": "Desired",
+      "section": "Stable properties",
+      "w": 150
     },
     {
-      "id": "propSize",
+      "id": "p2",
       "type": "tag-blue",
       "label": "size",
-      "lane": "The request",
-      "section": "Stable properties"
+      "lane": "Desired",
+      "section": "Stable properties",
+      "w": 150
     },
     {
-      "id": "propDura",
+      "id": "p3",
       "type": "tag-blue",
       "label": "durability",
-      "lane": "The request",
-      "section": "Stable properties"
+      "lane": "Desired",
+      "section": "Stable properties",
+      "w": 150
     },
     {
-      "id": "propBackup",
+      "id": "p4",
       "type": "tag-blue",
       "label": "backup policy",
-      "lane": "The request",
-      "section": "Stable properties"
-    },
-    {
-      "id": "gapB",
-      "type": "spacer",
-      "lane": "GapB",
-      "w": 80,
-      "h": 10
+      "lane": "Desired",
+      "section": "Stable properties",
+      "w": 150
     },
     {
       "id": "cap",
       "type": "capability",
       "label": "Database capability",
       "sublabel": "owns the translation",
-      "lane": "The capability",
-      "icon": "cog"
+      "lane": "Capability",
+      "icon": "cog",
+      "w": 210,
+      "h": 70
     },
     {
-      "id": "capSecGap",
+      "id": "g2",
       "type": "spacer",
-      "lane": "The capability",
+      "lane": "Capability",
       "w": 10,
-      "h": 30
+      "h": 40
     },
     {
-      "id": "stepProv",
+      "id": "s1",
       "type": "rectangle-grey-light",
       "label": "Provisioning steps",
-      "lane": "The capability",
-      "section": "Internal"
+      "lane": "Capability",
+      "section": "Internal",
+      "w": 180,
+      "h": 44
     },
     {
-      "id": "stepOrder",
+      "id": "s2",
       "type": "rectangle-grey-light",
       "label": "Dependency ordering",
-      "lane": "The capability",
-      "section": "Internal"
+      "lane": "Capability",
+      "section": "Internal",
+      "w": 180,
+      "h": 44
     },
     {
-      "id": "stepRecover",
+      "id": "s3",
       "type": "rectangle-grey-light",
       "label": "Recovery procedures",
-      "lane": "The capability",
-      "section": "Internal"
+      "lane": "Capability",
+      "section": "Internal",
+      "w": 180,
+      "h": 44
     }
   ],
   "edges": [
@@ -128,16 +130,19 @@
       "target": "declared",
       "type": "provides",
       "label": "declares",
-      "labelPosition": 0,
-      "labelOffset": -14
+      "labelOffset": -18,
+      "exit": "right",
+      "entry": "left"
     },
     {
       "source": "declared",
       "target": "cap",
-      "type": "reconciles",
+      "type": "exchanges",
       "label": "reconciled over time",
-      "labelPosition": 0,
-      "labelOffset": -16
+      "labelOffset": 22,
+      "exit": "right",
+      "entry": "left",
+      "labelPosition": 0
     }
   ]
 }

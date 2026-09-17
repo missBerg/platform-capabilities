@@ -1,186 +1,167 @@
 {
-  "flavour": "sketch",
+  "flavour": "clean",
   "direction": "LR",
+  "laneGap": 50,
+  "rowGap": 30,
   "lanes": [
-    "Authorized actors",
-    "Evidence surface",
-    "Gap",
-    "Self-serve answers"
+    "Actors",
+    "Evidence",
+    "Kinds"
   ],
   "nodes": [
     {
-      "id": "actorTopGap",
-      "type": "spacer",
-      "lane": "Authorized actors",
-      "w": 10,
-      "h": 25,
-      "section": "Authorized actors"
-    },
-    {
-      "id": "consumer",
-      "type": "icon",
+      "id": "a1",
+      "type": "rectangle-blue-light",
+      "label": "Consumers",
+      "lane": "Actors",
       "icon": "human",
-      "label": "Consumer",
-      "lane": "Authorized actors",
-      "section": "Authorized actors"
+      "section": "Authorized actors",
+      "w": 190,
+      "h": 40
     },
     {
-      "id": "producer",
-      "type": "icon",
+      "id": "a2",
+      "type": "rectangle-blue-light",
+      "label": "Producers",
+      "lane": "Actors",
       "icon": "team",
-      "label": "Producer",
-      "lane": "Authorized actors",
-      "section": "Authorized actors"
+      "section": "Authorized actors",
+      "w": 190,
+      "h": 40
     },
     {
-      "id": "operator",
-      "type": "icon",
-      "icon": "gear",
-      "label": "Platform operator",
-      "lane": "Authorized actors",
-      "section": "Authorized actors"
+      "id": "a3",
+      "type": "rectangle-blue-light",
+      "label": "Platform ops & leadership",
+      "lane": "Actors",
+      "icon": "cog",
+      "section": "Authorized actors",
+      "w": 190,
+      "h": 40
     },
     {
-      "id": "governance",
-      "type": "icon",
+      "id": "a4",
+      "type": "rectangle-blue-light",
+      "label": "Finance",
+      "lane": "Actors",
+      "icon": "dashboard",
+      "section": "Authorized actors",
+      "w": 190,
+      "h": 40
+    },
+    {
+      "id": "a5",
+      "type": "rectangle-blue-light",
+      "label": "Security & compliance",
+      "lane": "Actors",
       "icon": "shield",
-      "label": "Governance",
-      "lane": "Authorized actors",
-      "section": "Authorized actors"
+      "section": "Authorized actors",
+      "w": 190,
+      "h": 40
     },
     {
-      "id": "padSurface",
+      "id": "padE",
       "type": "spacer",
-      "lane": "Evidence surface",
+      "lane": "Evidence",
       "w": 10,
-      "h": 110
+      "h": 120
     },
     {
       "id": "surface",
       "type": "platform",
       "label": "Operational evidence",
       "sublabel": "authoritative",
-      "lane": "Evidence surface",
+      "lane": "Evidence",
       "icon": "dashboard",
-      "w": 230,
+      "w": 200,
       "h": 90
     },
     {
-      "id": "surfGap",
+      "id": "padK",
       "type": "spacer",
-      "lane": "Evidence surface",
+      "lane": "Kinds",
       "w": 10,
-      "h": 40
-    },
-    {
-      "id": "gapA",
-      "type": "spacer",
-      "lane": "Gap",
-      "w": 120,
-      "h": 10
+      "h": 50
     },
     {
       "id": "docs",
       "type": "documentation",
       "label": "Documentation",
-      "lane": "Self-serve answers",
-      "section": "What should be true",
-      "w": 190,
-      "h": 90
+      "sublabel": "purpose, ownership, policy",
+      "lane": "Kinds",
+      "w": 200,
+      "h": 80
     },
     {
-      "id": "ansGap",
+      "id": "kGap",
       "type": "spacer",
-      "lane": "Self-serve answers",
+      "lane": "Kinds",
       "w": 10,
       "h": 40
     },
     {
-      "id": "sigHealth",
+      "id": "telemetry",
       "type": "rectangle-grey-light",
-      "label": "Health & status",
-      "lane": "Self-serve answers",
-      "section": "What is actually true"
-    },
-    {
-      "id": "sigLife",
-      "type": "rectangle-grey-light",
-      "label": "Lifecycle stage",
-      "lane": "Self-serve answers",
-      "section": "What is actually true"
-    },
-    {
-      "id": "sigComply",
-      "type": "rectangle-grey-light",
-      "label": "Compliance state",
-      "lane": "Self-serve answers",
-      "section": "What is actually true"
-    },
-    {
-      "id": "sigFleet",
-      "type": "rectangle-grey-light",
-      "label": "Fleet rollout & drift",
-      "lane": "Self-serve answers",
-      "section": "What is actually true"
+      "label": "Telemetry",
+      "sublabel": "health, lifecycle, compliance",
+      "lane": "Kinds",
+      "w": 200,
+      "h": 80
     }
   ],
   "edges": [
     {
-      "source": "consumer",
-      "target": "surface",
-      "type": "exchanges"
+      "source": "surface",
+      "target": "a1",
+      "type": "provides",
+      "exit": "left",
+      "entry": "right"
     },
     {
-      "source": "producer",
-      "target": "surface",
-      "type": "exchanges"
+      "source": "surface",
+      "target": "a2",
+      "type": "provides",
+      "exit": "left",
+      "entry": "right"
     },
     {
-      "source": "operator",
-      "target": "surface",
-      "type": "exchanges",
-      "label": "ask & act",
-      "labelPosition": -0.75,
-      "labelOffset": 18
+      "source": "surface",
+      "target": "a3",
+      "type": "provides",
+      "exit": "left",
+      "entry": "right"
     },
     {
-      "source": "governance",
-      "target": "surface",
-      "type": "exchanges",
-      "entry": "left"
+      "source": "surface",
+      "target": "a4",
+      "type": "provides",
+      "exit": "left",
+      "entry": "right"
+    },
+    {
+      "source": "surface",
+      "target": "a5",
+      "type": "provides",
+      "exit": "left",
+      "entry": "right"
     },
     {
       "source": "surface",
       "target": "docs",
       "type": "provides",
+      "label": "what should be true",
+      "labelPosition": 0,
+      "labelOffset": -16,
       "exit": "right",
       "entry": "left"
     },
     {
       "source": "surface",
-      "target": "sigHealth",
+      "target": "telemetry",
       "type": "provides",
-      "exit": "right",
-      "entry": "left"
-    },
-    {
-      "source": "surface",
-      "target": "sigLife",
-      "type": "provides",
-      "exit": "right",
-      "entry": "left"
-    },
-    {
-      "source": "surface",
-      "target": "sigComply",
-      "type": "provides",
-      "exit": "right",
-      "entry": "left"
-    },
-    {
-      "source": "surface",
-      "target": "sigFleet",
-      "type": "provides",
+      "label": "what is actually true",
+      "labelPosition": 0,
+      "labelOffset": 16,
       "exit": "right",
       "entry": "left"
     }
