@@ -4,9 +4,6 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="pcf-title" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#1F3A68;fontFamily=Helvetica;fontSize=18;fontStyle=1;spacingLeft=4;" value="Capability Factors — from tests to organizational outcomes" vertex="1">
-          <mxGeometry height="32" width="760" x="70" y="140" as="geometry" />
-        </mxCell>
         <mxCell id="pcf-section-0" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=none;strokeColor=#7A99C7;strokeWidth=1.5;fontColor=#2E5C9E;fontFamily=Comic Sans MS;fontSize=13;align=left;verticalAlign=top;dashed=1;dashPattern=6 4;spacingLeft=12;spacingTop=8;shadow=0;sketch=1;" value="&lt;b&gt;The tests&lt;/b&gt;" vertex="1">
           <mxGeometry height="362" width="268" x="30" y="410" as="geometry" />
         </mxCell>
@@ -16,7 +13,7 @@
         <mxCell id="pcf-section-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=none;strokeColor=#7A99C7;strokeWidth=1.5;fontColor=#2E5C9E;fontFamily=Comic Sans MS;fontSize=13;align=left;verticalAlign=top;dashed=1;dashPattern=6 4;spacingLeft=12;spacingTop=8;shadow=0;sketch=1;" value="&lt;b&gt;Upheld&lt;/b&gt;" vertex="1">
           <mxGeometry height="254" width="294" x="884" y="390" as="geometry" />
         </mxCell>
-        <mxCell id="fhead" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#E8EEF7;strokeColor=#2E5C9E;strokeWidth=1.5;fontColor=#1F3A68;fontFamily=Comic Sans MS;fontSize=13;align=center;verticalAlign=middle;shadow=0;sketch=1;fillStyle=solid;" value="&lt;b&gt;Five capability factors&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px&quot; color=&quot;#6B7280&quot;&gt;binary, testable - no partial credit&lt;/font&gt;" vertex="1">
+        <mxCell id="fhead" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#E8EEF7;strokeColor=#2E5C9E;strokeWidth=1.5;fontColor=#1F3A68;fontFamily=Comic Sans MS;fontSize=13;align=center;verticalAlign=middle;shadow=0;sketch=1;fillStyle=solid;" value="&lt;b&gt;Five capability factors&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px&quot; color=&quot;#6B7280&quot;&gt;binary tests&lt;/font&gt;" vertex="1">
           <mxGeometry height="80" width="200" x="64" y="278" as="geometry" />
         </mxCell>
         <mxCell id="factA" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#B5915A;strokeColor=#7A5A2A;strokeWidth=1;fontColor=#FCF7E8;fontFamily=Comic Sans MS;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;shadow=0;sketch=1;fillStyle=solid;" value="Defined Contract" vertex="1">
@@ -34,7 +31,7 @@
         <mxCell id="factE" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#B5915A;strokeColor=#7A5A2A;strokeWidth=1;fontColor=#FCF7E8;fontFamily=Comic Sans MS;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;shadow=0;sketch=1;fillStyle=solid;" value="Operational Evidence" vertex="1">
           <mxGeometry height="24" width="220" x="54" y="724" as="geometry" />
         </mxCell>
-        <mxCell id="chead" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#F4F7FC;strokeColor=#7A99C7;strokeWidth=1;fontColor=#2E5C9E;fontFamily=Comic Sans MS;fontSize=12;align=center;verticalAlign=middle;shadow=0;sketch=1;fillStyle=solid;" value="&lt;b&gt;Capability principles&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px&quot; color=&quot;#6B7280&quot;&gt;what every capability embodies&lt;/font&gt;" vertex="1">
+        <mxCell id="chead" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#F4F7FC;strokeColor=#7A99C7;strokeWidth=1;fontColor=#2E5C9E;fontFamily=Comic Sans MS;fontSize=12;align=center;verticalAlign=middle;shadow=0;sketch=1;fillStyle=solid;" value="&lt;b&gt;Capability principles&lt;/b&gt;" vertex="1">
           <mxGeometry height="60" width="160" x="524" y="288" as="geometry" />
         </mxCell>
         <mxCell id="cprinA" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#B5915A;strokeColor=#7A5A2A;strokeWidth=1;fontColor=#FCF7E8;fontFamily=Comic Sans MS;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;shadow=0;sketch=1;fillStyle=solid;" value="Product-scoped" vertex="1">
@@ -46,7 +43,7 @@
         <mxCell id="cprinC" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#B5915A;strokeColor=#7A5A2A;strokeWidth=1;fontColor=#FCF7E8;fontFamily=Comic Sans MS;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;shadow=0;sketch=1;fillStyle=solid;" value="Operationally owned" vertex="1">
           <mxGeometry height="24" width="180" x="514" y="576" as="geometry" />
         </mxCell>
-        <mxCell id="phead" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#2E5C9E;strokeColor=#1F3A68;strokeWidth=1.5;fontColor=#FFFFFF;fontFamily=Comic Sans MS;fontSize=14;align=center;verticalAlign=middle;shadow=0;sketch=1;fillStyle=solid;" value="&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;&lt;b&gt;Platform principles&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;what the platform can then commit to&lt;/font&gt;&lt;/font&gt;" vertex="1">
+        <mxCell id="phead" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#2E5C9E;strokeColor=#1F3A68;strokeWidth=1.5;fontColor=#FFFFFF;fontFamily=Comic Sans MS;fontSize=14;align=center;verticalAlign=middle;shadow=0;sketch=1;fillStyle=solid;" value="&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;&lt;b&gt;Platform principles&lt;/b&gt;" vertex="1">
           <mxGeometry height="80" width="240" x="914" y="278" as="geometry" />
         </mxCell>
         <mxCell id="pprinA" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#2E5C9E;strokeColor=#1F3A68;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Comic Sans MS;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;shadow=0;sketch=1;fillStyle=solid;" value="Extensible" vertex="1">
@@ -64,16 +61,16 @@
         <mxCell id="pprinE" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#2E5C9E;strokeColor=#1F3A68;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Comic Sans MS;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;shadow=0;sketch=1;fillStyle=solid;" value="Observable" vertex="1">
           <mxGeometry height="24" width="100" x="1048" y="512" as="geometry" />
         </mxCell>
-        <mxCell id="pprinF" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#2E5C9E;strokeColor=#1F3A68;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Comic Sans MS;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;shadow=0;sketch=1;fillStyle=solid;" value="Evolvable" vertex="1">
+        <mxCell id="pprinF" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#2E5C9E;strokeColor=#1F3A68;strokeWidth=1;fontColor=#FFFFFF;fontFamily=Comic Sans MS;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;shadow=0;sketch=1;fillStyle=solid;" value="Stable" vertex="1">
           <mxGeometry height="24" width="100" x="1048" y="576" as="geometry" />
         </mxCell>
-        <mxCell id="ohead" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EEF3F9;strokeColor=#4A75B1;strokeWidth=1.5;fontColor=#1F3A68;fontFamily=Comic Sans MS;fontSize=12;align=center;verticalAlign=middle;shadow=0;sketch=1;fillStyle=solid;" value="&lt;b&gt;Adapt quickly&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px&quot; color=&quot;#6B7280&quot;&gt;supply without bottlenecks&lt;/font&gt;" vertex="1">
+        <mxCell id="ohead" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EEF3F9;strokeColor=#4A75B1;strokeWidth=1.5;fontColor=#1F3A68;fontFamily=Comic Sans MS;fontSize=12;align=center;verticalAlign=middle;shadow=0;sketch=1;fillStyle=solid;" value="&lt;b&gt;Adapt quickly&lt;/b&gt;" vertex="1">
           <mxGeometry height="100" width="220" x="1364" y="188" as="geometry" />
         </mxCell>
-        <mxCell id="obuild" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EEF3F9;strokeColor=#4A75B1;strokeWidth=1.5;fontColor=#1F3A68;fontFamily=Comic Sans MS;fontSize=12;align=center;verticalAlign=middle;shadow=0;sketch=1;fillStyle=solid;" value="&lt;b&gt;Build confidently&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px&quot; color=&quot;#6B7280&quot;&gt;on shared services&lt;/font&gt;" vertex="1">
+        <mxCell id="obuild" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EEF3F9;strokeColor=#4A75B1;strokeWidth=1.5;fontColor=#1F3A68;fontFamily=Comic Sans MS;fontSize=12;align=center;verticalAlign=middle;shadow=0;sketch=1;fillStyle=solid;" value="&lt;b&gt;Build confidently&lt;/b&gt;" vertex="1">
           <mxGeometry height="100" width="220" x="1364" y="270" as="geometry" />
         </mxCell>
-        <mxCell id="ooperate" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EEF3F9;strokeColor=#4A75B1;strokeWidth=1.5;fontColor=#1F3A68;fontFamily=Comic Sans MS;fontSize=12;align=center;verticalAlign=middle;shadow=0;sketch=1;fillStyle=solid;" value="&lt;b&gt;Operate sustainably&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px&quot; color=&quot;#6B7280&quot;&gt;the full capability catalog&lt;/font&gt;" vertex="1">
+        <mxCell id="ooperate" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EEF3F9;strokeColor=#4A75B1;strokeWidth=1.5;fontColor=#1F3A68;fontFamily=Comic Sans MS;fontSize=12;align=center;verticalAlign=middle;shadow=0;sketch=1;fillStyle=solid;" value="&lt;b&gt;Operate sustainably&lt;/b&gt;" vertex="1">
           <mxGeometry height="100" width="220" x="1364" y="348" as="geometry" />
         </mxCell>
         <mxCell id="pcf-edge-0" edge="1" parent="1" source="fhead" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;rounded=0;strokeColor=#2E5C9E;strokeWidth=1.5;fontColor=#1F3A68;fontFamily=Comic Sans MS;fontSize=11;endFill=1;sketch=1;sketch=1;curveFitting=1;jiggle=2;curved=1;" target="chead" value="prove">

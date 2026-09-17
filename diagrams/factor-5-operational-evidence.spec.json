@@ -1,5 +1,4 @@
 {
-  "title": "Factor 5 \u2014 Operational Evidence",
   "flavour": "sketch",
   "direction": "LR",
   "lanes": [
@@ -15,7 +14,7 @@
       "lane": "Authorized actors",
       "w": 10,
       "h": 25,
-      "section": "Each answers their own questions"
+      "section": "Authorized actors"
     },
     {
       "id": "consumer",
@@ -23,7 +22,7 @@
       "icon": "human",
       "label": "Consumer",
       "lane": "Authorized actors",
-      "section": "Each answers their own questions"
+      "section": "Authorized actors"
     },
     {
       "id": "producer",
@@ -31,7 +30,7 @@
       "icon": "team",
       "label": "Producer",
       "lane": "Authorized actors",
-      "section": "Each answers their own questions"
+      "section": "Authorized actors"
     },
     {
       "id": "operator",
@@ -39,7 +38,7 @@
       "icon": "gear",
       "label": "Platform operator",
       "lane": "Authorized actors",
-      "section": "Each answers their own questions"
+      "section": "Authorized actors"
     },
     {
       "id": "governance",
@@ -47,7 +46,7 @@
       "icon": "shield",
       "label": "Governance",
       "lane": "Authorized actors",
-      "section": "Each answers their own questions"
+      "section": "Authorized actors"
     },
     {
       "id": "padSurface",
@@ -60,7 +59,7 @@
       "id": "surface",
       "type": "platform",
       "label": "Operational evidence",
-      "sublabel": "authoritative - self-serve - no privileged access",
+      "sublabel": "authoritative",
       "lane": "Evidence surface",
       "icon": "dashboard",
       "w": 230,
@@ -74,12 +73,6 @@
       "h": 40
     },
     {
-      "id": "verifies",
-      "type": "note",
-      "label": "This factor is what makes the other four verifiable",
-      "lane": "Evidence surface"
-    },
-    {
       "id": "gapA",
       "type": "spacer",
       "lane": "Gap",
@@ -90,7 +83,6 @@
       "id": "docs",
       "type": "documentation",
       "label": "Documentation",
-      "sublabel": "purpose - ownership - support - policy",
       "lane": "Self-serve answers",
       "section": "What should be true",
       "w": 190,

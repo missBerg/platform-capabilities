@@ -1,5 +1,4 @@
 {
-  "title": "A capability-enabling platform",
   "flavour": "sketch",
   "direction": "LR",
   "lanes": [
@@ -14,7 +13,6 @@
       "id": "secteam",
       "type": "capability-owner",
       "label": "Security team",
-      "sublabel": "produces & operates",
       "lane": "Capability producers",
       "section": "Specialist teams"
     },
@@ -30,7 +28,6 @@
       "id": "datateam",
       "type": "capability-owner",
       "label": "Data team",
-      "sublabel": "produces & operates",
       "lane": "Capability producers",
       "section": "Specialist teams"
     },
@@ -46,7 +43,6 @@
       "id": "dbteam",
       "type": "capability-owner",
       "label": "Database team",
-      "sublabel": "produces & operates",
       "lane": "Capability producers",
       "section": "Specialist teams"
     },
@@ -69,7 +65,6 @@
       "id": "capsec",
       "type": "capability",
       "label": "Secrets management",
-      "sublabel": "contributed capability",
       "lane": "The platform",
       "icon": "lock",
       "section": "Capability catalog"
@@ -78,7 +73,6 @@
       "id": "capstream",
       "type": "capability",
       "label": "Stream processing",
-      "sublabel": "contributed capability",
       "lane": "The platform",
       "icon": "pipeline",
       "section": "Capability catalog"
@@ -87,7 +81,6 @@
       "id": "capdb",
       "type": "capability",
       "label": "Managed databases",
-      "sublabel": "contributed capability",
       "lane": "The platform",
       "icon": "gear",
       "section": "Capability catalog"
@@ -105,43 +98,39 @@
       "lane": "The platform",
       "w": 10,
       "h": 25,
-      "section": "Thin shared layer - run by platform operators"
+      "section": "Thin shared layer"
     },
     {
       "id": "governance",
       "type": "sub-capability",
       "label": "Policy & governance",
-      "sublabel": "controls inherited by construction",
       "lane": "The platform",
       "icon": "shield",
-      "section": "Thin shared layer - run by platform operators"
+      "section": "Thin shared layer"
     },
     {
       "id": "discovery",
       "type": "sub-capability",
       "label": "Discovery & catalog",
-      "sublabel": "every capability findable",
       "lane": "The platform",
       "icon": "dashboard",
-      "section": "Thin shared layer - run by platform operators"
+      "section": "Thin shared layer"
     },
     {
       "id": "contracts",
       "type": "sub-capability",
       "label": "Contracts & identity",
-      "sublabel": "one way in, stable identifiers",
       "lane": "The platform",
       "icon": "key",
-      "section": "Thin shared layer - run by platform operators"
+      "section": "Thin shared layer"
     },
     {
       "id": "observability",
       "type": "sub-capability",
       "label": "Observability",
-      "sublabel": "evidence, role-legible",
       "lane": "The platform",
       "icon": "bell",
-      "section": "Thin shared layer - run by platform operators"
+      "section": "Thin shared layer"
     },
     {
       "id": "gapB",
@@ -154,7 +143,6 @@
       "id": "appteam",
       "type": "capability-consumer",
       "label": "App team",
-      "sublabel": "discover, request, manage, retire",
       "lane": "Capability consumers"
     },
     {
@@ -168,7 +156,6 @@
       "id": "mlteam",
       "type": "capability-consumer",
       "label": "ML team",
-      "sublabel": "discover, request, manage, retire",
       "lane": "Capability consumers"
     },
     {
@@ -182,7 +169,6 @@
       "id": "webteam",
       "type": "capability-consumer",
       "label": "Web team",
-      "sublabel": "discover, request, manage, retire",
       "lane": "Capability consumers"
     }
   ],
@@ -231,7 +217,7 @@
       "source": "governance",
       "target": "capdb",
       "type": "reconciles",
-      "label": "inherited by every capability",
+      "label": "inherited",
       "labelPosition": 0.55,
       "labelOffset": 16,
       "exit": "top",

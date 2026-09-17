@@ -1,5 +1,4 @@
 {
-  "title": "Capability Factors \u2014 from tests to organizational outcomes",
   "flavour": "sketch",
   "direction": "LR",
   "lanes": [
@@ -16,7 +15,7 @@
       "id": "fhead",
       "type": "capability",
       "label": "Five capability factors",
-      "sublabel": "binary, testable - no partial credit",
+      "sublabel": "binary tests",
       "lane": "Capability factors"
     },
     {
@@ -77,7 +76,6 @@
       "id": "chead",
       "type": "sub-capability",
       "label": "Capability principles",
-      "sublabel": "what every capability embodies",
       "lane": "Capability principles"
     },
     {
@@ -120,7 +118,6 @@
       "id": "phead",
       "type": "platform",
       "label": "Platform principles",
-      "sublabel": "what the platform can then commit to",
       "lane": "Platform principles"
     },
     {
@@ -168,7 +165,7 @@
     {
       "id": "pprinF",
       "type": "tag-blue",
-      "label": "Evolvable",
+      "label": "Stable",
       "lane": "Platform principles",
       "section": "Upheld"
     },
@@ -183,7 +180,6 @@
       "id": "ohead",
       "type": "outcome",
       "label": "Adapt quickly",
-      "sublabel": "supply without bottlenecks",
       "lane": "Organizational outcomes",
       "w": 220
     },
@@ -191,7 +187,6 @@
       "id": "obuild",
       "type": "outcome",
       "label": "Build confidently",
-      "sublabel": "on shared services",
       "lane": "Organizational outcomes",
       "w": 220
     },
@@ -199,7 +194,6 @@
       "id": "ooperate",
       "type": "outcome",
       "label": "Operate sustainably",
-      "sublabel": "the full capability catalog",
       "lane": "Organizational outcomes",
       "w": 220
     }

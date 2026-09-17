@@ -1,0 +1,105 @@
+{
+  "flavour": "clean",
+  "direction": "LR",
+  "lanes": [
+    "Consumer",
+    "GapA",
+    "The capability",
+    "GapB",
+    "Outcome"
+  ],
+  "nodes": [
+    {
+      "id": "consumer",
+      "type": "capability-consumer",
+      "label": "Consumer",
+      "lane": "Consumer"
+    },
+    {
+      "id": "gapA",
+      "type": "spacer",
+      "lane": "GapA",
+      "w": 80,
+      "h": 10
+    },
+    {
+      "id": "cap",
+      "type": "capability",
+      "label": "A capability",
+      "sublabel": "self-contained service",
+      "lane": "The capability",
+      "icon": "cog",
+      "w": 260,
+      "h": 90
+    },
+    {
+      "id": "capGap",
+      "type": "spacer",
+      "lane": "The capability",
+      "w": 10,
+      "h": 40
+    },
+    {
+      "id": "api",
+      "type": "sub-capability",
+      "label": "Defined API",
+      "sublabel": "provision, configure, observe",
+      "lane": "The capability",
+      "section": "Defined by",
+      "w": 240,
+      "icon": "key"
+    },
+    {
+      "id": "lifecycle",
+      "type": "sub-capability",
+      "label": "Managed lifecycle",
+      "sublabel": "create, update, retire",
+      "lane": "The capability",
+      "section": "Defined by",
+      "w": 240,
+      "icon": "clock"
+    },
+    {
+      "id": "contract",
+      "type": "sub-capability",
+      "label": "Place in the participation contract",
+      "sublabel": "governed and discoverable",
+      "lane": "The capability",
+      "section": "Defined by",
+      "w": 240,
+      "icon": "shield"
+    },
+    {
+      "id": "gapB",
+      "type": "spacer",
+      "lane": "GapB",
+      "w": 80,
+      "h": 10
+    },
+    {
+      "id": "outcome",
+      "type": "outcome",
+      "label": "A user outcome",
+      "lane": "Outcome",
+      "w": 220
+    }
+  ],
+  "edges": [
+    {
+      "source": "consumer",
+      "target": "cap",
+      "type": "provides",
+      "label": "requests",
+      "labelPosition": 0,
+      "labelOffset": -16
+    },
+    {
+      "source": "cap",
+      "target": "outcome",
+      "type": "provides",
+      "label": "delivers",
+      "labelPosition": 0,
+      "labelOffset": -16
+    }
+  ]
+}

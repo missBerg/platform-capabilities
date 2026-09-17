@@ -1,0 +1,81 @@
+{
+  "flavour": "clean",
+  "direction": "LR",
+  "lanes": [
+    "Borrowed from",
+    "GapA",
+    "The platform ecosystem architecture"
+  ],
+  "nodes": [
+    {
+      "id": "plugin",
+      "type": "rectangle-grey-light",
+      "label": "Plugin systems",
+      "sublabel": "consistency via a shared contract",
+      "lane": "Borrowed from",
+      "icon": "code",
+      "w": 250,
+      "h": 90
+    },
+    {
+      "id": "gapP",
+      "type": "spacer",
+      "lane": "Borrowed from",
+      "w": 10,
+      "h": 60
+    },
+    {
+      "id": "micro",
+      "type": "rectangle-grey-light",
+      "label": "Microservices",
+      "sublabel": "independent delivery",
+      "lane": "Borrowed from",
+      "icon": "cloud",
+      "w": 250,
+      "h": 90
+    },
+    {
+      "id": "gapA",
+      "type": "spacer",
+      "lane": "GapA",
+      "w": 120,
+      "h": 10
+    },
+    {
+      "id": "padTop",
+      "type": "spacer",
+      "lane": "The platform ecosystem architecture",
+      "w": 10,
+      "h": 70
+    },
+    {
+      "id": "platform",
+      "type": "platform",
+      "label": "Platform ecosystem architecture",
+      "sublabel": "specialists contribute, consumers self-serve",
+      "lane": "The platform ecosystem architecture",
+      "w": 300,
+      "h": 110
+    }
+  ],
+  "edges": [
+    {
+      "source": "plugin",
+      "target": "platform",
+      "type": "provides",
+      "label": "consistency",
+      "labelPosition": -0.35,
+      "labelOffset": -16,
+      "entry": "left"
+    },
+    {
+      "source": "micro",
+      "target": "platform",
+      "type": "provides",
+      "label": "independence",
+      "labelPosition": -0.35,
+      "labelOffset": 16,
+      "entry": "left"
+    }
+  ]
+}

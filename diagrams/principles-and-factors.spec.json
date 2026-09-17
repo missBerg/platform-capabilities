@@ -1,5 +1,4 @@
 {
-  "title": "Principles & Factors \u2014 the mental model",
   "flavour": "sketch",
   "direction": "LR",
   "lanes": [
@@ -14,7 +13,6 @@
       "id": "capHead",
       "type": "capability",
       "label": "The capability",
-      "sublabel": "produced & owned by one team",
       "lane": "The capability promises",
       "icon": "cog"
     },
@@ -55,12 +53,6 @@
       "h": 380
     },
     {
-      "id": "capNote",
-      "type": "note",
-      "label": "Principles describe what good looks like",
-      "lane": "The capability promises"
-    },
-    {
       "id": "gapA",
       "type": "spacer",
       "lane": "GapA",
@@ -71,7 +63,7 @@
       "id": "factHead",
       "type": "policy",
       "label": "The five factors",
-      "sublabel": "binary tests - all five required",
+      "sublabel": "binary tests",
       "lane": "The five factors",
       "icon": "success",
       "w": 220,
@@ -88,7 +80,6 @@
       "id": "fOne",
       "type": "sub-capability",
       "label": "Defined Contract",
-      "sublabel": "one versioned entry point",
       "lane": "The five factors",
       "section": "The tests"
     },
@@ -96,7 +87,6 @@
       "id": "fTwo",
       "type": "sub-capability",
       "label": "Declarative Inputs",
-      "sublabel": "outcomes, not steps",
       "lane": "The five factors",
       "section": "The tests"
     },
@@ -104,7 +94,6 @@
       "id": "fThree",
       "type": "sub-capability",
       "label": "Encapsulated Dependencies",
-      "sublabel": "owns what it delivers",
       "lane": "The five factors",
       "section": "The tests",
       "w": 215
@@ -113,7 +102,6 @@
       "id": "fFour",
       "type": "sub-capability",
       "label": "Stable Reconciliation",
-      "sublabel": "safe to apply again & again",
       "lane": "The five factors",
       "section": "The tests"
     },
@@ -121,7 +109,6 @@
       "id": "fFive",
       "type": "sub-capability",
       "label": "Operational Evidence",
-      "sublabel": "state anyone authorized can see",
       "lane": "The five factors",
       "section": "The tests"
     },
@@ -131,12 +118,6 @@
       "lane": "The five factors",
       "w": 10,
       "h": 40
-    },
-    {
-      "id": "factNote",
-      "type": "note",
-      "label": "Factors make the promises testable - pass or fail, no partial credit",
-      "lane": "The five factors"
     },
     {
       "id": "gapB",
@@ -149,7 +130,6 @@
       "id": "platHead",
       "type": "platform",
       "label": "The platform",
-      "sublabel": "hosts the capability catalog",
       "lane": "The platform promises"
     },
     {
@@ -197,7 +177,7 @@
     {
       "id": "pprinF",
       "type": "tag-blue",
-      "label": "Evolvable",
+      "label": "Stable",
       "lane": "The platform promises",
       "section": "Platform principles"
     },
@@ -207,12 +187,6 @@
       "lane": "The platform promises",
       "w": 10,
       "h": 170
-    },
-    {
-      "id": "platNote",
-      "type": "note",
-      "label": "Commitments the platform can only keep for conformant capabilities",
-      "lane": "The platform promises"
     }
   ],
   "edges": [
@@ -220,7 +194,7 @@
       "source": "capHead",
       "target": "factHead",
       "type": "provides",
-      "label": "proves its promises through",
+      "label": "proven by",
       "labelPosition": 0,
       "labelOffset": -16
     },
@@ -228,7 +202,7 @@
       "source": "factHead",
       "target": "platHead",
       "type": "provides",
-      "label": "evidence the platform can commit on",
+      "label": "enables",
       "labelPosition": 0,
       "labelOffset": -16
     }

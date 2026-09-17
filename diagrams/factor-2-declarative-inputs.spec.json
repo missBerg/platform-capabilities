@@ -1,5 +1,4 @@
 {
-  "title": "Factor 2 \u2014 Declarative Inputs",
   "flavour": "sketch",
   "direction": "LR",
   "lanes": [
@@ -14,7 +13,6 @@
       "id": "consumer",
       "type": "capability-consumer",
       "label": "Consumer",
-      "sublabel": "states what should be true",
       "lane": "Consumer"
     },
     {
@@ -28,7 +26,7 @@
       "id": "imperative",
       "type": "risk-gap",
       "label": "Imperative inputs",
-      "sublabel": "consumer must know steps & ordering - no longer self-serve",
+      "sublabel": "fails the factor",
       "lane": "Consumer"
     },
     {
@@ -42,7 +40,7 @@
       "id": "declared",
       "type": "reference",
       "label": "Desired outcome",
-      "sublabel": "a state to maintain, not an action to run",
+      "sublabel": "what should be true",
       "lane": "The request"
     },
     {
@@ -91,7 +89,7 @@
       "id": "cap",
       "type": "capability",
       "label": "Database capability",
-      "sublabel": "owns the translation, over time",
+      "sublabel": "owns the translation",
       "lane": "The capability",
       "icon": "cog"
     },
@@ -107,21 +105,21 @@
       "type": "rectangle-grey-light",
       "label": "Provisioning steps",
       "lane": "The capability",
-      "section": "Internal - never the consumer's problem"
+      "section": "Internal"
     },
     {
       "id": "stepOrder",
       "type": "rectangle-grey-light",
       "label": "Dependency ordering",
       "lane": "The capability",
-      "section": "Internal - never the consumer's problem"
+      "section": "Internal"
     },
     {
       "id": "stepRecover",
       "type": "rectangle-grey-light",
       "label": "Recovery procedures",
       "lane": "The capability",
-      "section": "Internal - never the consumer's problem"
+      "section": "Internal"
     }
   ],
   "edges": [
@@ -137,7 +135,7 @@
       "source": "declared",
       "target": "cap",
       "type": "reconciles",
-      "label": "applied & reconciled as conditions change",
+      "label": "reconciled over time",
       "labelPosition": 0,
       "labelOffset": -16
     }

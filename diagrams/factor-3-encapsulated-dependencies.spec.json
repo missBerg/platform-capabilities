@@ -1,5 +1,4 @@
 {
-  "title": "Factor 3 \u2014 Encapsulated Dependencies",
   "flavour": "sketch",
   "direction": "LR",
   "lanes": [
@@ -27,9 +26,9 @@
       "id": "prereq",
       "type": "external-system",
       "label": "Prerequisite",
-      "sublabel": "consumer-managed, named in the contract",
+      "sublabel": "consumer-managed",
       "lane": "Consumer side",
-      "section": "Stays the consumer's responsibility"
+      "section": "Consumer's responsibility"
     },
     {
       "id": "gapA",
@@ -42,7 +41,6 @@
       "id": "cap",
       "type": "capability",
       "label": "Database capability",
-      "sublabel": "delivers the complete outcome",
       "lane": "The capability",
       "icon": "shield",
       "w": 220,
@@ -60,21 +58,21 @@
       "type": "sub-capability",
       "label": "Backing storage",
       "lane": "The capability",
-      "section": "Owned & hidden dependencies"
+      "section": "Owned dependencies"
     },
     {
       "id": "depBackup",
       "type": "sub-capability",
       "label": "Backups & recovery",
       "lane": "The capability",
-      "section": "Owned & hidden dependencies"
+      "section": "Owned dependencies"
     },
     {
       "id": "depGuard",
       "type": "sub-capability",
       "label": "Encryption, isolation, audit",
       "lane": "The capability",
-      "section": "Owned & hidden dependencies"
+      "section": "Owned dependencies"
     },
     {
       "id": "gapB",
@@ -87,7 +85,6 @@
       "id": "outcome",
       "type": "outcome",
       "label": "Working database",
-      "sublabel": "connection details & credentials included",
       "lane": "The outcome",
       "w": 230
     },
@@ -97,12 +94,6 @@
       "lane": "The outcome",
       "w": 10,
       "h": 40
-    },
-    {
-      "id": "guarantees",
-      "type": "note",
-      "label": "Guarantees built into every instance by construction - not assembled by each consumer",
-      "lane": "The outcome"
     }
   ],
   "edges": [
@@ -110,7 +101,7 @@
       "source": "consumer",
       "target": "cap",
       "type": "provides",
-      "label": "declare the outcome needed",
+      "label": "declares outcome",
       "labelPosition": -0.3,
       "labelOffset": -16
     },
@@ -135,7 +126,7 @@
       "source": "cap",
       "target": "outcome",
       "type": "provides",
-      "label": "complete result - no bridging work",
+      "label": "complete result",
       "labelPosition": 0,
       "labelOffset": -16
     }

@@ -1,5 +1,4 @@
 {
-  "title": "The Platform Marketplace \u2014 three roles, one thin layer",
   "flavour": "sketch",
   "direction": "LR",
   "lanes": [
@@ -14,7 +13,6 @@
       "id": "secprod",
       "type": "capability-owner",
       "label": "Security team",
-      "sublabel": "produces & owns the capability",
       "lane": "Capability producers",
       "section": "Specialist teams"
     },
@@ -30,7 +28,6 @@
       "id": "dataprod",
       "type": "capability-owner",
       "label": "Data team",
-      "sublabel": "produces & owns the capability",
       "lane": "Capability producers",
       "section": "Specialist teams"
     },
@@ -53,7 +50,6 @@
       "id": "capsec",
       "type": "capability",
       "label": "Secrets management",
-      "sublabel": "contributed capability",
       "lane": "Platform marketplace",
       "icon": "lock",
       "section": "The thin, consistent layer"
@@ -62,7 +58,6 @@
       "id": "capdata",
       "type": "capability",
       "label": "Stream processing",
-      "sublabel": "contributed capability",
       "lane": "Platform marketplace",
       "icon": "pipeline",
       "section": "The thin, consistent layer"
@@ -94,7 +89,6 @@
       "id": "appteam",
       "type": "capability-consumer",
       "label": "App team",
-      "sublabel": "discovers, requests, uses",
       "lane": "Capability consumers"
     },
     {
@@ -108,7 +102,6 @@
       "id": "mlteam",
       "type": "capability-consumer",
       "label": "ML team",
-      "sublabel": "discovers, requests, uses",
       "lane": "Capability consumers"
     }
   ],

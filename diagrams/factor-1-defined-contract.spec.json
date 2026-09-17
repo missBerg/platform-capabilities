@@ -1,5 +1,4 @@
 {
-  "title": "Factor 1 \u2014 Defined Contract",
   "flavour": "sketch",
   "direction": "LR",
   "lanes": [
@@ -16,7 +15,7 @@
       "lane": "Consumers arrive via",
       "w": 10,
       "h": 25,
-      "section": "Interface choices, not requirements"
+      "section": "Interface choices"
     },
     {
       "id": "cli",
@@ -24,7 +23,7 @@
       "icon": "computer",
       "label": "CLI",
       "lane": "Consumers arrive via",
-      "section": "Interface choices, not requirements"
+      "section": "Interface choices"
     },
     {
       "id": "portal",
@@ -32,7 +31,7 @@
       "icon": "dashboard",
       "label": "Web portal",
       "lane": "Consumers arrive via",
-      "section": "Interface choices, not requirements"
+      "section": "Interface choices"
     },
     {
       "id": "idp",
@@ -40,7 +39,7 @@
       "icon": "code",
       "label": "Developer portal",
       "lane": "Consumers arrive via",
-      "section": "Interface choices, not requirements"
+      "section": "Interface choices"
     },
     {
       "id": "agent",
@@ -48,7 +47,7 @@
       "icon": "ai-agent",
       "label": "AI agent",
       "lane": "Consumers arrive via",
-      "section": "Interface choices, not requirements"
+      "section": "Interface choices"
     },
     {
       "id": "gapA",
@@ -67,8 +66,8 @@
     {
       "id": "contract",
       "type": "consumer-api",
-      "label": "Versioned contract",
-      "sublabel": "single entry point - stable identifier",
+      "label": "Versioned API",
+      "sublabel": "single entry point",
       "lane": "One contract",
       "icon": "key",
       "w": 220,
@@ -80,12 +79,6 @@
       "lane": "One contract",
       "w": 10,
       "h": 60
-    },
-    {
-      "id": "versioning",
-      "type": "note",
-      "label": "Changes ship as new versions - the existing contract is never broken",
-      "lane": "One contract"
     },
     {
       "id": "secondEntry",
@@ -121,21 +114,21 @@
       "type": "rectangle-grey-light",
       "label": "Languages & runtimes",
       "lane": "Behind the contract",
-      "section": "Producer's free choice, invisible to consumers"
+      "section": "Implementation"
     },
     {
       "id": "implInfra",
       "type": "rectangle-grey-light",
       "label": "Infrastructure",
       "lane": "Behind the contract",
-      "section": "Producer's free choice, invisible to consumers"
+      "section": "Implementation"
     },
     {
       "id": "implAuto",
       "type": "rectangle-grey-light",
       "label": "Automation",
       "lane": "Behind the contract",
-      "section": "Producer's free choice, invisible to consumers"
+      "section": "Implementation"
     }
   ],
   "edges": [
@@ -166,7 +159,7 @@
       "source": "contract",
       "target": "cap",
       "type": "provides",
-      "label": "stable surface, any environment",
+      "label": "any environment",
       "labelPosition": -0.4,
       "labelOffset": -18,
       "exit": "right",

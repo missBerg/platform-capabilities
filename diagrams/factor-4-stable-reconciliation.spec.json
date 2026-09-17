@@ -1,5 +1,4 @@
 {
-  "title": "Factor 4 \u2014 Stable Reconciliation",
   "flavour": "sketch",
   "direction": "LR",
   "lanes": [
@@ -18,35 +17,35 @@
       "lane": "Platform reality",
       "w": 10,
       "h": 25,
-      "section": "The same state arrives again and again"
+      "section": "Triggers"
     },
     {
       "id": "trigRetry",
       "type": "tag",
       "label": "retry",
       "lane": "Platform reality",
-      "section": "The same state arrives again and again"
+      "section": "Triggers"
     },
     {
       "id": "trigRollout",
       "type": "tag",
       "label": "fleet rollout",
       "lane": "Platform reality",
-      "section": "The same state arrives again and again"
+      "section": "Triggers"
     },
     {
       "id": "trigRecover",
       "type": "tag",
       "label": "recovery",
       "lane": "Platform reality",
-      "section": "The same state arrives again and again"
+      "section": "Triggers"
     },
     {
       "id": "trigDrift",
       "type": "tag",
       "label": "drift correction",
       "lane": "Platform reality",
-      "section": "The same state arrives again and again"
+      "section": "Triggers"
     },
     {
       "id": "gapA",
@@ -87,7 +86,7 @@
       "id": "cap",
       "type": "capability",
       "label": "Capability",
-      "sublabel": "converges - never duplicates",
+      "sublabel": "converges",
       "lane": "Capability",
       "icon": "cog"
     },
@@ -102,7 +101,7 @@
       "id": "result",
       "type": "data-store",
       "label": "Same intended result",
-      "sublabel": "no side effects, no manual repair",
+      "sublabel": "no side effects",
       "lane": "Result"
     },
     {
@@ -116,7 +115,7 @@
       "id": "costNote",
       "type": "risk-gap",
       "label": "If unsafe to reapply",
-      "sublabel": "platform must add bespoke state tracking & sequencing",
+      "sublabel": "fails the factor",
       "lane": "Result"
     }
   ],
@@ -163,7 +162,7 @@
       "source": "result",
       "target": "cap",
       "type": "reconciles",
-      "label": "observe & correct drift",
+      "label": "corrects drift",
       "labelPosition": -0.5,
       "labelOffset": 22,
       "exit": "bottom",

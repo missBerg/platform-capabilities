@@ -1,5 +1,4 @@
 {
-  "title": "Platform Challenges at Scale \u2014 the central bottleneck",
   "flavour": "sketch",
   "direction": "LR",
   "lanes": [
@@ -14,7 +13,7 @@
       "id": "secteam",
       "type": "capability-owner",
       "label": "Security team",
-      "sublabel": "knows secrets management best",
+      "sublabel": "secrets management",
       "lane": "Demand",
       "section": "Specialists"
     },
@@ -30,7 +29,7 @@
       "id": "datateam",
       "type": "capability-owner",
       "label": "Data team",
-      "sublabel": "knows stream processing best",
+      "sublabel": "stream processing",
       "lane": "Demand",
       "section": "Specialists"
     },
@@ -53,7 +52,6 @@
       "id": "consumers",
       "type": "capability-consumer",
       "label": "Consumer teams",
-      "sublabel": "growing capability requests",
       "lane": "Demand"
     },
     {
@@ -74,7 +72,7 @@
       "id": "queue",
       "type": "platform",
       "label": "Central platform team",
-      "sublabel": "generalists - one queue for every change",
+      "sublabel": "one queue for every change",
       "lane": "Centralized model",
       "icon": "clock",
       "w": 260,
@@ -91,21 +89,18 @@
       "id": "bottleneck",
       "type": "risk-gap",
       "label": "Bottleneck",
-      "sublabel": "demand grows faster than the team can absorb",
       "lane": "Cost"
     },
     {
       "id": "orphaned",
       "type": "risk-gap",
       "label": "Orphaned ownership",
-      "sublabel": "owned without domain expertise, or by no one",
       "lane": "Cost"
     },
     {
       "id": "fragmentation",
       "type": "risk-gap",
       "label": "Fragmentation",
-      "sublabel": "teams build outside the platform instead",
       "lane": "Cost"
     }
   ],
@@ -114,7 +109,7 @@
       "source": "secteam",
       "target": "queue",
       "type": "provides",
-      "label": "route through central code & process",
+      "label": "central code & process",
       "labelPosition": -0.35,
       "labelOffset": -16
     },
@@ -127,7 +122,7 @@
       "source": "consumers",
       "target": "queue",
       "type": "provides",
-      "label": "every request, same queue",
+      "label": "same queue",
       "labelPosition": -0.35,
       "labelOffset": 16
     },
