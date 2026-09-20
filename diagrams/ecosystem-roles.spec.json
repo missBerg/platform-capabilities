@@ -43,7 +43,7 @@
       "label": "Platform operators",
       "sublabel": "platform team",
       "lane": "Layer",
-      "section": "The thin, consistent layer"
+      "section": "Core platform"
     },
     {
       "id": "g3",
@@ -58,7 +58,7 @@
       "label": "Secrets management",
       "lane": "Layer",
       "icon": "lock",
-      "section": "The thin, consistent layer",
+      "section": "Core platform",
       "w": 200,
       "h": 80
     },
@@ -68,7 +68,7 @@
       "label": "Stream processing",
       "lane": "Layer",
       "icon": "pipeline",
-      "section": "The thin, consistent layer",
+      "section": "Core platform",
       "w": 200,
       "h": 80
     },
@@ -122,7 +122,7 @@
       "source": "secprod",
       "target": "capsec",
       "type": "provides",
-      "label": "contribute via contract",
+      "label": "contribute & maintain",
       "labelOffset": -16,
       "exit": "right",
       "entry": "left",
@@ -139,7 +139,7 @@
       "source": "capsec",
       "target": "appteam",
       "type": "provides",
-      "label": "self-serve via API",
+      "label": "request & use",
       "labelOffset": -16,
       "exit": "right",
       "entry": "left",

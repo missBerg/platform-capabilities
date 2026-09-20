@@ -1,94 +1,95 @@
 {
   "flavour": "clean",
   "direction": "TB",
-  "laneGap": 60,
-  "rowGap": 40,
+  "laneGap": 30,
+  "rowGap": 44,
   "lanes": [
-    "Flow",
+    "Outcome",
+    "Capability",
     "Gap",
     "Facets"
   ],
   "nodes": [
     {
-      "id": "consumer",
-      "type": "capability-consumer",
-      "label": "Consumer",
-      "lane": "Flow"
+      "id": "padO",
+      "type": "spacer",
+      "lane": "Outcome",
+      "w": 110,
+      "h": 10
+    },
+    {
+      "id": "outcome",
+      "type": "outcome",
+      "label": "A user outcome",
+      "sublabel": "provided by the platform",
+      "lane": "Outcome",
+      "w": 200,
+      "h": 80
+    },
+    {
+      "id": "padC",
+      "type": "spacer",
+      "lane": "Capability",
+      "w": 100,
+      "h": 10
     },
     {
       "id": "cap",
       "type": "capability",
       "label": "A capability",
       "sublabel": "self-contained service",
-      "lane": "Flow",
       "icon": "cog",
+      "lane": "Capability",
       "w": 220,
       "h": 80
     },
     {
-      "id": "outcome",
-      "type": "outcome",
-      "label": "A user outcome",
-      "lane": "Flow",
-      "w": 190,
-      "h": 80
-    },
-    {
-      "id": "gapRow",
+      "id": "padG",
       "type": "spacer",
       "lane": "Gap",
       "w": 10,
-      "h": 50
+      "h": 6
     },
     {
       "id": "api",
       "type": "sub-capability",
       "label": "Defined API",
-      "sublabel": "provision, configure, observe",
-      "lane": "Facets",
       "icon": "key",
+      "lane": "Facets",
       "section": "Defined by",
-      "w": 180
+      "w": 140,
+      "h": 56
     },
     {
       "id": "lifecycle",
       "type": "sub-capability",
       "label": "Managed lifecycle",
-      "sublabel": "create, update, retire",
-      "lane": "Facets",
       "icon": "clock",
+      "lane": "Facets",
       "section": "Defined by",
-      "w": 180
+      "w": 140,
+      "h": 56
     },
     {
       "id": "contract",
       "type": "sub-capability",
-      "label": "Place in the contract",
-      "sublabel": "governed and discoverable",
-      "lane": "Facets",
+      "label": "Participation contract",
       "icon": "shield",
+      "lane": "Facets",
       "section": "Defined by",
-      "w": 180
+      "w": 140,
+      "h": 56
     }
   ],
   "edges": [
-    {
-      "source": "consumer",
-      "target": "cap",
-      "type": "provides",
-      "label": "requests",
-      "labelOffset": -18,
-      "exit": "right",
-      "entry": "left"
-    },
     {
       "source": "cap",
       "target": "outcome",
       "type": "provides",
       "label": "delivers",
-      "labelOffset": -18,
-      "exit": "right",
-      "entry": "left"
+      "exit": "top",
+      "entry": "bottom",
+      "labelOffsetX": 44
     }
   ]
 }

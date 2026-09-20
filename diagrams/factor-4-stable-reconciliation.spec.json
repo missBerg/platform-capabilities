@@ -1,69 +1,41 @@
 {
   "flavour": "clean",
-  "direction": "LR",
-  "laneGap": 50,
-  "rowGap": 36,
+  "direction": "TB",
+  "laneGap": 40,
+  "rowGap": 50,
   "lanes": [
-    "Triggers",
-    "Capability",
+    "Input",
+    "Cap",
     "Result"
   ],
   "nodes": [
     {
-      "id": "t1",
-      "type": "tag-blue",
-      "label": "retry",
-      "lane": "Triggers",
-      "section": "Same state, applied again",
-      "w": 130
-    },
-    {
-      "id": "t2",
-      "type": "tag-blue",
-      "label": "fleet rollout",
-      "lane": "Triggers",
-      "section": "Same state, applied again",
-      "w": 130
-    },
-    {
-      "id": "t3",
-      "type": "tag-blue",
-      "label": "recovery",
-      "lane": "Triggers",
-      "section": "Same state, applied again",
-      "w": 130
-    },
-    {
-      "id": "t4",
-      "type": "tag-blue",
-      "label": "drift correction",
-      "lane": "Triggers",
-      "section": "Same state, applied again",
-      "w": 130
-    },
-    {
-      "id": "padCap",
-      "type": "spacer",
-      "lane": "Capability",
-      "w": 10,
-      "h": 90
+      "id": "applied",
+      "type": "reference",
+      "label": "Same state, applied again",
+      "sublabel": "retry, rollout, recovery, drift",
+      "lane": "Input",
+      "w": 240,
+      "h": 80
     },
     {
       "id": "cap",
       "type": "capability",
       "label": "Capability",
       "sublabel": "converges, never duplicates",
-      "lane": "Capability",
       "icon": "cog",
-      "w": 210,
+      "lane": "Cap",
+      "w": 240,
       "h": 80
     },
     {
-      "id": "padRes",
-      "type": "spacer",
-      "lane": "Result",
-      "w": 10,
-      "h": 90
+      "id": "fail",
+      "type": "risk-gap",
+      "label": "Unsafe to reapply",
+      "sublabel": "fails the factor",
+      "lane": "Cap",
+      "w": 180,
+      "h": 56
     },
     {
       "id": "result",
@@ -71,72 +43,35 @@
       "label": "Same intended result",
       "sublabel": "no side effects",
       "lane": "Result",
-      "w": 200,
+      "w": 240,
       "h": 80
-    },
-    {
-      "id": "resGap",
-      "type": "spacer",
-      "lane": "Result",
-      "w": 10,
-      "h": 30
-    },
-    {
-      "id": "fail",
-      "type": "risk-gap",
-      "label": "Unsafe to reapply",
-      "sublabel": "fails the factor",
-      "lane": "Result",
-      "w": 180,
-      "h": 56
     }
   ],
   "edges": [
     {
-      "source": "t1",
+      "source": "applied",
       "target": "cap",
       "type": "provides",
-      "exit": "right",
-      "entry": "left"
-    },
-    {
-      "source": "t2",
-      "target": "cap",
-      "type": "provides",
-      "exit": "right",
-      "entry": "left"
-    },
-    {
-      "source": "t3",
-      "target": "cap",
-      "type": "provides",
-      "exit": "right",
-      "entry": "left"
-    },
-    {
-      "source": "t4",
-      "target": "cap",
-      "type": "provides",
-      "exit": "right",
-      "entry": "left"
+      "exit": "bottom",
+      "entry": "top"
     },
     {
       "source": "cap",
       "target": "result",
       "type": "exchanges",
       "label": "converge",
-      "labelOffset": -18,
-      "exit": "right",
-      "entry": "left"
+      "exit": "bottom",
+      "entry": "top",
+      "labelOffsetX": 52
     },
     {
       "source": "result",
       "target": "cap",
       "type": "reconciles",
       "label": "corrects drift",
-      "exit": "bottom",
-      "entry": "bottom",
-      "labelOffset": 18
+      "exit": "left",
+      "entry": "left",
+      "labelOffsetX": -64
     }
   ]
 }

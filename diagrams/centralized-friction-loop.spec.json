@@ -1,0 +1,107 @@
+{
+  "flavour": "clean",
+  "direction": "TB",
+  "laneGap": 70,
+  "rowGap": 44,
+  "lanes": [
+    "R1",
+    "R2",
+    "R3"
+  ],
+  "nodes": [
+    {
+      "id": "queue",
+      "type": "platform",
+      "label": "Every change queues centrally",
+      "icon": "clock",
+      "lane": "R1",
+      "w": 190,
+      "h": 64
+    },
+    {
+      "id": "load",
+      "type": "risk-gap",
+      "label": "Operational load multiplies",
+      "lane": "R1",
+      "w": 190,
+      "h": 64
+    },
+    {
+      "id": "slow",
+      "type": "process-step",
+      "label": "Delivery slows",
+      "lane": "R2",
+      "w": 190,
+      "h": 64
+    },
+    {
+      "id": "ux",
+      "type": "risk-gap",
+      "label": "Inconsistent experience",
+      "lane": "R2",
+      "w": 190,
+      "h": 64
+    },
+    {
+      "id": "outside",
+      "type": "external-system",
+      "label": "Teams build outside the platform",
+      "lane": "R3",
+      "w": 190,
+      "h": 64
+    },
+    {
+      "id": "frag",
+      "type": "risk-gap",
+      "label": "Incompatible contracts",
+      "sublabel": "duplicated effort",
+      "lane": "R3",
+      "w": 190,
+      "h": 64
+    }
+  ],
+  "edges": [
+    {
+      "source": "queue",
+      "target": "slow",
+      "type": "provides",
+      "exit": "bottom",
+      "entry": "top"
+    },
+    {
+      "source": "slow",
+      "target": "outside",
+      "type": "provides",
+      "exit": "bottom",
+      "entry": "top"
+    },
+    {
+      "source": "outside",
+      "target": "frag",
+      "type": "provides",
+      "exit": "right",
+      "entry": "left"
+    },
+    {
+      "source": "frag",
+      "target": "ux",
+      "type": "provides",
+      "exit": "top",
+      "entry": "bottom"
+    },
+    {
+      "source": "ux",
+      "target": "load",
+      "type": "provides",
+      "exit": "top",
+      "entry": "bottom"
+    },
+    {
+      "source": "load",
+      "target": "queue",
+      "type": "provides",
+      "exit": "left",
+      "entry": "right"
+    }
+  ]
+}

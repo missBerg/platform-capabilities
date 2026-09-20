@@ -97,3 +97,32 @@ label. For final polish, open the `.drawio` in draw.io / VS Code and nudge
 waypoints — that file already carries PCF styles inline, so it stays on-brand.
 The sketch flavour uses **Comic Sans MS** — a system font the library shapes
 carry inline, so no web font is downloaded.
+
+## Layout and label knobs (spec fields)
+
+- `laneGap` / `rowGap` (top level) — gap between lanes and between nodes
+  within a lane, in px. Defaults 90 / 40.
+- `{"type":"spacer","w":..,"h":..}` node — invisible, occupies grid space.
+  In `TB` layouts a leading spacer centres a narrower row under a wider one
+  (spacer w = (wideRow − thisRow) / 2 − laneGap); a whole spacer lane adds
+  vertical room, e.g. so a section header does not collide with the row above.
+- Edge `exit` / `entry` (`left|right|top|bottom`) pin the connection sides.
+  Person stamps (`capability-owner`, `capability-consumer`) only connect
+  cleanly on left/right; in `TB` flows use `rectangle-*-light` + a `team` /
+  `human` icon badge instead.
+- Edge `labelPosition` (−1 source … 0 middle … 1 target) slides the label
+  along the edge.
+- Edge `labelOffset` (px, vertical) and `labelOffsetX` (px, horizontal) push
+  the label off the line. These are **page axes, not edge axes**: use
+  `labelOffset` on horizontal edges and `labelOffsetX` on vertical ones.
+- Edge `"route":"straight"` skips the orthogonal router.
+
+## Paper figures (PDF budget)
+
+Figures embedded in a document scale to the text column, so keep the canvas
+narrow rather than wide: prefer `TB` (portrait) layouts, canvas width ≤ 550
+units, labels 14 px, sublabels/edge labels 12 px. Run
+`python3 scripts/render.py X.drawio --pdf-check` to see the effective point
+size. No titles inside the image (the document caption carries it), sublabels
+≤ 4 words, one red "fails the factor" callout per factor diagram, and run
+`scripts/restyle-diagram.py` after generating.

@@ -1,135 +1,169 @@
 {
   "flavour": "clean",
-  "direction": "LR",
-  "laneGap": 40,
-  "rowGap": 36,
+  "direction": "TB",
+  "laneGap": 60,
+  "rowGap": 30,
   "lanes": [
-    "Capability",
     "Contract",
-    "Platform"
+    "Gap",
+    "Parties",
+    "Gap2",
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5",
+    "P6"
   ],
   "nodes": [
     {
-      "id": "cap",
-      "type": "capability",
-      "label": "Contributed capability",
-      "lane": "Capability",
-      "icon": "cog",
-      "w": 200,
-      "h": 70
-    },
-    {
-      "id": "g1",
+      "id": "padK",
       "type": "spacer",
-      "lane": "Capability",
-      "w": 10,
-      "h": 40
-    },
-    {
-      "id": "cp1",
-      "type": "sub-capability",
-      "label": "Product-scoped",
-      "lane": "Capability",
-      "section": "Capability principles",
-      "w": 180,
-      "h": 44
-    },
-    {
-      "id": "cp2",
-      "type": "sub-capability",
-      "label": "Self-service",
-      "lane": "Capability",
-      "section": "Capability principles",
-      "w": 180,
-      "h": 44
-    },
-    {
-      "id": "cp3",
-      "type": "sub-capability",
-      "label": "Operationally owned",
-      "lane": "Capability",
-      "section": "Capability principles",
-      "w": 180,
-      "h": 44
-    },
-    {
-      "id": "factors",
-      "type": "tag-blue",
-      "label": "proven by the five factors",
-      "lane": "Capability",
-      "w": 200
+      "lane": "Contract",
+      "w": 60,
+      "h": 10
     },
     {
       "id": "contract",
       "type": "policy",
       "label": "Participation contract",
-      "lane": "Contract",
       "icon": "key",
-      "w": 190,
+      "lane": "Contract",
+      "w": 220,
+      "h": 70
+    },
+    {
+      "id": "gap",
+      "type": "spacer",
+      "lane": "Gap",
+      "w": 10,
+      "h": 20
+    },
+    {
+      "id": "cap",
+      "type": "capability",
+      "label": "Contributed capability",
+      "icon": "cog",
+      "lane": "Parties",
+      "w": 200,
       "h": 70
     },
     {
       "id": "plat",
       "type": "platform",
       "label": "Platform",
-      "lane": "Platform",
+      "lane": "Parties",
       "w": 200,
       "h": 70
     },
     {
-      "id": "g2",
+      "id": "gap2",
       "type": "spacer",
-      "lane": "Platform",
+      "lane": "Gap2",
       "w": 10,
+      "h": 20
+    },
+    {
+      "id": "cp1",
+      "type": "sub-capability",
+      "label": "Product-scoped",
+      "lane": "P1",
+      "section": "Capability principles",
+      "w": 200,
       "h": 40
     },
     {
       "id": "pp1",
       "type": "tag-blue",
       "label": "Extensible",
-      "lane": "Platform",
+      "lane": "P1",
       "section": "Platform principles",
-      "w": 160
+      "w": 200,
+      "h": 40
+    },
+    {
+      "id": "cp2",
+      "type": "sub-capability",
+      "label": "Self-service",
+      "lane": "P2",
+      "section": "Capability principles",
+      "w": 200,
+      "h": 40
     },
     {
       "id": "pp2",
       "type": "tag-blue",
       "label": "Composable",
-      "lane": "Platform",
+      "lane": "P2",
       "section": "Platform principles",
-      "w": 160
+      "w": 200,
+      "h": 40
+    },
+    {
+      "id": "cp3",
+      "type": "sub-capability",
+      "label": "Operationally owned",
+      "lane": "P3",
+      "section": "Capability principles",
+      "w": 200,
+      "h": 40
     },
     {
       "id": "pp3",
       "type": "tag-blue",
       "label": "Declarative",
-      "lane": "Platform",
+      "lane": "P3",
       "section": "Platform principles",
-      "w": 160
+      "w": 200,
+      "h": 40
+    },
+    {
+      "id": "cs4",
+      "type": "spacer",
+      "lane": "P4",
+      "w": 200,
+      "h": 40
     },
     {
       "id": "pp4",
       "type": "tag-blue",
       "label": "Governable",
-      "lane": "Platform",
+      "lane": "P4",
       "section": "Platform principles",
-      "w": 160
+      "w": 200,
+      "h": 40
+    },
+    {
+      "id": "cs5",
+      "type": "spacer",
+      "lane": "P5",
+      "w": 200,
+      "h": 40
     },
     {
       "id": "pp5",
       "type": "tag-blue",
       "label": "Observable",
-      "lane": "Platform",
+      "lane": "P5",
       "section": "Platform principles",
-      "w": 160
+      "w": 200,
+      "h": 40
+    },
+    {
+      "id": "cs6",
+      "type": "spacer",
+      "lane": "P6",
+      "w": 200,
+      "h": 40
     },
     {
       "id": "pp6",
       "type": "tag-blue",
       "label": "Stable",
-      "lane": "Platform",
+      "lane": "P6",
       "section": "Platform principles",
-      "w": 160
+      "w": 200,
+      "h": 40
     }
   ],
   "edges": [
@@ -138,16 +172,18 @@
       "target": "contract",
       "type": "exchanges",
       "label": "five factors",
-      "labelOffset": -16,
-      "route": "straight"
+      "exit": "top",
+      "entry": "top",
+      "labelOffsetX": -50
     },
     {
       "source": "plat",
       "target": "contract",
       "type": "exchanges",
       "label": "six principles",
-      "labelOffset": -16,
-      "route": "straight"
+      "exit": "top",
+      "entry": "bottom",
+      "labelOffsetX": 54
     }
   ]
 }

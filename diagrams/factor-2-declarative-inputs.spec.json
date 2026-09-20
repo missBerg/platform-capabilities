@@ -1,127 +1,64 @@
 {
   "flavour": "clean",
-  "direction": "LR",
+  "direction": "TB",
   "laneGap": 50,
-  "rowGap": 36,
+  "rowGap": 50,
   "lanes": [
-    "Consumer",
-    "Desired",
-    "Capability"
+    "Top",
+    "Cap",
+    "Fail"
   ],
   "nodes": [
     {
       "id": "consumer",
-      "type": "capability-consumer",
+      "type": "rectangle-blue-light",
       "label": "Consumer",
-      "lane": "Consumer"
-    },
-    {
-      "id": "padF",
-      "type": "spacer",
-      "lane": "Consumer",
-      "w": 10,
-      "h": 30
-    },
-    {
-      "id": "imperative",
-      "type": "risk-gap",
-      "label": "Imperative inputs",
-      "sublabel": "fails the factor",
-      "lane": "Consumer",
-      "w": 180,
+      "icon": "human",
+      "lane": "Top",
+      "w": 120,
       "h": 56
     },
     {
       "id": "declared",
       "type": "reference",
       "label": "Desired outcome",
-      "sublabel": "what should be true",
-      "lane": "Desired",
-      "w": 200,
-      "h": 70
+      "sublabel": "engine, size, durability, backup policy",
+      "lane": "Top",
+      "w": 260,
+      "h": 80
     },
     {
-      "id": "g1",
+      "id": "padC",
       "type": "spacer",
-      "lane": "Desired",
-      "w": 10,
-      "h": 40
-    },
-    {
-      "id": "p1",
-      "type": "tag-blue",
-      "label": "engine",
-      "lane": "Desired",
-      "section": "Stable properties",
-      "w": 150
-    },
-    {
-      "id": "p2",
-      "type": "tag-blue",
-      "label": "size",
-      "lane": "Desired",
-      "section": "Stable properties",
-      "w": 150
-    },
-    {
-      "id": "p3",
-      "type": "tag-blue",
-      "label": "durability",
-      "lane": "Desired",
-      "section": "Stable properties",
-      "w": 150
-    },
-    {
-      "id": "p4",
-      "type": "tag-blue",
-      "label": "backup policy",
-      "lane": "Desired",
-      "section": "Stable properties",
-      "w": 150
+      "lane": "Cap",
+      "w": 120,
+      "h": 10
     },
     {
       "id": "cap",
       "type": "capability",
       "label": "Database capability",
       "sublabel": "owns the translation",
-      "lane": "Capability",
       "icon": "cog",
-      "w": 210,
-      "h": 70
+      "lane": "Cap",
+      "w": 260,
+      "h": 80
     },
     {
-      "id": "g2",
+      "id": "padF",
       "type": "spacer",
-      "lane": "Capability",
-      "w": 10,
-      "h": 40
+      "lane": "Fail",
+      "w": 150,
+      "h": 10
     },
     {
-      "id": "s1",
-      "type": "rectangle-grey-light",
-      "label": "Provisioning steps",
-      "lane": "Capability",
-      "section": "Internal",
-      "w": 180,
-      "h": 44
-    },
-    {
-      "id": "s2",
-      "type": "rectangle-grey-light",
-      "label": "Dependency ordering",
-      "lane": "Capability",
-      "section": "Internal",
-      "w": 180,
-      "h": 44
-    },
-    {
-      "id": "s3",
-      "type": "rectangle-grey-light",
-      "label": "Recovery procedures",
-      "lane": "Capability",
-      "section": "Internal",
-      "w": 180,
-      "h": 44
+      "id": "fail",
+      "type": "risk-gap",
+      "label": "Imperative inputs",
+      "sublabel": "fails the factor",
+      "lane": "Fail",
+      "w": 200,
+      "h": 56
     }
   ],
   "edges": [
@@ -130,19 +67,16 @@
       "target": "declared",
       "type": "provides",
       "label": "declares",
-      "labelOffset": -18,
-      "exit": "right",
-      "entry": "left"
+      "labelOffset": -16
     },
     {
       "source": "declared",
       "target": "cap",
       "type": "exchanges",
       "label": "reconciled over time",
-      "labelOffset": 22,
-      "exit": "right",
-      "entry": "left",
-      "labelPosition": 0
+      "exit": "bottom",
+      "entry": "top",
+      "labelOffsetX": 88
     }
   ]
 }

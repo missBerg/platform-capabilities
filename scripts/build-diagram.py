@@ -213,7 +213,8 @@ def make_edge_cell(eid: str, stamp: Stamp, src: str, tgt: str,
                    label_pos: float | None = None,
                    label_off: float | None = None,
                    exit_side: str | None = None,
-                   entry_side: str | None = None) -> ET.Element:
+                   entry_side: str | None = None,
+                   label_off_x: float | None = None) -> ET.Element:
     cell = copy.deepcopy(stamp.cells[0])
     cell.set("id", eid)
     cell.set("parent", "1")
@@ -240,10 +241,13 @@ def make_edge_cell(eid: str, stamp: Stamp, src: str, tgt: str,
         if label_pos is not None:                     # slide label along edge
             geo.set("relative", "1")
             geo.set("x", str(label_pos))
-        if label_off is not None:                     # lift label off the line
+        if label_off is not None or label_off_x is not None:
+            # Lift the label off the line. Offsets are page axes, not edge
+            # axes: labelOffset moves vertically (use on horizontal edges),
+            # labelOffsetX moves horizontally (use on vertical edges).
             geo.set("relative", "1")
             ET.SubElement(geo, "mxPoint",
-                          {"x": "0", "y": fmt(label_off), "as": "offset"})
+                          {"x": fmt(label_off_x or 0), "y": fmt(label_off or 0), "as": "offset"})
     return cell
 
 
@@ -451,7 +455,8 @@ def generate(spec: dict) -> str:
         cells.append(make_edge_cell(f"pcf-edge-{i}", stamps[e.get("type", "provides")],
                                     e["source"], e["target"], e.get("label"), sketch,
                                     e.get("labelPosition"), e.get("labelOffset"),
-                                    e.get("exit"), e.get("entry")))
+                                    e.get("exit"), e.get("entry"),
+                                    e.get("labelOffsetX")))
 
     # page size to fit content
     maxx = max((float(c.find("mxGeometry").get("x", "0")) + float(c.find("mxGeometry").get("width", "0"))

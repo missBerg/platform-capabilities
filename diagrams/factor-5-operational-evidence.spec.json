@@ -1,110 +1,102 @@
 {
   "flavour": "clean",
   "direction": "LR",
-  "laneGap": 50,
-  "rowGap": 30,
+  "laneGap": 70,
+  "rowGap": 24,
   "lanes": [
     "Actors",
-    "Evidence",
-    "Kinds"
+    "Evidence"
   ],
   "nodes": [
     {
       "id": "a1",
       "type": "rectangle-blue-light",
       "label": "Consumers",
-      "lane": "Actors",
       "icon": "human",
+      "lane": "Actors",
       "section": "Authorized actors",
-      "w": 190,
+      "w": 200,
       "h": 40
     },
     {
       "id": "a2",
       "type": "rectangle-blue-light",
-      "label": "Producers",
+      "label": "Platform ops & leadership",
+      "icon": "cog",
       "lane": "Actors",
-      "icon": "team",
       "section": "Authorized actors",
-      "w": 190,
+      "w": 200,
       "h": 40
     },
     {
       "id": "a3",
       "type": "rectangle-blue-light",
-      "label": "Platform ops & leadership",
+      "label": "Producers",
+      "icon": "team",
       "lane": "Actors",
-      "icon": "cog",
       "section": "Authorized actors",
-      "w": 190,
+      "w": 200,
       "h": 40
     },
     {
       "id": "a4",
       "type": "rectangle-blue-light",
       "label": "Finance",
-      "lane": "Actors",
       "icon": "dashboard",
+      "lane": "Actors",
       "section": "Authorized actors",
-      "w": 190,
+      "w": 200,
       "h": 40
     },
     {
       "id": "a5",
       "type": "rectangle-blue-light",
       "label": "Security & compliance",
-      "lane": "Actors",
       "icon": "shield",
+      "lane": "Actors",
       "section": "Authorized actors",
-      "w": 190,
-      "h": 40
-    },
-    {
-      "id": "padE",
-      "type": "spacer",
-      "lane": "Evidence",
-      "w": 10,
-      "h": 120
-    },
-    {
-      "id": "surface",
-      "type": "platform",
-      "label": "Operational evidence",
-      "sublabel": "authoritative",
-      "lane": "Evidence",
-      "icon": "dashboard",
       "w": 200,
-      "h": 90
-    },
-    {
-      "id": "padK",
-      "type": "spacer",
-      "lane": "Kinds",
-      "w": 10,
-      "h": 50
+      "h": 40
     },
     {
       "id": "docs",
       "type": "documentation",
       "label": "Documentation",
       "sublabel": "purpose, ownership, policy",
-      "lane": "Kinds",
+      "lane": "Evidence",
       "w": 200,
       "h": 80
     },
     {
-      "id": "kGap",
+      "id": "g1",
       "type": "spacer",
-      "lane": "Kinds",
+      "lane": "Evidence",
       "w": 10,
-      "h": 40
+      "h": 30
+    },
+    {
+      "id": "surface",
+      "type": "platform",
+      "label": "Operational evidence",
+      "sublabel": "authoritative",
+      "icon": "dashboard",
+      "lane": "Evidence",
+      "w": 200,
+      "h": 90
+    },
+    {
+      "id": "g2",
+      "type": "spacer",
+      "lane": "Evidence",
+      "w": 10,
+      "h": 30
     },
     {
       "id": "telemetry",
       "type": "rectangle-grey-light",
       "label": "Telemetry",
       "sublabel": "health, lifecycle, compliance",
-      "lane": "Kinds",
+      "lane": "Evidence",
       "w": 200,
       "h": 80
     }
@@ -150,20 +142,18 @@
       "target": "docs",
       "type": "provides",
       "label": "what should be true",
-      "labelPosition": 0,
-      "labelOffset": -16,
-      "exit": "right",
-      "entry": "left"
+      "exit": "top",
+      "entry": "bottom",
+      "labelOffsetX": 72
     },
     {
       "source": "surface",
       "target": "telemetry",
       "type": "provides",
       "label": "what is actually true",
-      "labelPosition": 0,
-      "labelOffset": 16,
-      "exit": "right",
-      "entry": "left"
+      "exit": "bottom",
+      "entry": "top",
+      "labelOffsetX": 72
     }
   ]
 }

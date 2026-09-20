@@ -1,53 +1,46 @@
 {
   "flavour": "clean",
-  "direction": "LR",
+  "direction": "TB",
+  "laneGap": 40,
+  "rowGap": 60,
   "lanes": [
-    "Borrowed from",
-    "The platform ecosystem architecture"
+    "Sources",
+    "Model"
   ],
   "nodes": [
     {
       "id": "plugin",
       "type": "rectangle-grey-light",
       "label": "Plugin systems",
-      "sublabel": "consistency via a shared contract",
-      "lane": "Borrowed from",
       "icon": "code",
-      "w": 250,
-      "h": 90
-    },
-    {
-      "id": "gapP",
-      "type": "spacer",
-      "lane": "Borrowed from",
-      "w": 10,
-      "h": 60
+      "lane": "Sources",
+      "w": 200,
+      "h": 70
     },
     {
       "id": "micro",
       "type": "rectangle-grey-light",
       "label": "Microservices",
-      "sublabel": "independent delivery",
-      "lane": "Borrowed from",
       "icon": "cloud",
-      "w": 250,
-      "h": 90
+      "lane": "Sources",
+      "w": 200,
+      "h": 70
     },
     {
-      "id": "padTop",
+      "id": "padM",
       "type": "spacer",
-      "lane": "The platform ecosystem architecture",
-      "w": 10,
-      "h": 70
+      "lane": "Model",
+      "w": 30,
+      "h": 10
     },
     {
       "id": "platform",
       "type": "platform",
-      "label": "Platform ecosystem architecture",
-      "sublabel": "specialists contribute, consumers self-serve",
-      "lane": "The platform ecosystem architecture",
+      "label": "Platform ecosystem model",
+      "sublabel": "experts contribute, consumers self-serve",
+      "lane": "Model",
       "w": 300,
-      "h": 110
+      "h": 90
     }
   ],
   "edges": [
@@ -56,22 +49,20 @@
       "target": "platform",
       "type": "provides",
       "label": "consistency",
-      "labelPosition": -0.5,
-      "labelOffset": -16,
-      "entry": "left",
-      "exit": "right"
+      "exit": "bottom",
+      "entry": "top",
+      "labelPosition": -0.55,
+      "labelOffsetX": -58
     },
     {
       "source": "micro",
       "target": "platform",
       "type": "provides",
       "label": "independence",
-      "labelPosition": -0.5,
-      "labelOffset": 16,
-      "entry": "left",
-      "exit": "right"
+      "exit": "bottom",
+      "entry": "top",
+      "labelPosition": -0.55,
+      "labelOffsetX": 64
     }
-  ],
-  "laneGap": 60,
-  "rowGap": 36
+  ]
 }

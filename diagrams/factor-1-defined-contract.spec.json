@@ -1,93 +1,110 @@
 {
   "flavour": "clean",
-  "direction": "LR",
-  "laneGap": 60,
-  "rowGap": 36,
+  "direction": "TB",
+  "laneGap": 16,
+  "rowGap": 48,
   "lanes": [
     "Interfaces",
+    "GapI",
     "API",
-    "Capability"
+    "Capability",
+    "Fail"
   ],
   "nodes": [
     {
       "id": "cli",
-      "type": "icon",
-      "icon": "computer",
+      "type": "rectangle-blue-light",
       "label": "CLI",
+      "icon": "computer",
       "lane": "Interfaces",
-      "section": "Interface choices"
+      "section": "Interface choices",
+      "w": 100,
+      "h": 44
     },
     {
       "id": "portal",
-      "type": "icon",
-      "icon": "dashboard",
+      "type": "rectangle-blue-light",
       "label": "Web portal",
+      "icon": "dashboard",
       "lane": "Interfaces",
-      "section": "Interface choices"
+      "section": "Interface choices",
+      "w": 100,
+      "h": 44
     },
     {
       "id": "idp",
-      "type": "icon",
-      "icon": "code",
+      "type": "rectangle-blue-light",
       "label": "Dev portal",
+      "icon": "code",
       "lane": "Interfaces",
-      "section": "Interface choices"
+      "section": "Interface choices",
+      "w": 100,
+      "h": 44
     },
     {
       "id": "agent",
-      "type": "icon",
-      "icon": "ai-agent",
+      "type": "rectangle-blue-light",
       "label": "AI agent",
+      "icon": "ai-agent",
       "lane": "Interfaces",
-      "section": "Interface choices"
+      "section": "Interface choices",
+      "w": 100,
+      "h": 44
+    },
+    {
+      "id": "padI",
+      "type": "spacer",
+      "lane": "GapI",
+      "w": 10,
+      "h": 14
     },
     {
       "id": "padA",
       "type": "spacer",
       "lane": "API",
-      "w": 10,
-      "h": 190
+      "w": 98,
+      "h": 10
     },
     {
       "id": "api",
       "type": "sub-capability",
-      "label": "Versioned API",
+      "label": "One versioned API",
       "sublabel": "single entry point",
-      "lane": "API",
       "icon": "key",
-      "w": 200,
+      "lane": "API",
+      "w": 220,
       "h": 70
     },
     {
       "id": "padC",
       "type": "spacer",
       "lane": "Capability",
-      "w": 10,
-      "h": 185
+      "w": 98,
+      "h": 10
     },
     {
       "id": "cap",
       "type": "capability",
       "label": "Capability",
       "sublabel": "implementation is the producer's choice",
-      "lane": "Capability",
       "icon": "cog",
-      "w": 210,
+      "lane": "Capability",
+      "w": 220,
       "h": 80
     },
     {
-      "id": "gapF",
+      "id": "padF",
       "type": "spacer",
-      "lane": "Capability",
-      "w": 10,
-      "h": 40
+      "lane": "Fail",
+      "w": 108,
+      "h": 10
     },
     {
       "id": "fail",
       "type": "risk-gap",
-      "label": "Second entry point",
+      "label": "Extra entry points",
       "sublabel": "fails the factor",
-      "lane": "Capability",
+      "lane": "Fail",
       "w": 200,
       "h": 56
     }
@@ -97,38 +114,38 @@
       "source": "cli",
       "target": "api",
       "type": "provides",
-      "exit": "right",
-      "entry": "left"
+      "exit": "bottom",
+      "entry": "top"
     },
     {
       "source": "portal",
       "target": "api",
       "type": "provides",
-      "exit": "right",
-      "entry": "left"
+      "exit": "bottom",
+      "entry": "top"
     },
     {
       "source": "idp",
       "target": "api",
       "type": "provides",
-      "exit": "right",
-      "entry": "left"
+      "exit": "bottom",
+      "entry": "top"
     },
     {
       "source": "agent",
       "target": "api",
       "type": "provides",
-      "exit": "right",
-      "entry": "left"
+      "exit": "bottom",
+      "entry": "top"
     },
     {
       "source": "api",
       "target": "cap",
       "type": "provides",
       "label": "any environment",
-      "labelOffset": -16,
-      "exit": "right",
-      "entry": "left"
+      "exit": "bottom",
+      "entry": "top",
+      "labelOffsetX": 84
     }
   ]
 }

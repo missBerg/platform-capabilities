@@ -25,10 +25,11 @@ DIAGRAM_RE = re.compile(r"<diagram\b[^>]*>.*?</diagram>", re.DOTALL)
 OPEN_TAG_RE = re.compile(r"<diagram\b[^>]*>", re.DOTALL)
 ATTR_RE = re.compile(r'(\w+)\s*=\s*"([^"]*)"')
 
-# Preferred tab order: hero overview, then the 8 factors, then supporting
-# diagrams. Files not listed here sort after these, alphabetically.
+# Preferred tab order: paper order (limitations, ecosystem model, contract,
+# then the five factors). Files not listed here sort after these, alphabetically.
 PREFERRED = [
     "challenge-central-bottleneck",
+    "centralized-friction-loop",
     "ecosystem-architecture-lineage",
     "capability-definition",
     "ecosystem-roles",

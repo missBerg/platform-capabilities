@@ -1,56 +1,60 @@
 {
   "flavour": "clean",
   "direction": "TB",
-  "laneGap": 16,
-  "rowGap": 36,
+  "laneGap": 20,
+  "rowGap": 22,
   "lanes": [
-    "Factors"
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5"
   ],
   "nodes": [
     {
       "id": "f1",
       "type": "sub-capability",
       "label": "1. Defined Contract",
-      "sublabel": "one versioned API",
-      "lane": "Factors",
-      "w": 124,
-      "h": 84
+      "icon": "key",
+      "lane": "F1",
+      "w": 320,
+      "h": 56
     },
     {
       "id": "f2",
       "type": "sub-capability",
       "label": "2. Declarative Inputs",
-      "sublabel": "outcomes, not steps",
-      "lane": "Factors",
-      "w": 124,
-      "h": 84
+      "icon": "code",
+      "lane": "F2",
+      "w": 320,
+      "h": 56
     },
     {
       "id": "f3",
       "type": "sub-capability",
       "label": "3. Encapsulated Dependencies",
-      "sublabel": "owns what it needs",
-      "lane": "Factors",
-      "w": 124,
-      "h": 84
+      "icon": "shield",
+      "lane": "F3",
+      "w": 320,
+      "h": 56
     },
     {
       "id": "f4",
       "type": "sub-capability",
       "label": "4. Stable Reconciliation",
-      "sublabel": "safe to reapply",
-      "lane": "Factors",
-      "w": 124,
-      "h": 84
+      "icon": "cog",
+      "lane": "F4",
+      "w": 320,
+      "h": 56
     },
     {
       "id": "f5",
       "type": "sub-capability",
       "label": "5. Operational Evidence",
-      "sublabel": "authoritative, self-serve",
-      "lane": "Factors",
-      "w": 124,
-      "h": 84
+      "icon": "dashboard",
+      "lane": "F5",
+      "w": 320,
+      "h": 56
     }
   ],
   "edges": []

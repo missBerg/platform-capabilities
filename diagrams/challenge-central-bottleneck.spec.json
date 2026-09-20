@@ -1,154 +1,92 @@
 {
   "flavour": "clean",
-  "direction": "LR",
-  "laneGap": 50,
-  "rowGap": 36,
+  "direction": "TB",
+  "laneGap": 60,
+  "rowGap": 50,
   "lanes": [
     "Teams",
     "Central",
-    "Results"
+    "Outcomes"
   ],
   "nodes": [
     {
       "id": "secteam",
-      "type": "capability-owner",
+      "type": "rectangle-yellow-light",
       "label": "Security team",
+      "sublabel": "secrets management",
+      "icon": "team",
+      "iconColor": "yellow",
       "lane": "Teams",
-      "section": "Specialists"
-    },
-    {
-      "id": "g1",
-      "type": "spacer",
-      "lane": "Teams",
-      "w": 10,
-      "h": 20
+      "w": 190,
+      "h": 60
     },
     {
       "id": "datateam",
-      "type": "capability-owner",
+      "type": "rectangle-yellow-light",
       "label": "Data team",
+      "sublabel": "stream processing",
+      "icon": "team",
+      "iconColor": "yellow",
       "lane": "Teams",
-      "section": "Specialists"
-    },
-    {
-      "id": "g2",
-      "type": "spacer",
-      "lane": "Teams",
-      "w": 10,
-      "h": 20
-    },
-    {
-      "id": "consumers",
-      "type": "capability-consumer",
-      "label": "Consumer teams",
-      "lane": "Teams"
+      "w": 190,
+      "h": 60
     },
     {
       "id": "padQ",
       "type": "spacer",
       "lane": "Central",
-      "w": 10,
-      "h": 130
+      "w": 30,
+      "h": 10
     },
     {
       "id": "queue",
       "type": "platform",
-      "label": "Central platform team",
-      "sublabel": "one queue for every change",
-      "lane": "Central",
+      "label": "Centralized platform group",
+      "sublabel": "central codebases and processes",
       "icon": "clock",
-      "w": 210,
-      "h": 90
+      "lane": "Central",
+      "w": 260,
+      "h": 80
     },
     {
-      "id": "padR",
-      "type": "spacer",
-      "lane": "Results",
-      "w": 10,
-      "h": 70
-    },
-    {
-      "id": "r1",
+      "id": "o1",
       "type": "risk-gap",
-      "label": "Incompatible contracts",
-      "lane": "Results",
-      "w": 200,
-      "h": 50
+      "label": "Central group owns it",
+      "sublabel": "without the expertise",
+      "lane": "Outcomes",
+      "w": 190,
+      "h": 60
     },
     {
-      "id": "r2",
+      "id": "o2",
       "type": "risk-gap",
-      "label": "Inconsistent experience",
-      "lane": "Results",
-      "w": 200,
-      "h": 50
-    },
-    {
-      "id": "r3",
-      "type": "risk-gap",
-      "label": "Duplicated effort",
-      "lane": "Results",
-      "w": 200,
-      "h": 50
-    },
-    {
-      "id": "r4",
-      "type": "risk-gap",
-      "label": "Multiplied operational load",
-      "lane": "Results",
-      "w": 200,
-      "h": 50
+      "label": "No one owns it",
+      "sublabel": "coordination overhead",
+      "lane": "Outcomes",
+      "w": 190,
+      "h": 60
     }
   ],
   "edges": [
     {
       "source": "secteam",
       "target": "queue",
-      "type": "provides",
-      "exit": "right",
-      "entry": "left"
+      "type": "provides"
     },
     {
       "source": "datateam",
       "target": "queue",
-      "type": "provides",
-      "exit": "right",
-      "entry": "left"
-    },
-    {
-      "source": "consumers",
-      "target": "queue",
-      "type": "provides",
-      "exit": "right",
-      "entry": "left"
+      "type": "provides"
     },
     {
       "source": "queue",
-      "target": "r1",
-      "type": "depends",
-      "exit": "right",
-      "entry": "left"
+      "target": "o1",
+      "type": "depends"
     },
     {
       "source": "queue",
-      "target": "r2",
-      "type": "depends",
-      "exit": "right",
-      "entry": "left"
-    },
-    {
-      "source": "queue",
-      "target": "r3",
-      "type": "depends",
-      "exit": "right",
-      "entry": "left"
-    },
-    {
-      "source": "queue",
-      "target": "r4",
-      "type": "depends",
-      "exit": "right",
-      "entry": "left"
+      "target": "o2",
+      "type": "depends"
     }
   ]
 }
