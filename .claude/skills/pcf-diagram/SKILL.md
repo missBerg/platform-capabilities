@@ -117,6 +117,11 @@ carry inline, so no web font is downloaded.
   the label off the line. These are **page axes, not edge axes**: use
   `labelOffset` on horizontal edges and `labelOffsetX` on vertical ones.
 - Edge `"route":"straight"` skips the orthogonal router.
+- Edge labels may contain `\n` for a second line (object on line one, the
+  exchange on line two, as in `ecosystem-value-exchange`).
+- Node `x` / `y` place a node explicitly, ignoring the lane grid, for
+  compositions the grid cannot express (a true triangle, a ring). Everything
+  else keeps the automatic layout.
 
 ## Paper figures (PDF budget)
 

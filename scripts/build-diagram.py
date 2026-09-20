@@ -235,7 +235,7 @@ def make_edge_cell(eid: str, stamp: Stamp, src: str, tgt: str,
         style += f"entryX={ex};entryY={ey};entryDx=0;entryDy=0;"
     cell.set("style", style)
     if label:
-        cell.set("value", html.escape(label))
+        cell.set("value", "<br>".join(html.escape(part) for part in label.split("\n")))
     geo = cell.find("mxGeometry")
     if geo is not None:                               # drop sample endpoints
         for pt in list(geo.findall("mxPoint")):
@@ -390,6 +390,13 @@ def layout(spec: dict, stamps: dict) -> dict:
                 eff = h + (ICON_LABEL_PAD if n.get("type") == "icon" and n.get("label") else 0)
                 y += eff + row_gap
             x += lane_w + lane_gap
+    # Optional explicit placement (node "x"/"y"): the node keeps its size but
+    # ignores the lane grid. Use sparingly, for compositions the grid cannot
+    # express (a true triangle, a ring).
+    for n in nodes:
+        if "x" in n and "y" in n:
+            _, _, w, h = rects[n["id"]]
+            rects[n["id"]] = (float(n["x"]), float(n["y"]), w, h)
     return rects
 
 
