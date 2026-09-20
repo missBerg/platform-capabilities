@@ -5,8 +5,7 @@
   "rowGap": 50,
   "lanes": [
     "Top",
-    "Cap",
-    "Fail"
+    "Cap"
   ],
   "nodes": [
     {
@@ -43,22 +42,6 @@
       "lane": "Cap",
       "w": 260,
       "h": 80
-    },
-    {
-      "id": "padF",
-      "type": "spacer",
-      "lane": "Fail",
-      "w": 150,
-      "h": 10
-    },
-    {
-      "id": "fail",
-      "type": "risk-gap",
-      "label": "Imperative inputs",
-      "sublabel": "fails the factor",
-      "lane": "Fail",
-      "w": 200,
-      "h": 56
     }
   ],
   "edges": [

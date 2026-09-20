@@ -124,5 +124,6 @@ narrow rather than wide: prefer `TB` (portrait) layouts, canvas width ≤ 550
 units, labels 14 px, sublabels/edge labels 12 px. Run
 `python3 scripts/render.py X.drawio --pdf-check` to see the effective point
 size. No titles inside the image (the document caption carries it), sublabels
-≤ 4 words, one red "fails the factor" callout per factor diagram, and run
+≤ 4 words, no red "fails the factor" callouts (the document states the cost
+of failing; the figure shows the key point), and run
 `scripts/restyle-diagram.py` after generating.

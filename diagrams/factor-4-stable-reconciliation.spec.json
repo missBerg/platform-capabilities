@@ -15,7 +15,7 @@
       "label": "Same state, applied again",
       "sublabel": "retry, rollout, recovery, drift",
       "lane": "Input",
-      "w": 240,
+      "w": 280,
       "h": 80
     },
     {
@@ -25,17 +25,8 @@
       "sublabel": "converges, never duplicates",
       "icon": "cog",
       "lane": "Cap",
-      "w": 240,
+      "w": 280,
       "h": 80
-    },
-    {
-      "id": "fail",
-      "type": "risk-gap",
-      "label": "Unsafe to reapply",
-      "sublabel": "fails the factor",
-      "lane": "Cap",
-      "w": 180,
-      "h": 56
     },
     {
       "id": "result",
@@ -43,7 +34,7 @@
       "label": "Same intended result",
       "sublabel": "no side effects",
       "lane": "Result",
-      "w": 240,
+      "w": 280,
       "h": 80
     }
   ],

@@ -214,14 +214,16 @@ def make_edge_cell(eid: str, stamp: Stamp, src: str, tgt: str,
                    label_off: float | None = None,
                    exit_side: str | None = None,
                    entry_side: str | None = None,
-                   label_off_x: float | None = None) -> ET.Element:
+                   label_off_x: float | None = None,
+                   route: str | None = None) -> ET.Element:
     cell = copy.deepcopy(stamp.cells[0])
     cell.set("id", eid)
     cell.set("parent", "1")
     cell.set("edge", "1")
     cell.set("source", src)
     cell.set("target", tgt)
-    style = "edgeStyle=orthogonalEdgeStyle;" + (cell.get("style") or "")
+    prefix = "" if route == "straight" else "edgeStyle=orthogonalEdgeStyle;"
+    style = prefix + (cell.get("style") or "")
     style += "curved=1;"
     if sketch:
         style += "sketch=1;curveFitting=1;jiggle=2;"
@@ -318,6 +320,8 @@ def validate_spec(spec: dict, stamps: dict, icons: dict) -> None:
         etype = e.get("type", "provides")
         if etype not in stamps:
             raise ValueError(f"unknown edge type: {etype!r}")
+        if e.get("route") not in (None, "straight"):
+            raise ValueError(f"edge route must be 'straight' or omitted, got {e.get('route')!r}")
         for side in ("exit", "entry"):
             v = e.get(side)
             if v is not None and v not in ("left", "right", "top", "bottom"):
@@ -456,7 +460,7 @@ def generate(spec: dict) -> str:
                                     e["source"], e["target"], e.get("label"), sketch,
                                     e.get("labelPosition"), e.get("labelOffset"),
                                     e.get("exit"), e.get("entry"),
-                                    e.get("labelOffsetX")))
+                                    e.get("labelOffsetX"), e.get("route")))
 
     # page size to fit content
     maxx = max((float(c.find("mxGeometry").get("x", "0")) + float(c.find("mxGeometry").get("width", "0"))

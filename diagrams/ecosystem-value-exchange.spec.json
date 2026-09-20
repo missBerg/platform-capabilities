@@ -1,0 +1,134 @@
+{
+  "flavour": "clean",
+  "direction": "TB",
+  "laneGap": 30,
+  "rowGap": 110,
+  "lanes": [
+    "Top",
+    "Middle",
+    "Bottom"
+  ],
+  "nodes": [
+    {
+      "id": "padT",
+      "type": "spacer",
+      "lane": "Top",
+      "w": 125,
+      "h": 10
+    },
+    {
+      "id": "operators",
+      "type": "platform",
+      "label": "Platform operators",
+      "icon": "cog",
+      "lane": "Top",
+      "w": 220,
+      "h": 70
+    },
+    {
+      "id": "contract",
+      "type": "policy",
+      "label": "Participation contract",
+      "icon": "key",
+      "lane": "Middle",
+      "w": 200,
+      "h": 80
+    },
+    {
+      "id": "padM",
+      "type": "spacer",
+      "lane": "Middle",
+      "w": 70,
+      "h": 10
+    },
+    {
+      "id": "catalog",
+      "type": "service",
+      "label": "Self-service catalog",
+      "icon": "dashboard",
+      "lane": "Middle",
+      "w": 200,
+      "h": 80
+    },
+    {
+      "id": "producers",
+      "type": "rectangle-yellow-light",
+      "label": "Capability producers",
+      "icon": "team",
+      "iconColor": "yellow",
+      "lane": "Bottom",
+      "w": 170,
+      "h": 70
+    },
+    {
+      "id": "api",
+      "type": "rectangle-blue-light",
+      "label": "Capability API",
+      "icon": "code",
+      "lane": "Bottom",
+      "w": 130,
+      "h": 70
+    },
+    {
+      "id": "consumers",
+      "type": "rectangle-blue-light",
+      "label": "Capability consumers",
+      "icon": "human",
+      "lane": "Bottom",
+      "w": 170,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "source": "operators",
+      "target": "contract",
+      "type": "exchanges",
+      "label": "guardrails",
+      "route": "straight",
+      "labelOffset": -16,
+      "labelOffsetX": -40
+    },
+    {
+      "source": "operators",
+      "target": "catalog",
+      "type": "exchanges",
+      "label": "governance",
+      "route": "straight",
+      "labelOffset": -16,
+      "labelOffsetX": 44
+    },
+    {
+      "source": "producers",
+      "target": "contract",
+      "type": "exchanges",
+      "label": "conformant capabilities",
+      "route": "straight",
+      "labelOffset": 4,
+      "labelOffsetX": -66
+    },
+    {
+      "source": "consumers",
+      "target": "catalog",
+      "type": "exchanges",
+      "label": "discovery, trust",
+      "route": "straight",
+      "labelOffset": 4,
+      "labelOffsetX": 60
+    },
+    {
+      "source": "producers",
+      "target": "api",
+      "type": "exchanges",
+      "label": "outcomes",
+      "labelOffset": -52
+    },
+    {
+      "source": "consumers",
+      "target": "api",
+      "type": "exchanges",
+      "label": "intent",
+      "labelOffset": -52
+    }
+  ]
+}

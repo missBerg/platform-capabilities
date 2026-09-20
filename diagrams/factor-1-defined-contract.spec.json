@@ -7,8 +7,7 @@
     "Interfaces",
     "GapI",
     "API",
-    "Capability",
-    "Fail"
+    "Capability"
   ],
   "nodes": [
     {
@@ -91,22 +90,6 @@
       "lane": "Capability",
       "w": 220,
       "h": 80
-    },
-    {
-      "id": "padF",
-      "type": "spacer",
-      "lane": "Fail",
-      "w": 108,
-      "h": 10
-    },
-    {
-      "id": "fail",
-      "type": "risk-gap",
-      "label": "Extra entry points",
-      "sublabel": "fails the factor",
-      "lane": "Fail",
-      "w": 200,
-      "h": 56
     }
   ],
   "edges": [

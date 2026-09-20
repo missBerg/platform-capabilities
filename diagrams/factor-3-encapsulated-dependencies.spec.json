@@ -51,15 +51,6 @@
       "lane": "Bottom",
       "w": 180,
       "h": 66
-    },
-    {
-      "id": "fail",
-      "type": "risk-gap",
-      "label": "Manual assembly",
-      "sublabel": "fails the factor",
-      "lane": "Bottom",
-      "w": 165,
-      "h": 60
     }
   ],
   "edges": [

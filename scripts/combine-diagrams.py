@@ -33,6 +33,7 @@ PREFERRED = [
     "ecosystem-architecture-lineage",
     "capability-definition",
     "ecosystem-roles",
+    "ecosystem-value-exchange",
     "participation-contract",
     "factors-overview",
     "factor-1-defined-contract",
