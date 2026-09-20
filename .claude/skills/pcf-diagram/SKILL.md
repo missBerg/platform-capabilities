@@ -26,6 +26,7 @@ Validate the libraries any time with `python3 scripts/build-diagram.py --self-ch
 
 ```jsonc
 {
+  "name": "Fig 1 – Bottleneck",   // optional; draw.io tab name (defaults to the file stem)
   "title": "My Diagram",          // optional; drawn top-left
   "flavour": "clean",             // "clean" (Helvetica) | "sketch" (hand-drawn)
   "direction": "LR",              // "LR" lanes=columns | "TB" lanes=rows

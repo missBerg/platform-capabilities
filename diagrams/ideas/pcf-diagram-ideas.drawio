@@ -1,5 +1,5 @@
 <mxfile host="app.diagrams.net">
-  <diagram id="01-volume-vs-variety" name="PCF Diagram">
+  <diagram id="01-volume-vs-variety" name="Idea 01 – Volume vs variety">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -17,7 +17,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="02-three-condition-check" name="PCF Diagram">
+  <diagram id="02-three-condition-check" name="Idea 02 – Three condition check">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -35,7 +35,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="03-builder-to-guarantor" name="PCF Diagram">
+  <diagram id="03-builder-to-guarantor" name="Idea 03 – Builder to guarantor">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -56,7 +56,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="04-contract-vs-api" name="PCF Diagram">
+  <diagram id="04-contract-vs-api" name="Idea 04 – Contract vs API">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -74,7 +74,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="05-marketplace-beside-the-flow" name="PCF Diagram">
+  <diagram id="05-marketplace-beside-the-flow" name="Idea 05 – Marketplace beside the flow">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -102,7 +102,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="06-factor-admission-test" name="PCF Diagram">
+  <diagram id="06-factor-admission-test" name="Idea 06 – Factor admission test">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -120,7 +120,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="07-opinionation-spectrum" name="PCF Diagram">
+  <diagram id="07-opinionation-spectrum" name="Idea 07 – Opinionation spectrum">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -136,7 +136,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="08-capability-anatomy" name="PCF Diagram">
+  <diagram id="08-capability-anatomy" name="Idea 08 – Capability anatomy">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -157,7 +157,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="09-factors-four-plus-foundation" name="PCF Diagram">
+  <diagram id="09-factors-four-plus-foundation" name="Idea 09 – Factors four plus foundation">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -175,7 +175,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="10-declarative-vs-reconciliation-2x2" name="PCF Diagram">
+  <diagram id="10-declarative-vs-reconciliation-2x2" name="Idea 10 – Declarative vs reconciliation 2x2">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -195,7 +195,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="11-dependency-vs-prerequisite" name="PCF Diagram">
+  <diagram id="11-dependency-vs-prerequisite" name="Idea 11 – Dependency vs prerequisite">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -216,7 +216,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="12-cost-displacement" name="PCF Diagram">
+  <diagram id="12-cost-displacement" name="Idea 12 – Cost displacement">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -231,7 +231,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="13-control-vs-data-path" name="PCF Diagram">
+  <diagram id="13-control-vs-data-path" name="Idea 13 – Control vs data path">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -247,7 +247,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="14-declarative-vs-imperative" name="PCF Diagram">
+  <diagram id="14-declarative-vs-imperative" name="Idea 14 – Declarative vs imperative">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -270,7 +270,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="15-one-instance-vs-fleet" name="PCF Diagram">
+  <diagram id="15-one-instance-vs-fleet" name="Idea 15 – One instance vs fleet">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -288,7 +288,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="16-actors-and-their-questions" name="PCF Diagram">
+  <diagram id="16-actors-and-their-questions" name="Idea 16 – Actors and their questions">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />

@@ -1,5 +1,5 @@
 <mxfile host="app.diagrams.net">
-  <diagram id="challenge-central-bottleneck" name="PCF Diagram">
+  <diagram id="challenge-central-bottleneck" name="Fig 1 – Centralized bottleneck">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -21,7 +21,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="centralized-friction-loop" name="PCF Diagram">
+  <diagram id="centralized-friction-loop" name="Fig 2 – Friction loop">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -45,7 +45,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="ecosystem-architecture-lineage" name="PCF Diagram">
+  <diagram id="ecosystem-architecture-lineage" name="Fig 3 – Ecosystem model lineage">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -60,7 +60,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="capability-definition" name="PCF Diagram">
+  <diagram id="capability-definition" name="Fig 4 – Capability definition">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -79,7 +79,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="ecosystem-roles" name="PCF Diagram">
+  <diagram id="ecosystem-roles" name="Fig 5 – Three roles">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -108,7 +108,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="ecosystem-value-exchange" name="PCF Diagram">
+  <diagram id="ecosystem-value-exchange" name="Fig 6 – Exchange of value">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -134,7 +134,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="participation-contract" name="PCF Diagram">
+  <diagram id="participation-contract" name="Fig 7 – Participation contract">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -160,7 +160,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="factors-overview" name="PCF Diagram">
+  <diagram id="factors-overview" name="Fig 8 – Five factors">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -178,7 +178,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="factor-1-defined-contract" name="PCF Diagram">
+  <diagram id="factor-1-defined-contract" name="Fig 9 – Defined Contract">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -204,7 +204,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="factor-2-declarative-inputs" name="PCF Diagram">
+  <diagram id="factor-2-declarative-inputs" name="Fig 10 – Declarative Inputs">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -219,7 +219,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="factor-3-encapsulated-dependencies" name="PCF Diagram">
+  <diagram id="factor-3-encapsulated-dependencies" name="Fig 11 – Encapsulated Dependencies">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -238,7 +238,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="factor-4-stable-reconciliation" name="PCF Diagram">
+  <diagram id="factor-4-stable-reconciliation" name="Fig 12 – Stable Reconciliation">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -253,7 +253,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="factor-5-operational-evidence" name="PCF Diagram">
+  <diagram id="factor-5-operational-evidence" name="Fig 13 – Operational Evidence">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />

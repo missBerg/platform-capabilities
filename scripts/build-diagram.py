@@ -471,7 +471,7 @@ def generate(spec: dict) -> str:
     page_h = max(DEFAULT_PAGE_H, int((maxy + MARGIN) // GRID + 1) * GRID)
 
     body = "\n".join("        " + ET.tostring(c, encoding="unicode") for c in cells)
-    name = spec.get("title", "PCF Diagram")
+    name = spec.get("name") or spec.get("title") or "PCF Diagram"   # draw.io tab name
     return (
         '<mxfile host="app.diagrams.net">\n'
         f'  <diagram name="{html.escape(name)}" id="pcf-generated">\n'
@@ -518,12 +518,13 @@ def main() -> int:
         return self_check()
     spec_path = Path(args[0])
     spec = json.loads(spec_path.read_text(encoding="utf-8"))
-    xml = generate(spec)
     stem = spec_path.name
     for suffix in (".spec.json", ".json"):
         if stem.endswith(suffix):
             stem = stem[: -len(suffix)]
             break
+    spec.setdefault("name", stem)                     # default tab name
+    xml = generate(spec)
     out = spec_path.with_name(stem + ".drawio")
     out.write_text(xml, encoding="utf-8")
     print(f"wrote {out.relative_to(REPO) if out.is_relative_to(REPO) else out}")
