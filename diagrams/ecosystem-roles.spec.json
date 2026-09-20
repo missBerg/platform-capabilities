@@ -1,120 +1,102 @@
 {
   "flavour": "clean",
-  "direction": "LR",
-  "laneGap": 60,
-  "rowGap": 36,
+  "direction": "TB",
+  "laneGap": 30,
+  "rowGap": 30,
   "lanes": [
     "Producers",
-    "Layer",
+    "GapA",
+    "Platform",
+    "GapB",
     "Consumers"
   ],
   "nodes": [
     {
-      "id": "padP",
-      "type": "spacer",
-      "lane": "Producers",
-      "w": 10,
-      "h": 190
-    },
-    {
       "id": "secprod",
-      "type": "capability-owner",
+      "type": "rectangle-yellow-light",
       "label": "Security team",
+      "icon": "team",
+      "iconColor": "yellow",
       "lane": "Producers",
-      "section": "Producers"
-    },
-    {
-      "id": "g1",
-      "type": "spacer",
-      "lane": "Producers",
-      "w": 10,
-      "h": 40
+      "section": "Producers",
+      "w": 150,
+      "h": 56
     },
     {
       "id": "dataprod",
-      "type": "capability-owner",
+      "type": "rectangle-yellow-light",
       "label": "Data team",
+      "icon": "team",
+      "iconColor": "yellow",
       "lane": "Producers",
-      "section": "Producers"
+      "section": "Producers",
+      "w": 150,
+      "h": 56
     },
     {
-      "id": "operators",
-      "type": "capability-owner",
-      "label": "Platform operators",
-      "sublabel": "platform team",
-      "lane": "Layer",
-      "section": "Core platform"
-    },
-    {
-      "id": "g3",
+      "id": "gapA",
       "type": "spacer",
-      "lane": "Layer",
+      "lane": "GapA",
       "w": 10,
-      "h": 40
+      "h": 34
     },
     {
       "id": "capsec",
       "type": "capability",
       "label": "Secrets management",
-      "lane": "Layer",
       "icon": "lock",
+      "lane": "Platform",
       "section": "Core platform",
-      "w": 200,
-      "h": 80
+      "w": 150,
+      "h": 64
     },
     {
       "id": "capdata",
       "type": "capability",
       "label": "Stream processing",
-      "lane": "Layer",
       "icon": "pipeline",
+      "lane": "Platform",
       "section": "Core platform",
-      "w": 200,
-      "h": 80
+      "w": 150,
+      "h": 64
     },
     {
-      "id": "padC",
+      "id": "operators",
+      "type": "platform",
+      "label": "Platform operators",
+      "sublabel": "platform team",
+      "icon": "cog",
+      "lane": "Platform",
+      "section": "Core platform",
+      "w": 150,
+      "h": 64
+    },
+    {
+      "id": "gapB",
       "type": "spacer",
-      "lane": "Consumers",
+      "lane": "GapB",
       "w": 10,
-      "h": 190
+      "h": 34
     },
     {
       "id": "appteam",
-      "type": "capability-consumer",
+      "type": "rectangle-blue-light",
       "label": "App team",
+      "icon": "human",
       "lane": "Consumers",
-      "section": "Consumers"
-    },
-    {
-      "id": "g2",
-      "type": "spacer",
-      "lane": "Consumers",
-      "w": 10,
-      "h": 40
+      "section": "Consumers",
+      "w": 150,
+      "h": 56
     },
     {
       "id": "mlteam",
-      "type": "capability-consumer",
+      "type": "rectangle-blue-light",
       "label": "ML team",
+      "icon": "human",
       "lane": "Consumers",
-      "section": "Consumers"
-    },
-    {
-      "id": "spP",
-      "type": "spacer",
-      "lane": "Producers",
-      "w": 10,
-      "h": 24,
-      "section": "Producers"
-    },
-    {
-      "id": "spC",
-      "type": "spacer",
-      "lane": "Consumers",
-      "w": 10,
-      "h": 24,
-      "section": "Consumers"
+      "section": "Consumers",
+      "w": 150,
+      "h": 56
     }
   ],
   "edges": [
@@ -122,35 +104,29 @@
       "source": "secprod",
       "target": "capsec",
       "type": "provides",
-      "label": "contribute & maintain",
-      "labelOffset": -16,
-      "exit": "right",
-      "entry": "left",
-      "labelPosition": 0.4
+      "exit": "bottom",
+      "entry": "top"
     },
     {
       "source": "dataprod",
       "target": "capdata",
       "type": "provides",
-      "exit": "right",
-      "entry": "left"
+      "exit": "bottom",
+      "entry": "top"
     },
     {
       "source": "capsec",
       "target": "appteam",
       "type": "provides",
-      "label": "request & use",
-      "labelOffset": -16,
-      "exit": "right",
-      "entry": "left",
-      "labelPosition": 0.4
+      "exit": "bottom",
+      "entry": "top"
     },
     {
       "source": "capdata",
       "target": "mlteam",
       "type": "provides",
-      "exit": "right",
-      "entry": "left"
+      "exit": "bottom",
+      "entry": "top"
     }
   ]
 }
