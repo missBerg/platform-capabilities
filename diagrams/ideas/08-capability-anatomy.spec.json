@@ -1,0 +1,103 @@
+{
+  "flavour": "clean",
+  "direction": "TB",
+  "laneGap": 80,
+  "rowGap": 60,
+  "lanes": [
+    "R1",
+    "R2",
+    "R3"
+  ],
+  "nodes": [
+    {
+      "id": "outcome",
+      "type": "outcome",
+      "label": "A user outcome",
+      "lane": "R1",
+      "w": 200,
+      "h": 70
+    },
+    {
+      "id": "api",
+      "type": "sub-capability",
+      "label": "Defined API",
+      "icon": "key",
+      "lane": "R1",
+      "w": 200,
+      "h": 70
+    },
+    {
+      "id": "padC",
+      "type": "spacer",
+      "lane": "R2",
+      "w": 50,
+      "h": 10
+    },
+    {
+      "id": "cap",
+      "type": "capability",
+      "label": "A capability",
+      "sublabel": "self-contained service",
+      "icon": "cog",
+      "lane": "R2",
+      "w": 240,
+      "h": 80
+    },
+    {
+      "id": "lifecycle",
+      "type": "sub-capability",
+      "label": "Managed lifecycle",
+      "icon": "clock",
+      "lane": "R3",
+      "w": 200,
+      "h": 70
+    },
+    {
+      "id": "contract",
+      "type": "policy",
+      "label": "Participation contract",
+      "icon": "shield",
+      "lane": "R3",
+      "w": 200,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "source": "cap",
+      "target": "outcome",
+      "type": "provides",
+      "label": "delivers",
+      "route": "straight",
+      "labelOffset": -14
+    },
+    {
+      "source": "cap",
+      "target": "api",
+      "type": "provides",
+      "label": "exposes",
+      "route": "straight",
+      "labelOffset": -14
+    },
+    {
+      "source": "cap",
+      "target": "lifecycle",
+      "type": "provides",
+      "label": "manages",
+      "route": "straight",
+      "labelOffset": 0,
+      "labelPosition": -0.3,
+      "labelOffsetX": -46
+    },
+    {
+      "source": "cap",
+      "target": "contract",
+      "type": "provides",
+      "label": "operates within",
+      "route": "straight",
+      "labelOffset": 0,
+      "labelPosition": -0.3,
+      "labelOffsetX": 66
+    }
+  ]
+}

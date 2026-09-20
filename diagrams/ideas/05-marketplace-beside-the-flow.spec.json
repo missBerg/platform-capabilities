@@ -1,0 +1,136 @@
+{
+  "flavour": "clean",
+  "direction": "TB",
+  "laneGap": 30,
+  "rowGap": 50,
+  "lanes": [
+    "Teams",
+    "Gap",
+    "Catalog",
+    "Consumers"
+  ],
+  "nodes": [
+    {
+      "id": "secteam",
+      "type": "rectangle-yellow-light",
+      "label": "Security team",
+      "icon": "team",
+      "iconColor": "yellow",
+      "lane": "Teams",
+      "w": 165,
+      "h": 60
+    },
+    {
+      "id": "datateam",
+      "type": "rectangle-yellow-light",
+      "label": "Data team",
+      "icon": "team",
+      "iconColor": "yellow",
+      "lane": "Teams",
+      "w": 165,
+      "h": 60
+    },
+    {
+      "id": "operators",
+      "type": "platform",
+      "label": "Platform operators",
+      "sublabel": "beside the flow",
+      "icon": "cog",
+      "lane": "Teams",
+      "w": 165,
+      "h": 60
+    },
+    {
+      "id": "gap",
+      "type": "spacer",
+      "lane": "Gap",
+      "w": 10,
+      "h": 20
+    },
+    {
+      "id": "capsec",
+      "type": "capability",
+      "label": "Secrets management",
+      "icon": "lock",
+      "lane": "Catalog",
+      "section": "Self-service catalog",
+      "w": 165,
+      "h": 60
+    },
+    {
+      "id": "capdata",
+      "type": "capability",
+      "label": "Stream processing",
+      "icon": "pipeline",
+      "lane": "Catalog",
+      "section": "Self-service catalog",
+      "w": 165,
+      "h": 60
+    },
+    {
+      "id": "padK",
+      "type": "spacer",
+      "lane": "Catalog",
+      "w": 165,
+      "h": 10
+    },
+    {
+      "id": "appteam",
+      "type": "rectangle-blue-light",
+      "label": "App team",
+      "icon": "human",
+      "lane": "Consumers",
+      "w": 165,
+      "h": 60
+    },
+    {
+      "id": "mlteam",
+      "type": "rectangle-blue-light",
+      "label": "ML team",
+      "icon": "human",
+      "lane": "Consumers",
+      "w": 165,
+      "h": 60
+    }
+  ],
+  "edges": [
+    {
+      "source": "secteam",
+      "target": "capsec",
+      "type": "provides",
+      "exit": "bottom",
+      "entry": "top"
+    },
+    {
+      "source": "datateam",
+      "target": "capdata",
+      "type": "provides",
+      "exit": "bottom",
+      "entry": "top"
+    },
+    {
+      "source": "operators",
+      "target": "capdata",
+      "type": "depends",
+      "label": "guardrails",
+      "exit": "bottom",
+      "entry": "right",
+      "labelPosition": -0.5,
+      "labelOffsetX": 44
+    },
+    {
+      "source": "capsec",
+      "target": "appteam",
+      "type": "provides",
+      "exit": "bottom",
+      "entry": "top"
+    },
+    {
+      "source": "capdata",
+      "target": "mlteam",
+      "type": "provides",
+      "exit": "bottom",
+      "entry": "top"
+    }
+  ]
+}

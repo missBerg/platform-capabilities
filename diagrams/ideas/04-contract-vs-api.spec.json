@@ -1,0 +1,83 @@
+{
+  "flavour": "clean",
+  "direction": "TB",
+  "laneGap": 50,
+  "rowGap": 70,
+  "lanes": [
+    "Platform",
+    "Build",
+    "Use"
+  ],
+  "nodes": [
+    {
+      "id": "platform",
+      "type": "platform",
+      "label": "Platform",
+      "icon": "cog",
+      "lane": "Platform",
+      "w": 200,
+      "h": 70
+    },
+    {
+      "id": "producers",
+      "type": "rectangle-yellow-light",
+      "label": "Capability producers",
+      "icon": "team",
+      "iconColor": "yellow",
+      "lane": "Build",
+      "w": 200,
+      "h": 70
+    },
+    {
+      "id": "cap",
+      "type": "capability",
+      "label": "Capability",
+      "lane": "Build",
+      "w": 200,
+      "h": 70
+    },
+    {
+      "id": "padU",
+      "type": "spacer",
+      "lane": "Use",
+      "w": 200,
+      "h": 10
+    },
+    {
+      "id": "consumers",
+      "type": "rectangle-blue-light",
+      "label": "Capability consumers",
+      "icon": "human",
+      "lane": "Use",
+      "w": 200,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "source": "platform",
+      "target": "producers",
+      "type": "exchanges",
+      "label": "Participation contract",
+      "exit": "bottom",
+      "entry": "top",
+      "labelOffsetX": 100
+    },
+    {
+      "source": "producers",
+      "target": "cap",
+      "type": "provides",
+      "label": "build & operate",
+      "labelOffset": -16
+    },
+    {
+      "source": "cap",
+      "target": "consumers",
+      "type": "exchanges",
+      "label": "Capability API",
+      "exit": "bottom",
+      "entry": "top",
+      "labelOffsetX": 78
+    }
+  ]
+}

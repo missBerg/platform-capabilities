@@ -14,3 +14,5 @@ venv/
 # Rendered diagram previews (build artifacts from scripts/render.py)
 diagrams/*.png
 diagrams/*.svg
+diagrams/ideas/*.png
+diagrams/ideas/*.svg

@@ -1,0 +1,94 @@
+{
+  "flavour": "clean",
+  "direction": "TB",
+  "laneGap": 20,
+  "rowGap": 80,
+  "lanes": [
+    "State",
+    "Fleet"
+  ],
+  "nodes": [
+    {
+      "id": "padS",
+      "type": "spacer",
+      "lane": "State",
+      "w": 150,
+      "h": 10
+    },
+    {
+      "id": "state",
+      "type": "reference",
+      "label": "Same declared state",
+      "sublabel": "security fix, update, rollback",
+      "lane": "State",
+      "w": 240,
+      "h": 70
+    },
+    {
+      "id": "i1",
+      "type": "data-store",
+      "label": "Instance 1",
+      "lane": "Fleet",
+      "section": "The fleet",
+      "w": 120,
+      "h": 64
+    },
+    {
+      "id": "i2",
+      "type": "data-store",
+      "label": "Instance 2",
+      "lane": "Fleet",
+      "section": "The fleet",
+      "w": 120,
+      "h": 64
+    },
+    {
+      "id": "i3",
+      "type": "data-store",
+      "label": "Instance 3",
+      "lane": "Fleet",
+      "section": "The fleet",
+      "w": 120,
+      "h": 64
+    },
+    {
+      "id": "i4",
+      "type": "data-store",
+      "label": "Instance 4",
+      "lane": "Fleet",
+      "section": "The fleet",
+      "w": 120,
+      "h": 64
+    }
+  ],
+  "edges": [
+    {
+      "source": "state",
+      "target": "i1",
+      "type": "reconciles",
+      "exit": "bottom",
+      "entry": "top"
+    },
+    {
+      "source": "state",
+      "target": "i2",
+      "type": "reconciles",
+      "exit": "bottom",
+      "entry": "top"
+    },
+    {
+      "source": "state",
+      "target": "i3",
+      "type": "reconciles",
+      "exit": "bottom",
+      "entry": "top"
+    },
+    {
+      "source": "state",
+      "target": "i4",
+      "type": "reconciles",
+      "exit": "bottom",
+      "entry": "top"
+    }
+  ]
+}

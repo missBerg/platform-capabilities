@@ -1,0 +1,100 @@
+{
+  "flavour": "clean",
+  "direction": "TB",
+  "laneGap": 70,
+  "rowGap": 50,
+  "lanes": [
+    "Actors",
+    "Resources",
+    "Lifecycle"
+  ],
+  "nodes": [
+    {
+      "id": "consumer",
+      "type": "rectangle-blue-light",
+      "label": "Consumer",
+      "icon": "human",
+      "lane": "Actors",
+      "section": "Consumer owns",
+      "w": 200,
+      "h": 60
+    },
+    {
+      "id": "cap",
+      "type": "capability",
+      "label": "Capability",
+      "icon": "cog",
+      "lane": "Actors",
+      "section": "Capability owns",
+      "w": 200,
+      "h": 60
+    },
+    {
+      "id": "prereq",
+      "type": "external-system",
+      "label": "Prerequisite",
+      "sublabel": "e.g. existing network, identity",
+      "lane": "Resources",
+      "section": "Consumer owns",
+      "w": 200,
+      "h": 66
+    },
+    {
+      "id": "dep",
+      "type": "sub-capability",
+      "label": "Dependency",
+      "sublabel": "e.g. storage, backups",
+      "lane": "Resources",
+      "section": "Capability owns",
+      "w": 200,
+      "h": 66
+    },
+    {
+      "id": "l1",
+      "type": "tag-blue",
+      "label": "consumer holds its lifecycle",
+      "lane": "Lifecycle",
+      "section": "Consumer owns",
+      "w": 200,
+      "h": 30
+    },
+    {
+      "id": "l2",
+      "type": "tag-blue",
+      "label": "capability holds its lifecycle",
+      "lane": "Lifecycle",
+      "section": "Capability owns",
+      "w": 200,
+      "h": 30
+    }
+  ],
+  "edges": [
+    {
+      "source": "consumer",
+      "target": "prereq",
+      "type": "provides",
+      "label": "creates",
+      "exit": "bottom",
+      "entry": "top",
+      "labelOffsetX": -40
+    },
+    {
+      "source": "cap",
+      "target": "dep",
+      "type": "provides",
+      "label": "creates",
+      "exit": "bottom",
+      "entry": "top",
+      "labelOffsetX": 40
+    },
+    {
+      "source": "cap",
+      "target": "prereq",
+      "type": "depends",
+      "label": "requires",
+      "route": "straight",
+      "labelOffset": -18,
+      "labelPosition": -0.25
+    }
+  ]
+}

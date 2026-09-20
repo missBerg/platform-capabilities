@@ -1,0 +1,69 @@
+{
+  "flavour": "clean",
+  "direction": "TB",
+  "laneGap": 60,
+  "rowGap": 80,
+  "lanes": [
+    "Source",
+    "Where"
+  ],
+  "nodes": [
+    {
+      "id": "padS",
+      "type": "spacer",
+      "lane": "Source",
+      "w": 70,
+      "h": 10
+    },
+    {
+      "id": "complexity",
+      "type": "reference",
+      "label": "Operational complexity",
+      "sublabel": "does not vanish, it relocates",
+      "lane": "Source",
+      "w": 240,
+      "h": 70
+    },
+    {
+      "id": "inside",
+      "type": "capability",
+      "label": "Inside the capability",
+      "sublabel": "producer absorbs it",
+      "icon": "shield",
+      "lane": "Where",
+      "w": 220,
+      "h": 70
+    },
+    {
+      "id": "outside",
+      "type": "risk-gap",
+      "label": "On consumers and the platform",
+      "sublabel": "avoidable cost",
+      "lane": "Where",
+      "w": 220,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "source": "complexity",
+      "target": "inside",
+      "type": "provides",
+      "label": "factors met",
+      "exit": "bottom",
+      "entry": "top",
+      "labelPosition": -0.4,
+      "labelOffsetX": -46
+    },
+    {
+      "source": "complexity",
+      "target": "outside",
+      "type": "depends",
+      "label": "factors missed",
+      "exit": "bottom",
+      "entry": "top",
+      "labelPosition": -0.4,
+      "labelOffsetX": 54
+    }
+  ]
+}

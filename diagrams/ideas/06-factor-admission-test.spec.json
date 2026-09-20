@@ -1,0 +1,123 @@
+{
+  "flavour": "clean",
+  "direction": "TB",
+  "laneGap": 50,
+  "rowGap": 60,
+  "lanes": [
+    "In",
+    "Gate1",
+    "Gate2",
+    "Out"
+  ],
+  "nodes": [
+    {
+      "id": "padI",
+      "type": "spacer",
+      "lane": "In",
+      "w": 180,
+      "h": 10
+    },
+    {
+      "id": "candidate",
+      "type": "reference",
+      "label": "Candidate property",
+      "lane": "In",
+      "w": 240,
+      "h": 60
+    },
+    {
+      "id": "padG",
+      "type": "spacer",
+      "lane": "Gate1",
+      "w": 180,
+      "h": 10
+    },
+    {
+      "id": "gate1",
+      "type": "decision",
+      "label": "Absence pushes avoidable cost onto others?",
+      "lane": "Gate1",
+      "w": 240,
+      "h": 100
+    },
+    {
+      "id": "notfactor",
+      "type": "rectangle-grey-light",
+      "label": "Not a factor",
+      "sublabel": "nothing goes wrong without it",
+      "lane": "Gate2",
+      "w": 180,
+      "h": 64
+    },
+    {
+      "id": "gate2",
+      "type": "decision",
+      "label": "Already implied by another factor?",
+      "lane": "Gate2",
+      "w": 240,
+      "h": 100
+    },
+    {
+      "id": "padO",
+      "type": "spacer",
+      "lane": "Out",
+      "w": 180,
+      "h": 10
+    },
+    {
+      "id": "factor",
+      "type": "outcome",
+      "label": "A factor",
+      "sublabel": "named by the cost of its absence",
+      "lane": "Out",
+      "w": 240,
+      "h": 80
+    }
+  ],
+  "edges": [
+    {
+      "source": "candidate",
+      "target": "gate1",
+      "type": "provides",
+      "exit": "bottom",
+      "entry": "top"
+    },
+    {
+      "source": "gate1",
+      "target": "gate2",
+      "type": "provides",
+      "label": "yes",
+      "exit": "bottom",
+      "entry": "top",
+      "labelOffsetX": 24
+    },
+    {
+      "source": "gate1",
+      "target": "notfactor",
+      "type": "depends",
+      "label": "no",
+      "exit": "left",
+      "entry": "top",
+      "labelPosition": -0.3,
+      "labelOffset": -14
+    },
+    {
+      "source": "gate2",
+      "target": "notfactor",
+      "type": "depends",
+      "label": "yes",
+      "exit": "left",
+      "entry": "right",
+      "labelOffset": -14
+    },
+    {
+      "source": "gate2",
+      "target": "factor",
+      "type": "provides",
+      "label": "no",
+      "exit": "bottom",
+      "entry": "top",
+      "labelOffsetX": 22
+    }
+  ]
+}

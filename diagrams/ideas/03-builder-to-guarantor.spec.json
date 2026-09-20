@@ -1,0 +1,94 @@
+{
+  "flavour": "clean",
+  "direction": "LR",
+  "laneGap": 80,
+  "rowGap": 50,
+  "lanes": [
+    "Before",
+    "After"
+  ],
+  "nodes": [
+    {
+      "id": "plat1",
+      "type": "platform",
+      "label": "Platform team",
+      "sublabel": "builds",
+      "icon": "cog",
+      "lane": "Before",
+      "section": "Centralized",
+      "w": 220,
+      "h": 70
+    },
+    {
+      "id": "caps1",
+      "type": "capability",
+      "label": "Every capability",
+      "sublabel": "built and run centrally",
+      "lane": "Before",
+      "section": "Centralized",
+      "w": 220,
+      "h": 70
+    },
+    {
+      "id": "plat2",
+      "type": "platform",
+      "label": "Platform team",
+      "sublabel": "guarantees",
+      "icon": "shield",
+      "lane": "After",
+      "section": "Ecosystem",
+      "w": 220,
+      "h": 70
+    },
+    {
+      "id": "layer",
+      "type": "sub-capability",
+      "label": "Thinnest reasonable layer",
+      "sublabel": "consistency, compliance, governance",
+      "lane": "After",
+      "section": "Ecosystem",
+      "w": 220,
+      "h": 70
+    },
+    {
+      "id": "caps2",
+      "type": "capability",
+      "label": "Capabilities",
+      "sublabel": "built and run by domain experts",
+      "icon": "team",
+      "lane": "After",
+      "section": "Ecosystem",
+      "w": 220,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "source": "plat1",
+      "target": "caps1",
+      "type": "provides",
+      "label": "builds",
+      "exit": "bottom",
+      "entry": "top",
+      "labelOffsetX": 40
+    },
+    {
+      "source": "plat2",
+      "target": "layer",
+      "type": "provides",
+      "label": "runs",
+      "exit": "bottom",
+      "entry": "top",
+      "labelOffsetX": 34
+    },
+    {
+      "source": "layer",
+      "target": "caps2",
+      "type": "reconciles",
+      "label": "governs",
+      "exit": "bottom",
+      "entry": "top",
+      "labelOffsetX": 42
+    }
+  ]
+}

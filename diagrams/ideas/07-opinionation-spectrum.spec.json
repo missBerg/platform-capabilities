@@ -1,0 +1,82 @@
+{
+  "flavour": "clean",
+  "direction": "TB",
+  "laneGap": 20,
+  "rowGap": 50,
+  "lanes": [
+    "Ends",
+    "Markers",
+    "Rule"
+  ],
+  "nodes": [
+    {
+      "id": "flex",
+      "type": "rectangle-blue-dark",
+      "label": "Flexibility",
+      "sublabel": "more use-cases, more cognitive load",
+      "lane": "Ends",
+      "w": 200,
+      "h": 60
+    },
+    {
+      "id": "padE",
+      "type": "spacer",
+      "lane": "Ends",
+      "w": 100,
+      "h": 10
+    },
+    {
+      "id": "usab",
+      "type": "rectangle-blue-dark",
+      "label": "Usability",
+      "sublabel": "fewer use-cases, less cognitive load",
+      "lane": "Ends",
+      "w": 200,
+      "h": 60
+    },
+    {
+      "id": "console",
+      "type": "external-system",
+      "label": "Raw cloud console",
+      "sublabel": "un-opinionated",
+      "icon": "cloud",
+      "lane": "Markers",
+      "w": 200,
+      "h": 64
+    },
+    {
+      "id": "padM",
+      "type": "spacer",
+      "lane": "Markers",
+      "w": 100,
+      "h": 10
+    },
+    {
+      "id": "opinion",
+      "type": "platform",
+      "label": "Opinionated platform",
+      "sublabel": "a chosen position",
+      "icon": "shield",
+      "lane": "Markers",
+      "w": 200,
+      "h": 64
+    },
+    {
+      "id": "rule",
+      "type": "tag-blue",
+      "label": "choose the position first, then vendors are a compatibility question",
+      "lane": "Rule",
+      "w": 540,
+      "h": 30
+    }
+  ],
+  "edges": [
+    {
+      "source": "flex",
+      "target": "usab",
+      "type": "exchanges",
+      "label": "the trade-off",
+      "labelOffset": -28
+    }
+  ]
+}

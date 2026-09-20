@@ -1,0 +1,120 @@
+{
+  "flavour": "clean",
+  "direction": "TB",
+  "laneGap": 20,
+  "rowGap": 80,
+  "lanes": [
+    "Top",
+    "Mid",
+    "Bottom"
+  ],
+  "nodes": [
+    {
+      "id": "consumers",
+      "type": "rectangle-blue-light",
+      "label": "Consumers",
+      "sublabel": "Can I use it? What do I owe?",
+      "icon": "human",
+      "lane": "Top",
+      "w": 180,
+      "h": 66
+    },
+    {
+      "id": "padT",
+      "type": "spacer",
+      "lane": "Top",
+      "w": 160,
+      "h": 10
+    },
+    {
+      "id": "producers",
+      "type": "rectangle-yellow-light",
+      "label": "Producers",
+      "sublabel": "Is it healthy? Who uses it?",
+      "icon": "team",
+      "iconColor": "yellow",
+      "lane": "Top",
+      "w": 180,
+      "h": 66
+    },
+    {
+      "id": "padM",
+      "type": "spacer",
+      "lane": "Mid",
+      "w": 150,
+      "h": 10
+    },
+    {
+      "id": "cap",
+      "type": "platform",
+      "label": "Operational evidence",
+      "sublabel": "authoritative, self-served",
+      "icon": "dashboard",
+      "lane": "Mid",
+      "w": 240,
+      "h": 80
+    },
+    {
+      "id": "ops",
+      "type": "rectangle-blue-light",
+      "label": "Ops & leadership",
+      "sublabel": "Worth continued investment?",
+      "icon": "cog",
+      "lane": "Bottom",
+      "w": 180,
+      "h": 66
+    },
+    {
+      "id": "finance",
+      "type": "rectangle-blue-light",
+      "label": "Finance",
+      "sublabel": "What does it cost? Who owns it?",
+      "icon": "dashboard",
+      "lane": "Bottom",
+      "w": 180,
+      "h": 66
+    },
+    {
+      "id": "security",
+      "type": "rectangle-blue-light",
+      "label": "Security & compliance",
+      "sublabel": "In posture? Any exceptions?",
+      "icon": "shield",
+      "lane": "Bottom",
+      "w": 180,
+      "h": 66
+    }
+  ],
+  "edges": [
+    {
+      "source": "consumers",
+      "target": "cap",
+      "type": "exchanges",
+      "route": "straight"
+    },
+    {
+      "source": "producers",
+      "target": "cap",
+      "type": "exchanges",
+      "route": "straight"
+    },
+    {
+      "source": "ops",
+      "target": "cap",
+      "type": "exchanges",
+      "route": "straight"
+    },
+    {
+      "source": "finance",
+      "target": "cap",
+      "type": "exchanges",
+      "route": "straight"
+    },
+    {
+      "source": "security",
+      "target": "cap",
+      "type": "exchanges",
+      "route": "straight"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "flavour": "clean",
+  "direction": "TB",
+  "laneGap": 60,
+  "rowGap": 60,
+  "lanes": [
+    "Demand",
+    "Axes",
+    "Response"
+  ],
+  "nodes": [
+    {
+      "id": "padD",
+      "type": "spacer",
+      "lane": "Demand",
+      "w": 70,
+      "h": 10
+    },
+    {
+      "id": "demand",
+      "type": "platform",
+      "label": "Platform demand grows",
+      "icon": "dashboard",
+      "lane": "Demand",
+      "w": 240,
+      "h": 70
+    },
+    {
+      "id": "volume",
+      "type": "rectangle-blue-light",
+      "label": "Volume",
+      "sublabel": "more of the same",
+      "lane": "Axes",
+      "w": 200,
+      "h": 70
+    },
+    {
+      "id": "variety",
+      "type": "rectangle-blue-light",
+      "label": "Variety",
+      "sublabel": "more kinds, each with its experts",
+      "lane": "Axes",
+      "w": 200,
+      "h": 70
+    },
+    {
+      "id": "padH",
+      "type": "spacer",
+      "lane": "Response",
+      "w": 70,
+      "h": 10
+    },
+    {
+      "id": "hiring",
+      "type": "rectangle-yellow-light",
+      "label": "Hire more generalists",
+      "icon": "team",
+      "iconColor": "yellow",
+      "lane": "Response",
+      "w": 240,
+      "h": 64
+    }
+  ],
+  "edges": [
+    {
+      "source": "demand",
+      "target": "volume",
+      "type": "provides",
+      "exit": "bottom",
+      "entry": "top"
+    },
+    {
+      "source": "demand",
+      "target": "variety",
+      "type": "provides",
+      "exit": "bottom",
+      "entry": "top"
+    },
+    {
+      "source": "hiring",
+      "target": "volume",
+      "type": "provides",
+      "label": "solves",
+      "exit": "top",
+      "entry": "bottom",
+      "labelPosition": -0.4,
+      "labelOffsetX": -30
+    },
+    {
+      "source": "hiring",
+      "target": "variety",
+      "type": "depends",
+      "label": "does not move",
+      "exit": "top",
+      "entry": "bottom",
+      "labelPosition": -0.4,
+      "labelOffsetX": 52
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "flavour": "clean",
+  "direction": "TB",
+  "laneGap": 80,
+  "rowGap": 80,
+  "lanes": [
+    "Consumer",
+    "Paths"
+  ],
+  "nodes": [
+    {
+      "id": "padC",
+      "type": "spacer",
+      "lane": "Consumer",
+      "w": 100,
+      "h": 10
+    },
+    {
+      "id": "consumer",
+      "type": "rectangle-blue-light",
+      "label": "Consumer",
+      "icon": "human",
+      "lane": "Consumer",
+      "w": 200,
+      "h": 60
+    },
+    {
+      "id": "api",
+      "type": "sub-capability",
+      "label": "Capability API",
+      "sublabel": "via the platform",
+      "icon": "key",
+      "lane": "Paths",
+      "w": 200,
+      "h": 70
+    },
+    {
+      "id": "db",
+      "type": "data-store",
+      "label": "Database instance",
+      "sublabel": "the resulting service",
+      "lane": "Paths",
+      "w": 200,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "source": "consumer",
+      "target": "api",
+      "type": "provides",
+      "label": "control path: request, configure",
+      "exit": "bottom",
+      "entry": "top",
+      "labelPosition": -0.4,
+      "labelOffsetX": -96
+    },
+    {
+      "source": "consumer",
+      "target": "db",
+      "type": "provides",
+      "label": "data path: connection string",
+      "exit": "bottom",
+      "entry": "top",
+      "labelPosition": -0.4,
+      "labelOffsetX": 92
+    },
+    {
+      "source": "api",
+      "target": "db",
+      "type": "reconciles",
+      "label": "provisions",
+      "labelOffset": -16
+    }
+  ]
+}

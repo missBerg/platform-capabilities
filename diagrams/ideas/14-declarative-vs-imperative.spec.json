@@ -1,0 +1,112 @@
+{
+  "flavour": "clean",
+  "direction": "LR",
+  "laneGap": 80,
+  "rowGap": 50,
+  "lanes": [
+    "Declarative",
+    "Imperative"
+  ],
+  "nodes": [
+    {
+      "id": "cons1",
+      "type": "rectangle-blue-light",
+      "label": "Consumer",
+      "icon": "human",
+      "lane": "Declarative",
+      "section": "Declarative",
+      "w": 220,
+      "h": 60
+    },
+    {
+      "id": "desired",
+      "type": "reference",
+      "label": "Desired state",
+      "sublabel": "engine, size, backup policy",
+      "lane": "Declarative",
+      "section": "Declarative",
+      "w": 220,
+      "h": 70
+    },
+    {
+      "id": "cap1",
+      "type": "capability",
+      "label": "Capability",
+      "sublabel": "owns provisioning, ordering, recovery",
+      "icon": "cog",
+      "lane": "Declarative",
+      "section": "Declarative",
+      "w": 220,
+      "h": 70
+    },
+    {
+      "id": "cons2",
+      "type": "rectangle-blue-light",
+      "label": "Consumer",
+      "sublabel": "must know the steps",
+      "icon": "human",
+      "lane": "Imperative",
+      "section": "Imperative",
+      "w": 220,
+      "h": 60
+    },
+    {
+      "id": "steps",
+      "type": "rectangle-grey-light",
+      "label": "Ordered steps",
+      "sublabel": "provision, order, recover",
+      "lane": "Imperative",
+      "section": "Imperative",
+      "w": 220,
+      "h": 70
+    },
+    {
+      "id": "cap2",
+      "type": "capability",
+      "label": "Capability",
+      "sublabel": "executes what it is told",
+      "lane": "Imperative",
+      "section": "Imperative",
+      "w": 220,
+      "h": 70
+    }
+  ],
+  "edges": [
+    {
+      "source": "cons1",
+      "target": "desired",
+      "type": "provides",
+      "label": "declares",
+      "exit": "bottom",
+      "entry": "top",
+      "labelOffsetX": 44
+    },
+    {
+      "source": "desired",
+      "target": "cap1",
+      "type": "exchanges",
+      "label": "reconciled",
+      "exit": "bottom",
+      "entry": "top",
+      "labelOffsetX": 50
+    },
+    {
+      "source": "cons2",
+      "target": "steps",
+      "type": "provides",
+      "label": "writes",
+      "exit": "bottom",
+      "entry": "top",
+      "labelOffsetX": 36
+    },
+    {
+      "source": "steps",
+      "target": "cap2",
+      "type": "provides",
+      "label": "runs once",
+      "exit": "bottom",
+      "entry": "top",
+      "labelOffsetX": 48
+    }
+  ]
+}

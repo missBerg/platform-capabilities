@@ -1,0 +1,92 @@
+{
+  "flavour": "clean",
+  "direction": "TB",
+  "laneGap": 16,
+  "rowGap": 16,
+  "lanes": [
+    "H",
+    "R1",
+    "R2"
+  ],
+  "nodes": [
+    {
+      "id": "corner",
+      "type": "spacer",
+      "lane": "H",
+      "w": 150,
+      "h": 10
+    },
+    {
+      "id": "hSafe",
+      "type": "tag-blue",
+      "label": "Safe to reapply",
+      "lane": "H",
+      "w": 180,
+      "h": 34
+    },
+    {
+      "id": "hUnsafe",
+      "type": "tag-blue",
+      "label": "Unsafe to reapply",
+      "lane": "H",
+      "w": 180,
+      "h": 34
+    },
+    {
+      "id": "rDecl",
+      "type": "tag-blue",
+      "label": "Declarative request",
+      "lane": "R1",
+      "w": 150,
+      "h": 34
+    },
+    {
+      "id": "c11",
+      "type": "rectangle-blue-dark",
+      "label": "Passes both",
+      "sublabel": "converges on the same result",
+      "icon": "success",
+      "lane": "R1",
+      "w": 180,
+      "h": 80
+    },
+    {
+      "id": "c12",
+      "type": "rectangle-yellow-light",
+      "label": "Fails factor 4",
+      "sublabel": "applied twice, two of one thing",
+      "icon": "warning",
+      "lane": "R1",
+      "w": 180,
+      "h": 80
+    },
+    {
+      "id": "rImp",
+      "type": "tag-blue",
+      "label": "Imperative request",
+      "lane": "R2",
+      "w": 150,
+      "h": 34
+    },
+    {
+      "id": "c21",
+      "type": "rectangle-yellow-light",
+      "label": "Fails factor 2",
+      "sublabel": "consumer runs the steps",
+      "icon": "warning",
+      "lane": "R2",
+      "w": 180,
+      "h": 80
+    },
+    {
+      "id": "c22",
+      "type": "risk-gap",
+      "label": "Fails both",
+      "lane": "R2",
+      "w": 180,
+      "h": 80,
+      "sublabel": "steps, and duplicates on retry"
+    }
+  ],
+  "edges": []
+}

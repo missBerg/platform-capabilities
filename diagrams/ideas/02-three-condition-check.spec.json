@@ -1,0 +1,78 @@
+{
+  "flavour": "clean",
+  "direction": "TB",
+  "laneGap": 30,
+  "rowGap": 70,
+  "lanes": [
+    "Conditions",
+    "Verdict"
+  ],
+  "nodes": [
+    {
+      "id": "c1",
+      "type": "rectangle-blue-light",
+      "label": "Diverse technology stack",
+      "icon": "cloud",
+      "lane": "Conditions",
+      "w": 160,
+      "h": 64
+    },
+    {
+      "id": "c2",
+      "type": "rectangle-blue-light",
+      "label": "Many resources per capability",
+      "icon": "cog",
+      "lane": "Conditions",
+      "w": 160,
+      "h": 64
+    },
+    {
+      "id": "c3",
+      "type": "rectangle-blue-light",
+      "label": "Expertise scattered across teams",
+      "icon": "team",
+      "lane": "Conditions",
+      "w": 160,
+      "h": 64
+    },
+    {
+      "id": "padV",
+      "type": "spacer",
+      "lane": "Verdict",
+      "w": 130,
+      "h": 10
+    },
+    {
+      "id": "verdict",
+      "type": "outcome",
+      "label": "The bottleneck applies",
+      "sublabel": "any one condition is enough",
+      "lane": "Verdict",
+      "w": 220,
+      "h": 80
+    }
+  ],
+  "edges": [
+    {
+      "source": "c1",
+      "target": "verdict",
+      "type": "provides",
+      "exit": "bottom",
+      "entry": "top"
+    },
+    {
+      "source": "c2",
+      "target": "verdict",
+      "type": "provides",
+      "exit": "bottom",
+      "entry": "top"
+    },
+    {
+      "source": "c3",
+      "target": "verdict",
+      "type": "provides",
+      "exit": "bottom",
+      "entry": "top"
+    }
+  ]
+}
