@@ -19,6 +19,7 @@ Render it to an image for visual review with `scripts/render.py`.
 
 from __future__ import annotations
 
+import base64
 import copy
 import html
 import json
@@ -135,14 +136,33 @@ def parse_icons(path: Path) -> dict:
 # --------------------------------------------------------------------------- #
 # Cell emission
 # --------------------------------------------------------------------------- #
-def sublabel_color(style: str) -> str:
-    """Grey on light fills, pale blue on dark fills (luminance < 160)."""
+def is_dark_fill(style: str) -> bool:
+    """True when the style's fillColor has luminance < 160 (dark blue, gold)."""
     m = re.search(r"fillColor=#([0-9A-Fa-f]{6})", style or "")
-    if m:
-        r, g, b = (int(m.group(1)[i:i + 2], 16) for i in (0, 2, 4))
-        if 0.2126 * r + 0.7152 * g + 0.0722 * b < 160:
-            return "#D6E0F0"
-    return "#4B5563"
+    if not m:
+        return False
+    r, g, b = (int(m.group(1)[i:i + 2], 16) for i in (0, 2, 4))
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b < 160
+
+
+def sublabel_color(style: str) -> str:
+    """Grey on light fills, pale blue on dark fills."""
+    return "#D6E0F0" if is_dark_fill(style) else "#4B5563"
+
+
+_BADGE_RECT = re.compile(r'<rect x="2" y="2" width="44" height="44" rx="8" fill="(#[0-9A-Fa-f]{6})"/>')
+
+
+def ringed_icon(uri: str) -> str:
+    """Add a white ring to a badge SVG so it stands out on a dark host box."""
+    head, _, payload = uri.partition(",")
+    svg = base64.b64decode(payload).decode("utf-8")
+    svg, n = _BADGE_RECT.subn(
+        r'<rect x="3" y="3" width="42" height="42" rx="7" fill="\1" '
+        r'stroke="#FFFFFF" stroke-width="2.5"/>', svg, count=1)
+    if not n:
+        return uri
+    return head + "," + base64.b64encode(svg.encode("utf-8")).decode("ascii")
 
 
 def make_label(text: str, sublabel: str | None, bold: bool,
@@ -507,8 +527,11 @@ def generate(spec: dict) -> str:
                                      n.get("w"), n.get("h"), n.get("fontSize"),
                                      n.get("bold"), n.get("styleExtra")))
             if n.get("icon"):                          # corner badge
-                badge = badge_slug(n, icons)
-                cells.append(make_icon_cell(f"{nid}-icon", icons[badge],
+                uri = icons[badge_slug(n, icons)]
+                host = stamps[n["type"]].cells[stamps[n["type"]].label_index]
+                if is_dark_fill(apply_style(host.get("style") or "", n.get("styleExtra"))):
+                    uri = ringed_icon(uri)             # white ring on dark hosts
+                cells.append(make_icon_cell(f"{nid}-icon", uri,
                                             x - 6, y - 14, 28, 28, None, font))
     # edges last
     for i, e in enumerate(spec.get("edges", [])):
