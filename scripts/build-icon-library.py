@@ -29,6 +29,7 @@ ICON_SIZE = 48
 COLOR_VARIANTS: list[tuple[str, str, str]] = [
     ("Yellow", "#2E5C9E", "#B5915A"),
     ("Blue", "#5A7A5A", "#2E5C9E"),    # green callouts (success, healthy) in PCF blue
+    ("Red", "#2E5C9E", "#A85959"),     # blue icons in the callout red (a bad state)
 ]
 
 ROUGHEN_FILTER = (

@@ -79,7 +79,8 @@ Plain fills: `rectangle-{blue,yellow,grey}-{light,dark}`
   `computer` `dashboard` `pipeline` `webhook`
 - status: `healthy` `degraded` `failed` `pending` `deprecated`
 
-Most icons also have a yellow variant — set `"iconColor":"yellow"`. The green
+Most icons also have yellow and red variants — set `"iconColor":"yellow"` or
+`"red"` (red marks a bad state, e.g. the clock on a bottleneck). The green
 callouts (`success`, `healthy`) also come in PCF blue — set `"iconColor":"blue"`
 (on an already-blue icon that is a no-op).
 
