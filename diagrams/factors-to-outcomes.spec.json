@@ -1,0 +1,133 @@
+{
+  "name": "Fig 12 – From factors to outcomes",
+  "flavour": "clean",
+  "direction": "TB",
+  "laneGap": 20,
+  "rowGap": 56,
+  "lanes": [
+    "Factors",
+    "CapPrinciples",
+    "PlatPrinciples",
+    "Gap",
+    "Outcomes"
+  ],
+  "nodes": [
+    {
+      "id": "padF",
+      "type": "spacer",
+      "lane": "Factors",
+      "w": 116,
+      "h": 10
+    },
+    {
+      "id": "factors",
+      "type": "sub-capability",
+      "label": "Five capability factors",
+      "sublabel": "binary, testable",
+      "icon": "success",
+      "lane": "Factors",
+      "w": 280,
+      "h": 66
+    },
+    {
+      "id": "padC",
+      "type": "spacer",
+      "lane": "CapPrinciples",
+      "w": 116,
+      "h": 10
+    },
+    {
+      "id": "capp",
+      "type": "capability",
+      "label": "Three capability principles",
+      "sublabel": "what every capability embodies",
+      "icon": "cog",
+      "lane": "CapPrinciples",
+      "w": 280,
+      "h": 66
+    },
+    {
+      "id": "padP",
+      "type": "spacer",
+      "lane": "PlatPrinciples",
+      "w": 116,
+      "h": 10
+    },
+    {
+      "id": "platp",
+      "type": "platform",
+      "label": "Six platform principles",
+      "sublabel": "what the platform can commit to",
+      "icon": "shield",
+      "lane": "PlatPrinciples",
+      "w": 280,
+      "h": 66
+    },
+    {
+      "id": "gap",
+      "type": "spacer",
+      "lane": "Gap",
+      "w": 10,
+      "h": 6
+    },
+    {
+      "id": "o1",
+      "type": "outcome",
+      "label": "Adapt quickly",
+      "sublabel": "to changing capability needs",
+      "lane": "Outcomes",
+      "section": "Outcomes",
+      "w": 170,
+      "h": 76
+    },
+    {
+      "id": "o2",
+      "type": "outcome",
+      "label": "Build confidently",
+      "sublabel": "on trusted shared capabilities",
+      "lane": "Outcomes",
+      "section": "Outcomes",
+      "w": 170,
+      "h": 76
+    },
+    {
+      "id": "o3",
+      "type": "outcome",
+      "label": "Operate sustainably",
+      "sublabel": "a breadth of capabilities",
+      "lane": "Outcomes",
+      "section": "Outcomes",
+      "w": 170,
+      "h": 76
+    }
+  ],
+  "edges": [
+    {
+      "source": "factors",
+      "target": "capp",
+      "type": "provides",
+      "label": "prove",
+      "exit": "bottom",
+      "entry": "top",
+      "labelOffsetX": 34
+    },
+    {
+      "source": "capp",
+      "target": "platp",
+      "type": "provides",
+      "label": "enable",
+      "exit": "bottom",
+      "entry": "top",
+      "labelOffsetX": 38
+    },
+    {
+      "source": "platp",
+      "target": "section:Outcomes",
+      "type": "provides",
+      "label": "deliver",
+      "exit": "bottom",
+      "entry": "top",
+      "labelOffsetX": 38
+    }
+  ]
+}

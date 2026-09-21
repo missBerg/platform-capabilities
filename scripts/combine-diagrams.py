@@ -39,6 +39,7 @@ PREFERRED = [
     "factor-3-encapsulated-dependencies",
     "factor-4-stable-reconciliation",
     "factor-5-operational-evidence",
+    "factors-to-outcomes",
 ]
 
 
