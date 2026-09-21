@@ -1,5 +1,5 @@
 {
-  "name": "Fig 4 – Three roles and their exchanges",
+  "name": "Fig 4 \u2013 Three roles and their exchanges",
   "flavour": "clean",
   "direction": "TB",
   "nodes": [
@@ -20,7 +20,7 @@
       "icon": "team",
       "iconColor": "yellow",
       "x": 40,
-      "y": 360,
+      "y": 250,
       "w": 170,
       "h": 56
     },
@@ -30,7 +30,7 @@
       "label": "Capability consumers",
       "icon": "human",
       "x": 390,
-      "y": 360,
+      "y": 250,
       "w": 170,
       "h": 56
     }
@@ -42,7 +42,7 @@
       "type": "exchanges",
       "route": "straight",
       "label": "Participation contract\nconformance for a governed platform",
-      "labelOffsetX": -104,
+      "labelOffsetX": -118,
       "labelOffset": -6
     },
     {
@@ -51,7 +51,7 @@
       "type": "exchanges",
       "route": "straight",
       "label": "Self-service catalog\ndiscovery within guardrails",
-      "labelOffsetX": 90,
+      "labelOffsetX": 100,
       "labelOffset": -6
     },
     {
