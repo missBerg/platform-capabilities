@@ -1,0 +1,217 @@
+{
+  "name": "Platform with capabilities",
+  "flavour": "clean",
+  "direction": "TB",
+  "laneGap": 20,
+  "rowGap": 40,
+  "lanes": [
+    "Producers",
+    "GapA",
+    "ProducerAPI",
+    "GapB",
+    "Definition",
+    "Instances",
+    "GapC",
+    "ConsumerAPI",
+    "GapD",
+    "Consumers"
+  ],
+  "nodes": [
+    {
+      "id": "dev",
+      "type": "rectangle-yellow-light",
+      "label": "Developer",
+      "icon": "code",
+      "iconColor": "yellow",
+      "lane": "Producers",
+      "section": "Capability producers",
+      "w": 140,
+      "h": 44
+    },
+    {
+      "id": "pagent",
+      "type": "rectangle-yellow-light",
+      "label": "AI agent",
+      "icon": "ai-agent",
+      "iconColor": "yellow",
+      "lane": "Producers",
+      "section": "Capability producers",
+      "w": 140,
+      "h": 44
+    },
+    {
+      "id": "wysiwyg",
+      "type": "rectangle-yellow-light",
+      "label": "WYSIWYG",
+      "icon": "computer",
+      "iconColor": "yellow",
+      "lane": "Producers",
+      "section": "Capability producers",
+      "w": 140,
+      "h": 44
+    },
+    {
+      "id": "gapA",
+      "type": "spacer",
+      "lane": "GapA",
+      "w": 10,
+      "h": 12
+    },
+    {
+      "id": "padPA",
+      "type": "spacer",
+      "lane": "ProducerAPI",
+      "w": 130,
+      "h": 10
+    },
+    {
+      "id": "papi",
+      "type": "rectangle-yellow-light",
+      "label": "Producer API",
+      "lane": "ProducerAPI",
+      "w": 160,
+      "h": 44
+    },
+    {
+      "id": "gapB",
+      "type": "spacer",
+      "lane": "GapB",
+      "w": 10,
+      "h": 24
+    },
+    {
+      "id": "padD",
+      "type": "spacer",
+      "lane": "Definition",
+      "w": 110,
+      "h": 10
+    },
+    {
+      "id": "definition",
+      "type": "rectangle-blue-dark",
+      "label": "Capability definition",
+      "icon": "cog",
+      "lane": "Definition",
+      "section": "Platform with capabilities",
+      "w": 200,
+      "h": 52
+    },
+    {
+      "id": "padI",
+      "type": "spacer",
+      "lane": "Instances",
+      "w": 110,
+      "h": 10
+    },
+    {
+      "id": "instances",
+      "type": "rectangle-blue-light",
+      "label": "Instances",
+      "sublabel": "N instances of a capability",
+      "lane": "Instances",
+      "section": "Platform with capabilities",
+      "w": 200,
+      "h": 60
+    },
+    {
+      "id": "gapC",
+      "type": "spacer",
+      "lane": "GapC",
+      "w": 10,
+      "h": 12
+    },
+    {
+      "id": "padCA",
+      "type": "spacer",
+      "lane": "ConsumerAPI",
+      "w": 130,
+      "h": 10
+    },
+    {
+      "id": "capi",
+      "type": "rectangle-blue-light",
+      "label": "Consumer API",
+      "lane": "ConsumerAPI",
+      "w": 160,
+      "h": 44
+    },
+    {
+      "id": "gapD",
+      "type": "spacer",
+      "lane": "GapD",
+      "w": 10,
+      "h": 24
+    },
+    {
+      "id": "prog",
+      "type": "rectangle-blue-light",
+      "label": "Programmatic",
+      "icon": "code",
+      "lane": "Consumers",
+      "section": "Capability consumers",
+      "w": 140,
+      "h": 44
+    },
+    {
+      "id": "cagent",
+      "type": "rectangle-blue-light",
+      "label": "AI agent",
+      "icon": "ai-agent",
+      "lane": "Consumers",
+      "section": "Capability consumers",
+      "w": 140,
+      "h": 44
+    },
+    {
+      "id": "portal",
+      "type": "rectangle-blue-light",
+      "label": "Portal",
+      "icon": "computer",
+      "lane": "Consumers",
+      "section": "Capability consumers",
+      "w": 140,
+      "h": 44
+    }
+  ],
+  "edges": [
+    {
+      "source": "section:Capability producers",
+      "target": "papi",
+      "type": "provides",
+      "exit": "bottom",
+      "entry": "top"
+    },
+    {
+      "source": "papi",
+      "target": "section:Platform with capabilities",
+      "type": "provides",
+      "label": "create & manage",
+      "exit": "bottom",
+      "entry": "top",
+      "labelOffsetX": 78
+    },
+    {
+      "source": "definition",
+      "target": "instances",
+      "type": "provides",
+      "exit": "bottom",
+      "entry": "top"
+    },
+    {
+      "source": "section:Capability consumers",
+      "target": "capi",
+      "type": "provides",
+      "exit": "top",
+      "entry": "bottom"
+    },
+    {
+      "source": "capi",
+      "target": "section:Platform with capabilities",
+      "type": "provides",
+      "label": "discover & use",
+      "exit": "top",
+      "entry": "bottom",
+      "labelOffsetX": 72
+    }
+  ]
+}

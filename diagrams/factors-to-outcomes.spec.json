@@ -72,33 +72,36 @@
     },
     {
       "id": "o1",
-      "type": "outcome",
+      "type": "rectangle-blue-light",
       "label": "Adapt quickly",
       "sublabel": "to changing capability needs",
       "lane": "Outcomes",
       "section": "Outcomes",
       "w": 170,
-      "h": 76
+      "h": 66,
+      "icon": "success"
     },
     {
       "id": "o2",
-      "type": "outcome",
+      "type": "rectangle-blue-light",
       "label": "Build confidently",
       "sublabel": "on trusted shared capabilities",
       "lane": "Outcomes",
       "section": "Outcomes",
       "w": 170,
-      "h": 76
+      "h": 66,
+      "icon": "success"
     },
     {
       "id": "o3",
-      "type": "outcome",
+      "type": "rectangle-blue-light",
       "label": "Operate sustainably",
       "sublabel": "a breadth of capabilities",
       "lane": "Outcomes",
       "section": "Outcomes",
       "w": 170,
-      "h": 76
+      "h": 66,
+      "icon": "success"
     }
   ],
   "edges": [

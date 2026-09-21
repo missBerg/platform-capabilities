@@ -31,6 +31,7 @@ PREFERRED = [
     "challenge-central-bottleneck",
     "centralized-friction-loop",
     "ecosystem-architecture-lineage",
+    "platform-with-capabilities",
     "ecosystem-value-exchange",
     "participation-contract",
     "factors-overview",
