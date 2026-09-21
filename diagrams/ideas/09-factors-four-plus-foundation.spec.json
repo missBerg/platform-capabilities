@@ -1,5 +1,5 @@
 {
-  "name": "Idea 09 – Factors four plus foundation",
+  "name": "Idea 09 \u2013 Factors four plus foundation",
   "flavour": "clean",
   "direction": "TB",
   "laneGap": 16,
@@ -13,7 +13,7 @@
       "id": "f1",
       "type": "sub-capability",
       "label": "1. Defined Contract",
-      "icon": "key",
+      "icon": "success",
       "lane": "Four",
       "w": 124,
       "h": 72
@@ -40,7 +40,7 @@
       "id": "f4",
       "type": "sub-capability",
       "label": "4. Stable Reconciliation",
-      "icon": "cog",
+      "icon": "gear",
       "lane": "Four",
       "w": 124,
       "h": 72

@@ -1,5 +1,5 @@
 {
-  "name": "Idea 13 – Control vs data path",
+  "name": "Idea 13 \u2013 Control vs data path",
   "flavour": "clean",
   "direction": "TB",
   "laneGap": 80,
@@ -30,7 +30,7 @@
       "type": "sub-capability",
       "label": "Capability API",
       "sublabel": "via the platform",
-      "icon": "key",
+      "icon": "success",
       "lane": "Paths",
       "w": 200,
       "h": 70

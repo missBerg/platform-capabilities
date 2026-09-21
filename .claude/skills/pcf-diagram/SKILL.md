@@ -148,3 +148,14 @@ container adds 24 padding on each side plus a 34 header, and fan-ins from a
 group are cleaner as one edge from `section:<label>` than one edge per box. On
 the `policy` hexagon in `LR`, use entry `top` for the left vertex and `bottom`
 for the right one.
+
+## Icon vocabulary (keep it consistent across figures)
+
+- `success` (green tick box) = a contract or the API that embodies it
+  (participation contract, Defined Contract, "one versioned API"); do not use
+  `key` for contracts.
+- `code` = CLI, programmatic access, developers. `computer` = a GUI (web
+  portal, WYSIWYG). `dashboard` = developer portal, dashboards, evidence.
+- `cog` = a capability, or platform operators. `gear` = reconciliation.
+- `shield` = encapsulation/boundary (also security). `warning` = a cost.
+- Actors: `human` consumers, `team` (yellow) producers, `ai-agent` agents.

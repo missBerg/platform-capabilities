@@ -12,7 +12,7 @@
       "y": 98,
       "w": 150,
       "h": 44,
-      "icon": "computer",
+      "icon": "code",
       "section": "Interface choices"
     },
     {
@@ -24,7 +24,7 @@
       "y": 158,
       "w": 150,
       "h": 44,
-      "icon": "dashboard",
+      "icon": "computer",
       "section": "Interface choices"
     },
     {
@@ -36,7 +36,7 @@
       "y": 218,
       "w": 150,
       "h": 44,
-      "icon": "code",
+      "icon": "dashboard",
       "section": "Interface choices"
     },
     {
@@ -61,7 +61,7 @@
       "w": 220,
       "h": 70,
       "sublabel": "provision, configure, update, observe",
-      "icon": "key"
+      "icon": "success"
     },
     {
       "id": "cap",

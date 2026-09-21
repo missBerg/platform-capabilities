@@ -1,5 +1,5 @@
 {
-  "name": "Idea 08 – Capability anatomy",
+  "name": "Idea 08 \u2013 Capability anatomy",
   "flavour": "clean",
   "direction": "TB",
   "laneGap": 80,
@@ -22,7 +22,7 @@
       "id": "api",
       "type": "sub-capability",
       "label": "Defined API",
-      "icon": "key",
+      "icon": "success",
       "lane": "R1",
       "w": 200,
       "h": 70
@@ -57,7 +57,7 @@
       "id": "contract",
       "type": "policy",
       "label": "Participation contract",
-      "icon": "shield",
+      "icon": "success",
       "lane": "R3",
       "w": 200,
       "h": 70

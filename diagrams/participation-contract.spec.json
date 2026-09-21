@@ -1,5 +1,5 @@
 {
-  "name": "Fig 5 – Participation contract",
+  "name": "Fig 5 \u2013 Participation contract",
   "flavour": "clean",
   "direction": "TB",
   "laneGap": 16,
@@ -73,7 +73,7 @@
       "id": "contract",
       "type": "policy",
       "label": "Participation contract",
-      "icon": "key",
+      "icon": "success",
       "lane": "Contract",
       "w": 240,
       "h": 70
