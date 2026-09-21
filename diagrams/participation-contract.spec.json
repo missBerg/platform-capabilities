@@ -1,5 +1,5 @@
 {
-  "name": "Fig 5 \u2013 Participation contract",
+  "name": "Fig 4 \u2013 Participation contract",
   "flavour": "clean",
   "direction": "TB",
   "laneGap": 16,
@@ -76,7 +76,8 @@
       "icon": "success",
       "lane": "Contract",
       "w": 240,
-      "h": 70
+      "h": 70,
+      "iconPosition": "top"
     },
     {
       "id": "padP",

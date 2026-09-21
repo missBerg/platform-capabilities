@@ -52,6 +52,9 @@ Validate the libraries any time with `python3 scripts/build-diagram.py --self-ch
   `sectionStyle` (same, applied to the node's section container; use it for a
   green `fillColor=#EDF4ED;strokeColor=#5A7A5A;fontColor=#3F5A3F` or red
   `fillColor=#F7ECEC;strokeColor=#A85959;fontColor=#7A3F3F` tint).
+- `iconPosition: "top"` centres the badge on the top edge instead of the
+  top-left corner (used on the contract hexagon). A sublabel may contain `\n`
+  for a chosen line break.
 - **icon node**: `type:"icon"` + `icon:"<slug>"` → a bordered icon tile.
 - **edge**: `source`, `target`, `type` (`provides`|`depends`|`exchanges`|
   `reconciles`), optional `label`. Edges auto-route (orthogonal) — no coordinates.

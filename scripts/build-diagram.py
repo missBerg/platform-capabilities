@@ -171,7 +171,8 @@ def make_label(text: str, sublabel: str | None, bold: bool,
     main = f"<b>{html.escape(text)}</b>" if bold else html.escape(text)
     if sublabel:
         main += (f'<br><font style="font-size: 11px" color="{sublabel_color(style)}">'
-                 f'{html.escape(sublabel)}</font>')
+                 + "<br>".join(html.escape(part) for part in sublabel.split("\n"))
+                 + "</font>")
     return main
 
 
@@ -531,8 +532,9 @@ def generate(spec: dict) -> str:
                 host = stamps[n["type"]].cells[stamps[n["type"]].label_index]
                 if is_dark_fill(apply_style(host.get("style") or "", n.get("styleExtra"))):
                     uri = ringed_icon(uri)             # white ring on dark hosts
+                bx = x + w / 2 - 14 if n.get("iconPosition") == "top" else x - 6
                 cells.append(make_icon_cell(f"{nid}-icon", uri,
-                                            x - 6, y - 14, 28, 28, None, font))
+                                            bx, y - 14, 28, 28, None, font))
     # edges last
     for i, e in enumerate(spec.get("edges", [])):
         cells.append(make_edge_cell(f"pcf-edge-{i}", stamps[e.get("type", "provides")],

@@ -1,5 +1,5 @@
 {
-  "name": "Fig 9 – Encapsulated Dependencies",
+  "name": "Fig 8 \u2013 Encapsulated Dependencies",
   "flavour": "clean",
   "direction": "TB",
   "laneGap": 70,
@@ -103,8 +103,9 @@
       "type": "depends",
       "label": "requires",
       "route": "straight",
-      "labelPosition": 0.15,
-      "labelOffset": -20
+      "labelPosition": 0.72,
+      "labelOffset": -16,
+      "labelOffsetX": -28
     }
   ]
 }

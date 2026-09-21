@@ -1,5 +1,5 @@
 {
-  "name": "Fig 5 \u2013 Participation contract (landscape)",
+  "name": "Fig 4 \u2013 Participation contract (landscape)",
   "flavour": "clean",
   "direction": "LR",
   "nodes": [
@@ -24,7 +24,8 @@
       "y": 37,
       "w": 240,
       "h": 70,
-      "icon": "success"
+      "icon": "success",
+      "iconPosition": "top"
     },
     {
       "id": "plat",

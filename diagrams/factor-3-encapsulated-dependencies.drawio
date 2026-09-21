@@ -1,5 +1,5 @@
 <mxfile host="app.diagrams.net">
-  <diagram name="Fig 9 – Encapsulated Dependencies" id="pcf-generated">
+  <diagram name="Fig 8 – Encapsulated Dependencies" id="pcf-generated">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -17,7 +17,7 @@
         <mxCell id="pcf-edge-0" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;rounded=0;strokeColor=#2E5C9E;strokeWidth=2;fontColor=#1F3A68;fontFamily=Helvetica;fontSize=12;endFill=1;curved=1;" edge="1" parent="1" source="consumer" target="cap" value="requests"><mxGeometry relative="1" as="geometry"><mxPoint x="0" y="-30" as="offset" /></mxGeometry></mxCell>
         <mxCell id="pcf-edge-1" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;rounded=0;strokeColor=#2E5C9E;strokeWidth=2;fontColor=#1F3A68;fontFamily=Helvetica;fontSize=12;endFill=1;curved=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="consumer" target="prereq" value="provides"><mxGeometry relative="1" as="geometry"><mxPoint x="-44" y="0" as="offset" /></mxGeometry></mxCell>
         <mxCell id="pcf-edge-2" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;rounded=0;strokeColor=#2E5C9E;strokeWidth=2;fontColor=#1F3A68;fontFamily=Helvetica;fontSize=12;endFill=1;curved=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cap" target="dep" value="creates"><mxGeometry relative="1" as="geometry"><mxPoint x="40" y="0" as="offset" /></mxGeometry></mxCell>
-        <mxCell id="pcf-edge-3" style="endArrow=open;html=1;rounded=0;strokeColor=#7A99C7;strokeWidth=2;dashed=1;dashPattern=6 4;fontColor=#1F3A68;fontFamily=Helvetica;fontSize=12;curved=1;" edge="1" parent="1" source="cap" target="prereq" value="requires"><mxGeometry relative="1" as="geometry" x="0.15"><mxPoint x="0" y="-20" as="offset" /></mxGeometry></mxCell>
+        <mxCell id="pcf-edge-3" style="endArrow=open;html=1;rounded=0;strokeColor=#7A99C7;strokeWidth=2;dashed=1;dashPattern=6 4;fontColor=#1F3A68;fontFamily=Helvetica;fontSize=12;curved=1;" edge="1" parent="1" source="cap" target="prereq" value="requires"><mxGeometry relative="1" as="geometry" x="0.72"><mxPoint x="-28" y="-16" as="offset" /></mxGeometry></mxCell>
       </root>
     </mxGraphModel>
   </diagram>

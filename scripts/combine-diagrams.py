@@ -28,7 +28,6 @@ ATTR_RE = re.compile(r'(\w+)\s*=\s*"([^"]*)"')
 # Preferred tab order: paper order (limitations, ecosystem model, contract,
 # then the five factors). Files not listed here sort after these, alphabetically.
 PREFERRED = [
-    "challenge-central-bottleneck",
     "centralized-friction-loop",
     "centralized-friction-loop-landscape",
     "ecosystem-architecture-lineage",
