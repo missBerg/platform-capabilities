@@ -48,7 +48,7 @@
       "id": "lifecycle",
       "type": "sub-capability",
       "label": "Managed lifecycle",
-      "icon": "clock",
+      "icon": "gear",
       "lane": "R3",
       "w": 200,
       "h": 70

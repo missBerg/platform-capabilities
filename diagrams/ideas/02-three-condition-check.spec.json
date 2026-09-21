@@ -1,5 +1,5 @@
 {
-  "name": "Idea 02 – Three condition check",
+  "name": "Idea 02 \u2013 Three condition check",
   "flavour": "clean",
   "direction": "TB",
   "laneGap": 30,
@@ -34,7 +34,8 @@
       "icon": "team",
       "lane": "Conditions",
       "w": 160,
-      "h": 64
+      "h": 64,
+      "iconColor": "yellow"
     },
     {
       "id": "padV",

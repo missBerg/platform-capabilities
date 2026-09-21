@@ -1,5 +1,5 @@
 {
-  "name": "Fig 2 – Friction chain",
+  "name": "Fig 2 \u2013 Friction chain",
   "flavour": "clean",
   "direction": "TB",
   "laneGap": 60,
@@ -44,7 +44,9 @@
       "sublabel": "build outside, or reinvent in their domain",
       "lane": "R2",
       "w": 300,
-      "h": 64
+      "h": 64,
+      "icon": "team",
+      "iconColor": "yellow"
     },
     {
       "id": "p3",

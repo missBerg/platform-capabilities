@@ -1,5 +1,5 @@
 {
-  "name": "Fig 12 – From factors to outcomes",
+  "name": "Fig 12 \u2013 From factors to outcomes",
   "flavour": "clean",
   "direction": "TB",
   "laneGap": 20,
@@ -79,7 +79,7 @@
       "section": "Outcomes",
       "w": 170,
       "h": 66,
-      "icon": "success"
+      "icon": "healthy"
     },
     {
       "id": "o2",
@@ -90,7 +90,7 @@
       "section": "Outcomes",
       "w": 170,
       "h": 66,
-      "icon": "success"
+      "icon": "healthy"
     },
     {
       "id": "o3",
@@ -101,7 +101,7 @@
       "section": "Outcomes",
       "w": 170,
       "h": 66,
-      "icon": "success"
+      "icon": "healthy"
     }
   ],
   "edges": [

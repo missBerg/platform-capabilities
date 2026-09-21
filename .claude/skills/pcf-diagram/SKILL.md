@@ -153,17 +153,22 @@ for the right one.
 
 ## Icon vocabulary (keep it consistent across figures)
 
-- `success` (tick box) = a contract or the API that embodies it
-  (participation contract, Defined Contract, "one versioned API"); do not use
-  `key` for contracts. Green by default; `"iconColor":"blue"` where the row
-  of badges is otherwise all blue (Fig 6).
+- `success` (tick box) = a contract, the API that embodies it, or the factors
+  (things you satisfy); never `key`. Green by default; `"iconColor":"blue"`
+  where the row of badges is otherwise all blue (Fig 6).
+- `healthy` (green circle-check) = an outcome or a passing state you reach.
 - `code` = CLI, programmatic access, developers. `computer` = a GUI (web
-  portal, WYSIWYG). `dashboard` = developer portal, dashboards, evidence.
-- `cog` = a capability, or platform operators. `gear` = reconciliation.
-- `shield` = encapsulation/boundary (also security). `warning` = a cost.
+  portal, WYSIWYG). `dashboard` = developer portal, operational evidence.
+- `note` = a ledger or record (Finance).
+- `cog` = a capability. `gear` = reconciliation / managed lifecycle.
+- `shield` = encapsulation/boundary, a guarantee (also security).
+- `warning` = a cost. `clock` = slow, a bottleneck. `lock` = secrets.
 - `webhook` (node mesh) = microservices / distributed services. `cloud` = cloud
   infrastructure only, not an architecture pattern.
-- Actors: `human` consumers, `team` (yellow) producers, `ai-agent` agents.
+- Actors: `human` consumers; `team` yellow = producers and domain experts;
+  `team` blue = platform operators / platform team; `ai-agent` agents.
+- A dark platform box needs no badge just to say "platform"; add one only
+  when it says more (a guarantee, evidence, a bottleneck).
 - On a dark host box (platform, `rectangle-blue-dark`, gold) the generator
   adds a white ring to the badge automatically so it does not merge with the
   fill. Nothing to set in the spec.

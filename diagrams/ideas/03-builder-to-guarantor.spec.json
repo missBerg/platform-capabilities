@@ -1,5 +1,5 @@
 {
-  "name": "Idea 03 – Builder to guarantor",
+  "name": "Idea 03 \u2013 Builder to guarantor",
   "flavour": "clean",
   "direction": "LR",
   "laneGap": 80,
@@ -14,7 +14,7 @@
       "type": "platform",
       "label": "Platform team",
       "sublabel": "builds",
-      "icon": "cog",
+      "icon": "team",
       "lane": "Before",
       "section": "Centralized",
       "w": 220,
@@ -60,7 +60,8 @@
       "lane": "After",
       "section": "Ecosystem",
       "w": 220,
-      "h": 70
+      "h": 70,
+      "iconColor": "yellow"
     }
   ],
   "edges": [

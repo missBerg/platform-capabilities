@@ -1,5 +1,5 @@
 {
-  "name": "Idea 05 – Marketplace beside the flow",
+  "name": "Idea 05 \u2013 Marketplace beside the flow",
   "flavour": "clean",
   "direction": "TB",
   "laneGap": 30,
@@ -36,7 +36,7 @@
       "type": "platform",
       "label": "Platform operators",
       "sublabel": "beside the flow",
-      "icon": "cog",
+      "icon": "team",
       "lane": "Teams",
       "w": 165,
       "h": 60

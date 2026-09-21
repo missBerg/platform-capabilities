@@ -1,5 +1,5 @@
 {
-  "name": "Idea 16 – Actors and their questions",
+  "name": "Idea 16 \u2013 Actors and their questions",
   "flavour": "clean",
   "direction": "TB",
   "laneGap": 20,
@@ -60,7 +60,7 @@
       "type": "rectangle-blue-light",
       "label": "Ops & leadership",
       "sublabel": "Worth continued investment?",
-      "icon": "cog",
+      "icon": "team",
       "lane": "Bottom",
       "w": 180,
       "h": 66
@@ -70,7 +70,7 @@
       "type": "rectangle-blue-light",
       "label": "Finance",
       "sublabel": "What does it cost? Who owns it?",
-      "icon": "dashboard",
+      "icon": "note",
       "lane": "Bottom",
       "w": 180,
       "h": 66

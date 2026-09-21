@@ -24,7 +24,9 @@
       "y": 103,
       "w": 230,
       "h": 84,
-      "sublabel": "build outside, or reinvent in their domain"
+      "sublabel": "build outside, or reinvent in their domain",
+      "icon": "team",
+      "iconColor": "yellow"
     },
     {
       "id": "lose",
