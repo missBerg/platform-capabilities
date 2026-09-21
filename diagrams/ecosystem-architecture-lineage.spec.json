@@ -1,5 +1,5 @@
 {
-  "name": "Fig 3 – Ecosystem model lineage",
+  "name": "Fig 3 \u2013 Ecosystem model lineage",
   "flavour": "clean",
   "direction": "TB",
   "laneGap": 30,
@@ -45,7 +45,7 @@
       "type": "rectangle-grey-light",
       "label": "Microservices",
       "sublabel": "independence: ship without a shared codebase",
-      "icon": "cloud",
+      "icon": "webhook",
       "lane": "B",
       "w": 360,
       "h": 70

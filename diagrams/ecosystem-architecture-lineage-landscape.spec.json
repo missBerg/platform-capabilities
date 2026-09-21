@@ -38,7 +38,7 @@
       "w": 320,
       "h": 90,
       "sublabel": "independence: ship without a shared codebase",
-      "icon": "cloud"
+      "icon": "webhook"
     },
     {
       "id": "eq",

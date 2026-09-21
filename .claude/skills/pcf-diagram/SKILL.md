@@ -161,6 +161,8 @@ for the right one.
   portal, WYSIWYG). `dashboard` = developer portal, dashboards, evidence.
 - `cog` = a capability, or platform operators. `gear` = reconciliation.
 - `shield` = encapsulation/boundary (also security). `warning` = a cost.
+- `webhook` (node mesh) = microservices / distributed services. `cloud` = cloud
+  infrastructure only, not an architecture pattern.
 - Actors: `human` consumers, `team` (yellow) producers, `ai-agent` agents.
 - On a dark host box (platform, `rectangle-blue-dark`, gold) the generator
   adds a white ring to the badge automatically so it does not merge with the
