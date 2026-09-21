@@ -28,6 +28,7 @@ ICON_SIZE = 48
 # `source` colour. The base (unvariant) entry is always emitted first.
 COLOR_VARIANTS: list[tuple[str, str, str]] = [
     ("Yellow", "#2E5C9E", "#B5915A"),
+    ("Blue", "#5A7A5A", "#2E5C9E"),    # green callouts (success, healthy) in PCF blue
 ]
 
 ROUGHEN_FILTER = (

@@ -16,7 +16,8 @@
       "icon": "success",
       "lane": "Four",
       "w": 124,
-      "h": 72
+      "h": 72,
+      "iconColor": "blue"
     },
     {
       "id": "f2",

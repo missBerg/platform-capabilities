@@ -274,6 +274,21 @@ def apply_style(style: str, extra: str | None) -> str:
     return style
 
 
+def badge_slug(n: dict, icons: dict) -> str:
+    """Icon slug for a node's corner badge, honouring iconColor.
+
+    Blue is the native colour of most icons, so `iconColor: "blue"` only picks
+    a `-blue` variant when the library has one (the green callouts).
+    """
+    slug = slugify(n["icon"])
+    color = n.get("iconColor")
+    if color and color != "blue":
+        return f"{slug}-{color}"
+    if color == "blue" and f"{slug}-blue" in icons:
+        return f"{slug}-blue"
+    return slug
+
+
 def make_container(cid: str, stamp: Stamp, x: float, y: float, w: float, h: float,
                    label: str, style_extra: str | None = None) -> ET.Element:
     base = stamp.cells[stamp.label_index]
@@ -330,9 +345,7 @@ def validate_spec(spec: dict, stamps: dict, icons: dict) -> None:
         elif ntype not in stamps:
             raise ValueError(f"unknown node type: {ntype!r}")
         if n.get("icon") and ntype != "icon":
-            badge = slugify(n["icon"])
-            if n.get("iconColor") == "yellow":
-                badge += "-yellow"
+            badge = badge_slug(n, icons)
             if badge not in icons:
                 raise ValueError(f"unknown badge icon: {n['icon']!r}")
     sections = {n["section"] for n in spec.get("nodes", []) if n.get("section")}
@@ -494,7 +507,7 @@ def generate(spec: dict) -> str:
                                      n.get("w"), n.get("h"), n.get("fontSize"),
                                      n.get("bold"), n.get("styleExtra")))
             if n.get("icon"):                          # corner badge
-                badge = slugify(n["icon"]) + ("-yellow" if n.get("iconColor") == "yellow" else "")
+                badge = badge_slug(n, icons)
                 cells.append(make_icon_cell(f"{nid}-icon", icons[badge],
                                             x - 6, y - 14, 28, 28, None, font))
     # edges last

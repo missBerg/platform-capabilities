@@ -76,7 +76,9 @@ Plain fills: `rectangle-{blue,yellow,grey}-{light,dark}`
   `computer` `dashboard` `pipeline` `webhook`
 - status: `healthy` `degraded` `failed` `pending` `deprecated`
 
-Most icons also have a yellow variant — set `"iconColor":"yellow"`.
+Most icons also have a yellow variant — set `"iconColor":"yellow"`. The green
+callouts (`success`, `healthy`) also come in PCF blue — set `"iconColor":"blue"`
+(on an already-blue icon that is a no-op).
 
 ## Color semantics (keep diagrams legible)
 
@@ -151,9 +153,10 @@ for the right one.
 
 ## Icon vocabulary (keep it consistent across figures)
 
-- `success` (green tick box) = a contract or the API that embodies it
+- `success` (tick box) = a contract or the API that embodies it
   (participation contract, Defined Contract, "one versioned API"); do not use
-  `key` for contracts.
+  `key` for contracts. Green by default; `"iconColor":"blue"` where the row
+  of badges is otherwise all blue (Fig 6).
 - `code` = CLI, programmatic access, developers. `computer` = a GUI (web
   portal, WYSIWYG). `dashboard` = developer portal, dashboards, evidence.
 - `cog` = a capability, or platform operators. `gear` = reconciliation.
