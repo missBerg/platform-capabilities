@@ -1,76 +1,119 @@
 {
-  "name": "Fig 2 – Friction loop",
+  "name": "Fig 2 – Friction chain",
   "flavour": "clean",
   "direction": "TB",
-  "laneGap": 70,
-  "rowGap": 44,
+  "laneGap": 60,
+  "rowGap": 40,
   "lanes": [
     "R1",
     "R2",
-    "R3"
+    "R3",
+    "Gap",
+    "C1",
+    "C2"
   ],
   "nodes": [
     {
-      "id": "queue",
+      "id": "p1",
+      "type": "spacer",
+      "lane": "R1",
+      "w": 40,
+      "h": 10
+    },
+    {
+      "id": "hard",
       "type": "platform",
-      "label": "Every change queues centrally",
+      "label": "Integration is hard",
+      "sublabel": "central codebases and processes",
       "icon": "clock",
       "lane": "R1",
-      "w": 190,
+      "w": 300,
       "h": 64
     },
     {
-      "id": "load",
-      "type": "risk-gap",
-      "label": "Operational load multiplies",
-      "lane": "R1",
-      "w": 190,
-      "h": 64
-    },
-    {
-      "id": "slow",
-      "type": "process-step",
-      "label": "Delivery slows",
+      "id": "p2",
+      "type": "spacer",
       "lane": "R2",
-      "w": 190,
-      "h": 64
-    },
-    {
-      "id": "ux",
-      "type": "risk-gap",
-      "label": "Inconsistent experience",
-      "lane": "R2",
-      "w": 190,
-      "h": 64
+      "w": 40,
+      "h": 10
     },
     {
       "id": "outside",
       "type": "external-system",
-      "label": "Teams build outside the platform",
-      "lane": "R3",
-      "w": 190,
+      "label": "Specialists stop contributing",
+      "sublabel": "build outside, or reinvent in their domain",
+      "lane": "R2",
+      "w": 300,
       "h": 64
     },
     {
-      "id": "frag",
-      "type": "risk-gap",
-      "label": "Incompatible contracts",
-      "sublabel": "duplicated effort",
+      "id": "p3",
+      "type": "spacer",
       "lane": "R3",
-      "w": 190,
+      "w": 40,
+      "h": 10
+    },
+    {
+      "id": "lose",
+      "type": "rectangle-grey-light",
+      "label": "Platform loses the contribution",
+      "sublabel": "the best implementation stays out",
+      "lane": "R3",
+      "w": 300,
       "h": 64
+    },
+    {
+      "id": "gap",
+      "type": "spacer",
+      "lane": "Gap",
+      "w": 10,
+      "h": 10
+    },
+    {
+      "id": "c1",
+      "type": "rectangle-grey-light",
+      "label": "Incompatible contracts",
+      "sublabel": "fragmentation",
+      "icon": "warning",
+      "lane": "C1",
+      "w": 220,
+      "h": 56,
+      "section": "The organization pays"
+    },
+    {
+      "id": "c2",
+      "type": "rectangle-grey-light",
+      "label": "Inconsistent experience",
+      "icon": "warning",
+      "lane": "C1",
+      "w": 220,
+      "h": 56,
+      "section": "The organization pays"
+    },
+    {
+      "id": "c3",
+      "type": "rectangle-grey-light",
+      "label": "Duplicated effort",
+      "icon": "warning",
+      "lane": "C2",
+      "w": 220,
+      "h": 56,
+      "section": "The organization pays"
+    },
+    {
+      "id": "c4",
+      "type": "rectangle-grey-light",
+      "label": "Multiplied operational load",
+      "icon": "warning",
+      "lane": "C2",
+      "w": 220,
+      "h": 56,
+      "section": "The organization pays"
     }
   ],
   "edges": [
     {
-      "source": "queue",
-      "target": "slow",
-      "type": "provides",
-      "exit": "bottom",
-      "entry": "top"
-    },
-    {
-      "source": "slow",
+      "source": "hard",
       "target": "outside",
       "type": "provides",
       "exit": "bottom",
@@ -78,31 +121,17 @@
     },
     {
       "source": "outside",
-      "target": "frag",
+      "target": "lose",
       "type": "provides",
-      "exit": "right",
-      "entry": "left"
+      "exit": "bottom",
+      "entry": "top"
     },
     {
-      "source": "frag",
-      "target": "ux",
+      "source": "lose",
+      "target": "section:The organization pays",
       "type": "provides",
-      "exit": "top",
-      "entry": "bottom"
-    },
-    {
-      "source": "ux",
-      "target": "load",
-      "type": "provides",
-      "exit": "top",
-      "entry": "bottom"
-    },
-    {
-      "source": "load",
-      "target": "queue",
-      "type": "provides",
-      "exit": "left",
-      "entry": "right"
+      "exit": "bottom",
+      "entry": "top"
     }
   ]
 }

@@ -46,7 +46,9 @@ Validate the libraries any time with `python3 scripts/build-diagram.py --self-ch
   below; default `rectangle-blue-light`), `label`, `sublabel` (2nd grey line),
   `lane`, `icon` (adds a corner badge), `iconColor` (`blue`|`yellow`),
   `section` (string — nodes sharing it get wrapped in a container),
-  `sectionType` (container slug, default `capability-group`), `w`/`h` overrides.
+  `sectionType` (container slug, default `capability-group`), `w`/`h` overrides,
+  `fontSize` (label size override), `bold` (force bold on/off), `styleExtra`
+  (raw draw.io style tokens appended to the label cell, e.g. `"spacingBottom=8"`).
 - **icon node**: `type:"icon"` + `icon:"<slug>"` → a bordered icon tile.
 - **edge**: `source`, `target`, `type` (`provides`|`depends`|`exchanges`|
   `reconciles`), optional `label`. Edges auto-route (orthogonal) — no coordinates.
@@ -117,6 +119,8 @@ carry inline, so no web font is downloaded.
   the label off the line. These are **page axes, not edge axes**: use
   `labelOffset` on horizontal edges and `labelOffsetX` on vertical ones.
 - Edge `"route":"straight"` skips the orthogonal router.
+- An edge `source`/`target` may be `"section:<label>"` to end on a container
+  (e.g. a chain that lands on a dashed group of results).
 - Edge labels may contain `\n` for a second line (object on line one, the
   exchange on line two, as in `ecosystem-value-exchange`).
 - Node `x` / `y` place a node explicitly, ignoring the lane grid, for

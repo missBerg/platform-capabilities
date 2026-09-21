@@ -157,7 +157,9 @@ def make_label(text: str, sublabel: str | None, bold: bool,
 
 def place_stamp(stamp: Stamp, x: float, y: float, nid: str,
                 label: str | None, sublabel: str | None,
-                w: float | None = None, h: float | None = None) -> list:
+                w: float | None = None, h: float | None = None,
+                font_size: float | None = None, bold: bool | None = None,
+                style_extra: str | None = None) -> list:
     """Clone a stamp's cells at (x, y); primary cell gets id=nid.
 
     A `w`/`h` override scales every cell proportionally so multi-cell stamps
@@ -187,8 +189,16 @@ def place_stamp(stamp: Stamp, x: float, y: float, nid: str,
                 geo.set("height", fmt(float(geo.get("height")) * sy))
         out.append(cell)
     if label is not None:
-        out[stamp.label_index].set("value", make_label(label, sublabel, stamp.label_bold,
-                                                     out[stamp.label_index].get("style", "")))
+        out[stamp.label_index].set("value", make_label(
+            label, sublabel, stamp.label_bold if bold is None else bold,
+            out[stamp.label_index].get("style", "")))
+    if style_extra:                                   # raw draw.io style tokens, one-offs
+        lc = out[stamp.label_index]
+        lc.set("style", lc.get("style", "") + style_extra.rstrip(";") + ";")
+    if font_size:                                     # per-node label size override
+        lc = out[stamp.label_index]
+        st = re.sub(r"fontSize=\d+", f"fontSize={fmt(font_size)}", lc.get("style", ""))
+        lc.set("style", st if "fontSize=" in st else st + f"fontSize={fmt(font_size)};")
     return out
 
 
@@ -313,10 +323,15 @@ def validate_spec(spec: dict, stamps: dict, icons: dict) -> None:
                 badge += "-yellow"
             if badge not in icons:
                 raise ValueError(f"unknown badge icon: {n['icon']!r}")
+    sections = {n["section"] for n in spec.get("nodes", []) if n.get("section")}
     for e in spec.get("edges", []):
         for end in ("source", "target"):
-            if e.get(end) not in ids:
-                raise ValueError(f"edge {end} {e.get(end)!r} is not a node id")
+            v = e.get(end)
+            if isinstance(v, str) and v.startswith("section:"):
+                if v[len("section:"):] not in sections:
+                    raise ValueError(f"edge {end} {v!r} names an unknown section")
+            elif v not in ids:
+                raise ValueError(f"edge {end} {v!r} is not a node id")
         etype = e.get("type", "provides")
         if etype not in stamps:
             raise ValueError(f"unknown edge type: {etype!r}")
@@ -441,9 +456,14 @@ def generate(spec: dict) -> str:
     cells: list = []
     if spec.get("title"):
         cells.append(make_title(spec["title"]))
-    # containers first (behind nodes)
+    # containers first (behind nodes); edges may end on one via "section:<label>"
+    section_ids: dict = {}
     for cid, stype, label, x, y, w, h in section_boxes(spec, rects):
+        section_ids[label] = cid
         cells.append(make_container(cid, stamps[stype], x, y, w, h, label))
+
+    def endpoint(v: str) -> str:
+        return section_ids[v[len("section:"):]] if v.startswith("section:") else v
     # nodes
     for n in spec["nodes"]:
         nid = n["id"]
@@ -456,7 +476,8 @@ def generate(spec: dict) -> str:
         else:
             cells.extend(place_stamp(stamps[n["type"]], x, y, nid,
                                      n.get("label"), n.get("sublabel"),
-                                     n.get("w"), n.get("h")))
+                                     n.get("w"), n.get("h"), n.get("fontSize"),
+                                     n.get("bold"), n.get("styleExtra")))
             if n.get("icon"):                          # corner badge
                 badge = slugify(n["icon"]) + ("-yellow" if n.get("iconColor") == "yellow" else "")
                 cells.append(make_icon_cell(f"{nid}-icon", icons[badge],
@@ -464,7 +485,7 @@ def generate(spec: dict) -> str:
     # edges last
     for i, e in enumerate(spec.get("edges", [])):
         cells.append(make_edge_cell(f"pcf-edge-{i}", stamps[e.get("type", "provides")],
-                                    e["source"], e["target"], e.get("label"), sketch,
+                                    endpoint(e["source"]), endpoint(e["target"]), e.get("label"), sketch,
                                     e.get("labelPosition"), e.get("labelOffset"),
                                     e.get("exit"), e.get("entry"),
                                     e.get("labelOffsetX"), e.get("route")))

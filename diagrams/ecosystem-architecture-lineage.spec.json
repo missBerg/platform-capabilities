@@ -2,68 +2,81 @@
   "name": "Fig 3 – Ecosystem model lineage",
   "flavour": "clean",
   "direction": "TB",
-  "laneGap": 40,
-  "rowGap": 60,
+  "laneGap": 30,
+  "rowGap": 14,
   "lanes": [
-    "Sources",
-    "Model"
+    "A",
+    "Plus",
+    "B",
+    "Eq",
+    "C"
   ],
   "nodes": [
     {
       "id": "plugin",
       "type": "rectangle-grey-light",
       "label": "Plugin systems",
+      "sublabel": "consistency: a shared framework or contracts",
       "icon": "code",
-      "lane": "Sources",
-      "w": 200,
+      "lane": "A",
+      "w": 360,
       "h": 70
+    },
+    {
+      "id": "padP",
+      "type": "spacer",
+      "lane": "Plus",
+      "w": 126,
+      "h": 10
+    },
+    {
+      "id": "plus",
+      "type": "rectangle-blue-light",
+      "label": "+",
+      "lane": "Plus",
+      "w": 48,
+      "h": 48,
+      "fontSize": 26,
+      "bold": true,
+      "styleExtra": "spacingBottom=6"
     },
     {
       "id": "micro",
       "type": "rectangle-grey-light",
       "label": "Microservices",
+      "sublabel": "independence: ship without a shared codebase",
       "icon": "cloud",
-      "lane": "Sources",
-      "w": 200,
+      "lane": "B",
+      "w": 360,
       "h": 70
     },
     {
-      "id": "padM",
+      "id": "padE",
       "type": "spacer",
-      "lane": "Model",
-      "w": 30,
+      "lane": "Eq",
+      "w": 126,
       "h": 10
+    },
+    {
+      "id": "eq",
+      "type": "rectangle-blue-dark",
+      "label": "=",
+      "lane": "Eq",
+      "w": 48,
+      "h": 48,
+      "fontSize": 26,
+      "bold": true,
+      "styleExtra": "spacingBottom=6"
     },
     {
       "id": "platform",
       "type": "platform",
       "label": "Platform ecosystem model",
-      "sublabel": "experts contribute, consumers self-serve",
-      "lane": "Model",
-      "w": 300,
-      "h": 90
+      "sublabel": "experts contribute and operate, consumers self-serve",
+      "lane": "C",
+      "w": 360,
+      "h": 80
     }
   ],
-  "edges": [
-    {
-      "source": "plugin",
-      "target": "platform",
-      "type": "provides",
-      "label": "consistency",
-      "exit": "bottom",
-      "entry": "top",
-      "labelPosition": -0.55,
-      "labelOffsetX": -58
-    },
-    {
-      "source": "micro",
-      "target": "platform",
-      "type": "provides",
-      "label": "independence",
-      "exit": "bottom",
-      "entry": "top",
-      "labelPosition": -0.55,
-      "labelOffsetX": 64
-    }
-  ]
+  "edges": []
 }
