@@ -2,26 +2,71 @@
   "name": "Fig 5 – Participation contract",
   "flavour": "clean",
   "direction": "TB",
-  "laneGap": 60,
-  "rowGap": 30,
+  "laneGap": 16,
+  "rowGap": 24,
   "lanes": [
+    "CP",
+    "G1",
+    "Cap",
+    "G2",
     "Contract",
+    "G3",
+    "Plat",
     "Gap",
-    "Parties",
-    "Gap2",
+    "P0",
     "P1",
-    "P2",
-    "P3",
-    "P4",
-    "P5",
-    "P6"
+    "P2"
   ],
   "nodes": [
+    {
+      "id": "cp1",
+      "type": "sub-capability",
+      "label": "Product-scoped",
+      "lane": "CP",
+      "section": "Capability principles",
+      "w": 150,
+      "h": 40
+    },
+    {
+      "id": "cp2",
+      "type": "sub-capability",
+      "label": "Self-service",
+      "lane": "CP",
+      "section": "Capability principles",
+      "w": 150,
+      "h": 40
+    },
+    {
+      "id": "cp3",
+      "type": "sub-capability",
+      "label": "Operationally owned",
+      "lane": "CP",
+      "section": "Capability principles",
+      "w": 150,
+      "h": 40
+    },
+    {
+      "id": "padC",
+      "type": "spacer",
+      "lane": "Cap",
+      "w": 95,
+      "h": 10
+    },
+    {
+      "id": "cap",
+      "type": "capability",
+      "label": "Capability",
+      "sublabel": "needs a platform to host it",
+      "icon": "cog",
+      "lane": "Cap",
+      "w": 260,
+      "h": 64
+    },
     {
       "id": "padK",
       "type": "spacer",
       "lane": "Contract",
-      "w": 60,
+      "w": 105,
       "h": 10
     },
     {
@@ -30,141 +75,127 @@
       "label": "Participation contract",
       "icon": "key",
       "lane": "Contract",
-      "w": 220,
+      "w": 240,
       "h": 70
+    },
+    {
+      "id": "padP",
+      "type": "spacer",
+      "lane": "Plat",
+      "w": 95,
+      "h": 10
+    },
+    {
+      "id": "plat",
+      "type": "platform",
+      "label": "Platform",
+      "sublabel": "needs capabilities it can sustain",
+      "lane": "Plat",
+      "w": 260,
+      "h": 64
     },
     {
       "id": "gap",
       "type": "spacer",
       "lane": "Gap",
       "w": 10,
-      "h": 20
+      "h": 34
     },
     {
-      "id": "cap",
-      "type": "capability",
-      "label": "Contributed capability",
-      "icon": "cog",
-      "lane": "Parties",
-      "w": 200,
-      "h": 70
-    },
-    {
-      "id": "plat",
-      "type": "platform",
-      "label": "Platform",
-      "lane": "Parties",
-      "w": 200,
-      "h": 70
-    },
-    {
-      "id": "gap2",
+      "id": "padR0",
       "type": "spacer",
-      "lane": "Gap2",
-      "w": 10,
-      "h": 20
-    },
-    {
-      "id": "cp1",
-      "type": "sub-capability",
-      "label": "Product-scoped",
-      "lane": "P1",
-      "section": "Capability principles",
-      "w": 200,
-      "h": 40
+      "lane": "P0",
+      "w": 67,
+      "h": 10
     },
     {
       "id": "pp1",
       "type": "tag-blue",
       "label": "Extensible",
-      "lane": "P1",
+      "lane": "P0",
       "section": "Platform principles",
-      "w": 200,
-      "h": 40
-    },
-    {
-      "id": "cp2",
-      "type": "sub-capability",
-      "label": "Self-service",
-      "lane": "P2",
-      "section": "Capability principles",
-      "w": 200,
-      "h": 40
+      "w": 150,
+      "h": 36
     },
     {
       "id": "pp2",
       "type": "tag-blue",
       "label": "Composable",
-      "lane": "P2",
+      "lane": "P0",
       "section": "Platform principles",
-      "w": 200,
-      "h": 40
+      "w": 150,
+      "h": 36
     },
     {
-      "id": "cp3",
-      "type": "sub-capability",
-      "label": "Operationally owned",
-      "lane": "P3",
-      "section": "Capability principles",
-      "w": 200,
-      "h": 40
+      "id": "padR1",
+      "type": "spacer",
+      "lane": "P1",
+      "w": 67,
+      "h": 10
     },
     {
       "id": "pp3",
       "type": "tag-blue",
       "label": "Declarative",
-      "lane": "P3",
+      "lane": "P1",
       "section": "Platform principles",
-      "w": 200,
-      "h": 40
-    },
-    {
-      "id": "cs4",
-      "type": "spacer",
-      "lane": "P4",
-      "w": 200,
-      "h": 40
+      "w": 150,
+      "h": 36
     },
     {
       "id": "pp4",
       "type": "tag-blue",
       "label": "Governable",
-      "lane": "P4",
+      "lane": "P1",
       "section": "Platform principles",
-      "w": 200,
-      "h": 40
+      "w": 150,
+      "h": 36
     },
     {
-      "id": "cs5",
+      "id": "padR2",
       "type": "spacer",
-      "lane": "P5",
-      "w": 200,
-      "h": 40
+      "lane": "P2",
+      "w": 67,
+      "h": 10
     },
     {
       "id": "pp5",
       "type": "tag-blue",
       "label": "Observable",
-      "lane": "P5",
+      "lane": "P2",
       "section": "Platform principles",
-      "w": 200,
-      "h": 40
-    },
-    {
-      "id": "cs6",
-      "type": "spacer",
-      "lane": "P6",
-      "w": 200,
-      "h": 40
+      "w": 150,
+      "h": 36
     },
     {
       "id": "pp6",
       "type": "tag-blue",
       "label": "Stable",
-      "lane": "P6",
+      "lane": "P2",
       "section": "Platform principles",
-      "w": 200,
-      "h": 40
+      "w": 150,
+      "h": 36
+    },
+    {
+      "id": "g1",
+      "type": "spacer",
+      "lane": "G1",
+      "w": 10,
+      "h": 22
+    },
+    {
+      "id": "g2",
+      "type": "spacer",
+      "lane": "G2",
+      "w": 10,
+      "h": 22
+    },
+    {
+      "id": "g3",
+      "type": "spacer",
+      "lane": "G3",
+      "w": 10,
+      "h": 22
     }
   ],
   "edges": [
@@ -172,19 +203,19 @@
       "source": "cap",
       "target": "contract",
       "type": "exchanges",
-      "label": "five factors",
-      "exit": "top",
-      "entry": "top",
-      "labelOffsetX": -50
+      "label": "adheres to",
+      "exit": "bottom",
+      "entry": "right",
+      "labelOffsetX": 54
     },
     {
       "source": "plat",
       "target": "contract",
       "type": "exchanges",
-      "label": "six principles",
+      "label": "commits to support",
       "exit": "top",
-      "entry": "bottom",
-      "labelOffsetX": 54
+      "entry": "left",
+      "labelOffsetX": 82
     }
   ]
 }

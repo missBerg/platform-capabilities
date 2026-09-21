@@ -2,68 +2,97 @@
   "name": "Fig 10 – Stable Reconciliation",
   "flavour": "clean",
   "direction": "TB",
-  "laneGap": 40,
-  "rowGap": 50,
+  "laneGap": 16,
+  "rowGap": 16,
   "lanes": [
-    "Input",
-    "Cap",
-    "Result"
+    "H",
+    "R1",
+    "R2"
   ],
   "nodes": [
     {
-      "id": "applied",
-      "type": "reference",
-      "label": "Same state, applied again",
-      "sublabel": "retry, rollout, recovery, drift",
-      "lane": "Input",
-      "w": 280,
-      "h": 80
+      "id": "corner",
+      "type": "spacer",
+      "lane": "H",
+      "w": 160,
+      "h": 10
     },
     {
-      "id": "cap",
-      "type": "capability",
-      "label": "Capability",
-      "sublabel": "converges, never duplicates",
-      "icon": "cog",
-      "lane": "Cap",
-      "w": 280,
-      "h": 80
+      "id": "hSafe",
+      "type": "tag-blue",
+      "label": "Safe to reapply",
+      "lane": "H",
+      "w": 200,
+      "h": 34
     },
     {
-      "id": "result",
-      "type": "data-store",
-      "label": "Same intended result",
-      "sublabel": "no side effects",
-      "lane": "Result",
-      "w": 280,
-      "h": 80
+      "id": "hUnsafe",
+      "type": "tag-blue",
+      "label": "Unsafe to reapply",
+      "lane": "H",
+      "w": 200,
+      "h": 34
+    },
+    {
+      "id": "rDecl",
+      "type": "tag-blue",
+      "label": "Declarative request",
+      "lane": "R1",
+      "w": 160,
+      "h": 34
+    },
+    {
+      "id": "c11",
+      "type": "rectangle-blue-light",
+      "label": "Passes both",
+      "sublabel": "converges on the same result",
+      "icon": "success",
+      "lane": "R1",
+      "w": 200,
+      "h": 84,
+      "styleExtra": "fillColor=#EDF4ED;strokeColor=#5A7A5A;fontColor=#3F5A3F"
+    },
+    {
+      "id": "c12",
+      "type": "rectangle-blue-light",
+      "label": "Fails Stable Reconciliation",
+      "sublabel": "applied twice, two of one thing",
+      "icon": "warning",
+      "lane": "R1",
+      "w": 200,
+      "h": 84,
+      "styleExtra": "fillColor=#F7ECEC;strokeColor=#A85959;fontColor=#7A3F3F"
+    },
+    {
+      "id": "rImp",
+      "type": "tag-blue",
+      "label": "Imperative request",
+      "lane": "R2",
+      "w": 160,
+      "h": 34
+    },
+    {
+      "id": "c21",
+      "type": "rectangle-blue-light",
+      "label": "Fails Declarative Inputs",
+      "sublabel": "the consumer runs the steps",
+      "icon": "warning",
+      "lane": "R2",
+      "w": 200,
+      "h": 84,
+      "styleExtra": "fillColor=#F7ECEC;strokeColor=#A85959;fontColor=#7A3F3F"
+    },
+    {
+      "id": "c22",
+      "type": "rectangle-blue-light",
+      "label": "Fails both",
+      "sublabel": "steps, and duplicates on retry",
+      "icon": "danger",
+      "lane": "R2",
+      "w": 200,
+      "h": 84,
+      "styleExtra": "fillColor=#F7ECEC;strokeColor=#A85959;fontColor=#7A3F3F"
     }
   ],
-  "edges": [
-    {
-      "source": "applied",
-      "target": "cap",
-      "type": "provides",
-      "exit": "bottom",
-      "entry": "top"
-    },
-    {
-      "source": "cap",
-      "target": "result",
-      "type": "exchanges",
-      "label": "converge",
-      "exit": "bottom",
-      "entry": "top",
-      "labelOffsetX": 52
-    },
-    {
-      "source": "result",
-      "target": "cap",
-      "type": "reconciles",
-      "label": "corrects drift",
-      "exit": "left",
-      "entry": "left",
-      "labelOffsetX": -64
-    }
-  ]
+  "edges": []
 }

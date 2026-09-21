@@ -194,7 +194,7 @@ def place_stamp(stamp: Stamp, x: float, y: float, nid: str,
             out[stamp.label_index].get("style", "")))
     if style_extra:                                   # raw draw.io style tokens, one-offs
         lc = out[stamp.label_index]
-        lc.set("style", lc.get("style", "") + style_extra.rstrip(";") + ";")
+        lc.set("style", apply_style(lc.get("style", ""), style_extra))
     if font_size:                                     # per-node label size override
         lc = out[stamp.label_index]
         st = re.sub(r"fontSize=\d+", f"fontSize={fmt(font_size)}", lc.get("style", ""))
@@ -263,12 +263,24 @@ def make_edge_cell(eid: str, stamp: Stamp, src: str, tgt: str,
     return cell
 
 
+def apply_style(style: str, extra: str | None) -> str:
+    """Append raw draw.io tokens, replacing any key already present."""
+    if not extra:
+        return style
+    for tok in extra.strip(";").split(";"):
+        key = tok.split("=", 1)[0]
+        style = re.sub(rf"(^|;){re.escape(key)}=[^;]*;?", r"\1", style)
+        style += ("" if style.endswith(";") or not style else ";") + tok + ";"
+    return style
+
+
 def make_container(cid: str, stamp: Stamp, x: float, y: float, w: float, h: float,
-                   label: str) -> ET.Element:
+                   label: str, style_extra: str | None = None) -> ET.Element:
     base = stamp.cells[stamp.label_index]
+    style = apply_style(base.get("style") or "", style_extra)
     cell = ET.Element("mxCell", {
         "id": cid, "parent": "1", "vertex": "1",
-        "style": base.get("style") or "",
+        "style": style,
         "value": make_label(label, None, "<b>" in (base.get("value") or "")),
     })
     ET.SubElement(cell, "mxGeometry", {
@@ -458,9 +470,12 @@ def generate(spec: dict) -> str:
         cells.append(make_title(spec["title"]))
     # containers first (behind nodes); edges may end on one via "section:<label>"
     section_ids: dict = {}
+    section_styles = {n["section"]: n["sectionStyle"] for n in spec["nodes"]
+                      if n.get("section") and n.get("sectionStyle")}
     for cid, stype, label, x, y, w, h in section_boxes(spec, rects):
         section_ids[label] = cid
-        cells.append(make_container(cid, stamps[stype], x, y, w, h, label))
+        cells.append(make_container(cid, stamps[stype], x, y, w, h, label,
+                                    section_styles.get(label)))
 
     def endpoint(v: str) -> str:
         return section_ids[v[len("section:"):]] if v.startswith("section:") else v

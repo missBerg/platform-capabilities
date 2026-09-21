@@ -3,12 +3,14 @@
   "flavour": "clean",
   "direction": "TB",
   "laneGap": 16,
-  "rowGap": 48,
+  "rowGap": 44,
   "lanes": [
     "Interfaces",
     "GapI",
     "API",
-    "Capability"
+    "Capability",
+    "GapE",
+    "Environments"
   ],
   "nodes": [
     {
@@ -69,7 +71,7 @@
       "id": "api",
       "type": "sub-capability",
       "label": "One versioned API",
-      "sublabel": "single entry point",
+      "sublabel": "provision, configure, update, observe",
       "icon": "key",
       "lane": "API",
       "w": 220,
@@ -90,7 +92,48 @@
       "icon": "cog",
       "lane": "Capability",
       "w": 220,
-      "h": 80
+      "h": 70
+    },
+    {
+      "id": "padE",
+      "type": "spacer",
+      "lane": "GapE",
+      "w": 10,
+      "h": 10
+    },
+    {
+      "id": "padEnv",
+      "type": "spacer",
+      "lane": "Environments",
+      "w": 40,
+      "h": 10
+    },
+    {
+      "id": "dev",
+      "type": "rectangle-grey-light",
+      "label": "Dev",
+      "lane": "Environments",
+      "section": "Same API in every environment",
+      "w": 100,
+      "h": 44
+    },
+    {
+      "id": "staging",
+      "type": "rectangle-grey-light",
+      "label": "Staging",
+      "lane": "Environments",
+      "section": "Same API in every environment",
+      "w": 100,
+      "h": 44
+    },
+    {
+      "id": "prod",
+      "type": "rectangle-grey-light",
+      "label": "Production",
+      "lane": "Environments",
+      "section": "Same API in every environment",
+      "w": 100,
+      "h": 44
     }
   ],
   "edges": [
@@ -126,10 +169,15 @@
       "source": "api",
       "target": "cap",
       "type": "provides",
-      "label": "any environment",
       "exit": "bottom",
-      "entry": "top",
-      "labelOffsetX": 84
+      "entry": "top"
+    },
+    {
+      "source": "cap",
+      "target": "section:Same API in every environment",
+      "type": "provides",
+      "exit": "bottom",
+      "entry": "top"
     }
   ]
 }

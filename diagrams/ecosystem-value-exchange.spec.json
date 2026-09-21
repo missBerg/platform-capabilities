@@ -41,8 +41,8 @@
       "target": "operators",
       "type": "exchanges",
       "route": "straight",
-      "label": "Participation contract\nconformance for distribution",
-      "labelOffsetX": -92,
+      "label": "Participation contract\nconformance for a governed platform",
+      "labelOffsetX": -104,
       "labelOffset": -6
     },
     {
@@ -50,8 +50,8 @@
       "target": "consumers",
       "type": "exchanges",
       "route": "straight",
-      "label": "Self-service catalog\nguardrails for trust",
-      "labelOffsetX": 84,
+      "label": "Self-service catalog\ndiscovery within guardrails",
+      "labelOffsetX": 90,
       "labelOffset": -6
     },
     {
@@ -59,8 +59,8 @@
       "target": "producers",
       "type": "exchanges",
       "route": "straight",
-      "label": "Capability API\ndemand for outcomes",
-      "labelOffset": -26
+      "label": "Capability API\nmanaged outcomes on request",
+      "labelOffset": -48
     }
   ]
 }

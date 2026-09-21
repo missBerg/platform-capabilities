@@ -48,7 +48,10 @@ Validate the libraries any time with `python3 scripts/build-diagram.py --self-ch
   `section` (string — nodes sharing it get wrapped in a container),
   `sectionType` (container slug, default `capability-group`), `w`/`h` overrides,
   `fontSize` (label size override), `bold` (force bold on/off), `styleExtra`
-  (raw draw.io style tokens appended to the label cell, e.g. `"spacingBottom=8"`).
+  (raw draw.io style tokens appended to the label cell, e.g. `"spacingBottom=8"`),
+  `sectionStyle` (same, applied to the node's section container; use it for a
+  green `fillColor=#EDF4ED;strokeColor=#5A7A5A;fontColor=#3F5A3F` or red
+  `fillColor=#F7ECEC;strokeColor=#A85959;fontColor=#7A3F3F` tint).
 - **icon node**: `type:"icon"` + `icon:"<slug>"` → a bordered icon tile.
 - **edge**: `source`, `target`, `type` (`provides`|`depends`|`exchanges`|
   `reconciles`), optional `label`. Edges auto-route (orthogonal) — no coordinates.

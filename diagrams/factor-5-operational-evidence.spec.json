@@ -1,160 +1,121 @@
 {
   "name": "Fig 11 – Operational Evidence",
   "flavour": "clean",
-  "direction": "LR",
-  "laneGap": 70,
-  "rowGap": 24,
+  "direction": "TB",
+  "laneGap": 20,
+  "rowGap": 80,
   "lanes": [
-    "Actors",
-    "Evidence"
+    "Top",
+    "Mid",
+    "Bottom"
   ],
   "nodes": [
     {
-      "id": "a1",
+      "id": "consumers",
       "type": "rectangle-blue-light",
       "label": "Consumers",
+      "sublabel": "Can I use it? What do I owe?",
       "icon": "human",
-      "lane": "Actors",
-      "section": "Authorized actors",
-      "w": 200,
-      "h": 40
+      "lane": "Top",
+      "w": 184,
+      "h": 70
     },
     {
-      "id": "a2",
-      "type": "rectangle-blue-light",
-      "label": "Platform ops & leadership",
-      "icon": "cog",
-      "lane": "Actors",
-      "section": "Authorized actors",
-      "w": 200,
-      "h": 40
-    },
-    {
-      "id": "a3",
-      "type": "rectangle-blue-light",
-      "label": "Producers",
-      "icon": "team",
-      "lane": "Actors",
-      "section": "Authorized actors",
-      "w": 200,
-      "h": 40
-    },
-    {
-      "id": "a4",
-      "type": "rectangle-blue-light",
-      "label": "Finance",
-      "icon": "dashboard",
-      "lane": "Actors",
-      "section": "Authorized actors",
-      "w": 200,
-      "h": 40
-    },
-    {
-      "id": "a5",
-      "type": "rectangle-blue-light",
-      "label": "Security & compliance",
-      "icon": "shield",
-      "lane": "Actors",
-      "section": "Authorized actors",
-      "w": 200,
-      "h": 40
-    },
-    {
-      "id": "docs",
-      "type": "documentation",
-      "label": "Documentation",
-      "sublabel": "purpose, ownership, policy",
-      "lane": "Evidence",
-      "w": 200,
-      "h": 80
-    },
-    {
-      "id": "g1",
+      "id": "padT",
       "type": "spacer",
-      "lane": "Evidence",
-      "w": 10,
-      "h": 30
+      "lane": "Top",
+      "w": 150,
+      "h": 10
     },
     {
-      "id": "surface",
+      "id": "producers",
+      "type": "rectangle-yellow-light",
+      "label": "Producers",
+      "sublabel": "Is it healthy? Who uses it?",
+      "icon": "team",
+      "iconColor": "yellow",
+      "lane": "Top",
+      "w": 184,
+      "h": 70
+    },
+    {
+      "id": "padM",
+      "type": "spacer",
+      "lane": "Mid",
+      "w": 150,
+      "h": 10
+    },
+    {
+      "id": "cap",
       "type": "platform",
       "label": "Operational evidence",
-      "sublabel": "authoritative",
+      "sublabel": "authoritative, answered without the producer",
       "icon": "dashboard",
-      "lane": "Evidence",
-      "w": 200,
-      "h": 90
-    },
-    {
-      "id": "g2",
-      "type": "spacer",
-      "lane": "Evidence",
-      "w": 10,
-      "h": 30
-    },
-    {
-      "id": "telemetry",
-      "type": "rectangle-grey-light",
-      "label": "Telemetry",
-      "sublabel": "health, lifecycle, compliance",
-      "lane": "Evidence",
-      "w": 200,
+      "lane": "Mid",
+      "w": 240,
       "h": 80
+    },
+    {
+      "id": "ops",
+      "type": "rectangle-blue-light",
+      "label": "Platform ops & leadership",
+      "sublabel": "Worth continued investment?",
+      "icon": "cog",
+      "lane": "Bottom",
+      "w": 184,
+      "h": 70
+    },
+    {
+      "id": "finance",
+      "type": "rectangle-blue-light",
+      "label": "Finance",
+      "sublabel": "What does it cost? Who owns it?",
+      "icon": "dashboard",
+      "lane": "Bottom",
+      "w": 184,
+      "h": 70
+    },
+    {
+      "id": "security",
+      "type": "rectangle-blue-light",
+      "label": "Security & compliance",
+      "sublabel": "In posture? Any exceptions?",
+      "icon": "shield",
+      "lane": "Bottom",
+      "w": 184,
+      "h": 70
     }
   ],
   "edges": [
     {
-      "source": "surface",
-      "target": "a1",
-      "type": "provides",
-      "exit": "left",
-      "entry": "right"
+      "source": "consumers",
+      "target": "cap",
+      "type": "exchanges",
+      "route": "straight"
     },
     {
-      "source": "surface",
-      "target": "a2",
-      "type": "provides",
-      "exit": "left",
-      "entry": "right"
+      "source": "producers",
+      "target": "cap",
+      "type": "exchanges",
+      "route": "straight"
     },
     {
-      "source": "surface",
-      "target": "a3",
-      "type": "provides",
-      "exit": "left",
-      "entry": "right"
+      "source": "ops",
+      "target": "cap",
+      "type": "exchanges",
+      "route": "straight"
     },
     {
-      "source": "surface",
-      "target": "a4",
-      "type": "provides",
-      "exit": "left",
-      "entry": "right"
+      "source": "finance",
+      "target": "cap",
+      "type": "exchanges",
+      "route": "straight"
     },
     {
-      "source": "surface",
-      "target": "a5",
-      "type": "provides",
-      "exit": "left",
-      "entry": "right"
-    },
-    {
-      "source": "surface",
-      "target": "docs",
-      "type": "provides",
-      "label": "what should be true",
-      "exit": "top",
-      "entry": "bottom",
-      "labelOffsetX": 72
-    },
-    {
-      "source": "surface",
-      "target": "telemetry",
-      "type": "provides",
-      "label": "what is actually true",
-      "exit": "bottom",
-      "entry": "top",
-      "labelOffsetX": 72
+      "source": "security",
+      "target": "cap",
+      "type": "exchanges",
+      "route": "straight"
     }
   ]
 }

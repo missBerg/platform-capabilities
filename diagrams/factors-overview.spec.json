@@ -2,14 +2,11 @@
   "name": "Fig 6 – Five factors",
   "flavour": "clean",
   "direction": "TB",
-  "laneGap": 20,
-  "rowGap": 22,
+  "laneGap": 16,
+  "rowGap": 40,
   "lanes": [
-    "F1",
-    "F2",
-    "F3",
-    "F4",
-    "F5"
+    "Four",
+    "Foundation"
   ],
   "nodes": [
     {
@@ -17,45 +14,46 @@
       "type": "sub-capability",
       "label": "1. Defined Contract",
       "icon": "key",
-      "lane": "F1",
-      "w": 320,
-      "h": 56
+      "lane": "Four",
+      "w": 124,
+      "h": 72
     },
     {
       "id": "f2",
       "type": "sub-capability",
       "label": "2. Declarative Inputs",
       "icon": "code",
-      "lane": "F2",
-      "w": 320,
-      "h": 56
+      "lane": "Four",
+      "w": 124,
+      "h": 72
     },
     {
       "id": "f3",
       "type": "sub-capability",
       "label": "3. Encapsulated Dependencies",
       "icon": "shield",
-      "lane": "F3",
-      "w": 320,
-      "h": 56
+      "lane": "Four",
+      "w": 124,
+      "h": 72
     },
     {
       "id": "f4",
       "type": "sub-capability",
       "label": "4. Stable Reconciliation",
       "icon": "cog",
-      "lane": "F4",
-      "w": 320,
-      "h": 56
+      "lane": "Four",
+      "w": 124,
+      "h": 72
     },
     {
       "id": "f5",
-      "type": "sub-capability",
+      "type": "platform",
       "label": "5. Operational Evidence",
+      "sublabel": "makes the other four verifiable",
       "icon": "dashboard",
-      "lane": "F5",
-      "w": 320,
-      "h": 56
+      "lane": "Foundation",
+      "w": 544,
+      "h": 64
     }
   ],
   "edges": []

@@ -2,56 +2,73 @@
   "name": "Fig 9 – Encapsulated Dependencies",
   "flavour": "clean",
   "direction": "TB",
-  "laneGap": 44,
+  "laneGap": 70,
   "rowGap": 50,
   "lanes": [
-    "Top",
-    "Bottom"
+    "Actors",
+    "Resources",
+    "Lifecycle"
   ],
   "nodes": [
     {
       "id": "consumer",
       "type": "rectangle-blue-light",
       "label": "Consumer",
+      "sublabel": "requests a database",
       "icon": "human",
-      "lane": "Top",
-      "w": 110,
-      "h": 56
+      "lane": "Actors",
+      "section": "Consumer owns",
+      "w": 210,
+      "h": 60
     },
     {
       "id": "cap",
       "type": "capability",
       "label": "Database capability",
+      "sublabel": "delivers the complete outcome",
       "icon": "shield",
-      "lane": "Top",
-      "w": 180,
-      "h": 80
-    },
-    {
-      "id": "outcome",
-      "type": "outcome",
-      "label": "Working database",
-      "lane": "Top",
-      "w": 165,
-      "h": 80
+      "lane": "Actors",
+      "section": "Capability owns",
+      "w": 210,
+      "h": 60
     },
     {
       "id": "prereq",
       "type": "external-system",
       "label": "Prerequisite",
-      "sublabel": "consumer's responsibility",
-      "lane": "Bottom",
-      "w": 110,
+      "sublabel": "e.g. an existing network",
+      "lane": "Resources",
+      "section": "Consumer owns",
+      "w": 210,
       "h": 66
     },
     {
-      "id": "deps",
+      "id": "dep",
       "type": "sub-capability",
-      "label": "Owned dependencies",
+      "label": "Dependencies",
       "sublabel": "storage, backups, encryption, audit",
-      "lane": "Bottom",
-      "w": 180,
+      "lane": "Resources",
+      "section": "Capability owns",
+      "w": 210,
       "h": 66
+    },
+    {
+      "id": "l1",
+      "type": "tag-blue",
+      "label": "consumer holds its lifecycle",
+      "lane": "Lifecycle",
+      "section": "Consumer owns",
+      "w": 210,
+      "h": 30
+    },
+    {
+      "id": "l2",
+      "type": "tag-blue",
+      "label": "capability holds their lifecycle",
+      "lane": "Lifecycle",
+      "section": "Capability owns",
+      "w": 210,
+      "h": 30
     }
   ],
   "edges": [
@@ -59,29 +76,35 @@
       "source": "consumer",
       "target": "cap",
       "type": "provides",
-      "label": "declares",
-      "labelOffset": -14
-    },
-    {
-      "source": "cap",
-      "target": "outcome",
-      "type": "provides",
-      "label": "delivers",
-      "labelOffset": -14
+      "label": "requests",
+      "labelOffset": -30
     },
     {
       "source": "consumer",
       "target": "prereq",
-      "type": "depends",
+      "type": "provides",
+      "label": "provides",
       "exit": "bottom",
-      "entry": "top"
+      "entry": "top",
+      "labelOffsetX": -44
     },
     {
       "source": "cap",
-      "target": "deps",
-      "type": "reconciles",
+      "target": "dep",
+      "type": "provides",
+      "label": "creates",
       "exit": "bottom",
-      "entry": "top"
+      "entry": "top",
+      "labelOffsetX": 40
+    },
+    {
+      "source": "cap",
+      "target": "prereq",
+      "type": "depends",
+      "label": "requires",
+      "route": "straight",
+      "labelPosition": 0.15,
+      "labelOffset": -20
     }
   ]
 }

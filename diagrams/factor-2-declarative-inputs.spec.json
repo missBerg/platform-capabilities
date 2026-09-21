@@ -1,66 +1,134 @@
 {
   "name": "Fig 8 – Declarative Inputs",
   "flavour": "clean",
-  "direction": "TB",
-  "laneGap": 50,
-  "rowGap": 50,
+  "direction": "LR",
+  "laneGap": 46,
+  "rowGap": 44,
   "lanes": [
-    "Top",
-    "Cap"
+    "Declarative",
+    "VS",
+    "Imperative"
   ],
   "nodes": [
     {
-      "id": "consumer",
+      "id": "cons1",
       "type": "rectangle-blue-light",
       "label": "Consumer",
       "icon": "human",
-      "lane": "Top",
-      "w": 120,
+      "lane": "Declarative",
+      "section": "Declarative",
+      "sectionStyle": "fillColor=#EDF4ED;strokeColor=#5A7A5A;fontColor=#3F5A3F",
+      "w": 200,
       "h": 56
     },
     {
-      "id": "declared",
+      "id": "desired",
       "type": "reference",
-      "label": "Desired outcome",
+      "label": "Desired state",
       "sublabel": "engine, size, durability, backup policy",
-      "lane": "Top",
-      "w": 260,
-      "h": 80
+      "lane": "Declarative",
+      "section": "Declarative",
+      "w": 200,
+      "h": 70
     },
     {
-      "id": "padC",
-      "type": "spacer",
-      "lane": "Cap",
-      "w": 120,
-      "h": 10
-    },
-    {
-      "id": "cap",
+      "id": "cap1",
       "type": "capability",
-      "label": "Database capability",
-      "sublabel": "owns the translation",
+      "label": "Capability",
+      "sublabel": "owns provisioning, ordering, recovery",
       "icon": "cog",
-      "lane": "Cap",
-      "w": 260,
-      "h": 80
+      "lane": "Declarative",
+      "section": "Declarative",
+      "w": 200,
+      "h": 70
+    },
+    {
+      "id": "padV",
+      "type": "spacer",
+      "lane": "VS",
+      "w": 10,
+      "h": 78
+    },
+    {
+      "id": "vs",
+      "type": "rectangle-blue-dark",
+      "label": "vs",
+      "lane": "VS",
+      "w": 48,
+      "h": 48,
+      "fontSize": 20,
+      "bold": true,
+      "styleExtra": "spacingBottom=4"
+    },
+    {
+      "id": "cons2",
+      "type": "rectangle-blue-light",
+      "label": "Consumer",
+      "sublabel": "must know the steps",
+      "icon": "human",
+      "lane": "Imperative",
+      "section": "Imperative",
+      "sectionStyle": "fillColor=#F7ECEC;strokeColor=#A85959;fontColor=#7A3F3F",
+      "w": 200,
+      "h": 56
+    },
+    {
+      "id": "steps",
+      "type": "rectangle-grey-light",
+      "label": "Ordered steps",
+      "sublabel": "provision, order, recover",
+      "lane": "Imperative",
+      "section": "Imperative",
+      "w": 200,
+      "h": 70
+    },
+    {
+      "id": "cap2",
+      "type": "capability",
+      "label": "Capability",
+      "sublabel": "executes what it is told",
+      "lane": "Imperative",
+      "section": "Imperative",
+      "w": 200,
+      "h": 70
     }
   ],
   "edges": [
     {
-      "source": "consumer",
-      "target": "declared",
+      "source": "cons1",
+      "target": "desired",
       "type": "provides",
       "label": "declares",
-      "labelOffset": -16
-    },
-    {
-      "source": "declared",
-      "target": "cap",
-      "type": "exchanges",
-      "label": "reconciled over time",
       "exit": "bottom",
       "entry": "top",
-      "labelOffsetX": 88
+      "labelOffsetX": 44
+    },
+    {
+      "source": "desired",
+      "target": "cap1",
+      "type": "exchanges",
+      "label": "reconciled",
+      "exit": "bottom",
+      "entry": "top",
+      "labelOffsetX": 50
+    },
+    {
+      "source": "cons2",
+      "target": "steps",
+      "type": "provides",
+      "label": "writes",
+      "exit": "bottom",
+      "entry": "top",
+      "labelOffsetX": 36
+    },
+    {
+      "source": "steps",
+      "target": "cap2",
+      "type": "provides",
+      "label": "runs once",
+      "exit": "bottom",
+      "entry": "top",
+      "labelOffsetX": 48
     }
   ]
 }
