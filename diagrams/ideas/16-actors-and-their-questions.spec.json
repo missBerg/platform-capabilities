@@ -29,7 +29,7 @@
     },
     {
       "id": "producers",
-      "type": "rectangle-yellow-light",
+      "type": "rectangle-blue-light",
       "label": "Producers",
       "sublabel": "Is it healthy? Who uses it?",
       "icon": "team",
