@@ -1,0 +1,165 @@
+{
+  "name": "Platform with capabilities (landscape)",
+  "flavour": "clean",
+  "direction": "LR",
+  "nodes": [
+    {
+      "id": "dev",
+      "type": "rectangle-yellow-light",
+      "label": "Developer",
+      "icon": "code",
+      "iconColor": "yellow",
+      "lane": "L",
+      "section": "Capability producers",
+      "x": 40,
+      "y": 104,
+      "w": 140,
+      "h": 44
+    },
+    {
+      "id": "pagent",
+      "type": "rectangle-yellow-light",
+      "label": "AI agent",
+      "icon": "ai-agent",
+      "iconColor": "yellow",
+      "lane": "L",
+      "section": "Capability producers",
+      "x": 40,
+      "y": 178,
+      "w": 140,
+      "h": 44
+    },
+    {
+      "id": "wysiwyg",
+      "type": "rectangle-yellow-light",
+      "label": "WYSIWYG",
+      "icon": "computer",
+      "iconColor": "yellow",
+      "lane": "L",
+      "section": "Capability producers",
+      "x": 40,
+      "y": 252,
+      "w": 140,
+      "h": 44
+    },
+    {
+      "id": "papi",
+      "type": "rectangle-yellow-light",
+      "label": "Producer API",
+      "sublabel": "create & manage",
+      "lane": "L",
+      "x": 252,
+      "y": 155,
+      "w": 150,
+      "h": 56
+    },
+    {
+      "id": "definition",
+      "type": "rectangle-blue-dark",
+      "label": "Capability definition",
+      "icon": "cog",
+      "lane": "L",
+      "section": "Platform with capabilities",
+      "x": 474,
+      "y": 129,
+      "w": 200,
+      "h": 52
+    },
+    {
+      "id": "instances",
+      "type": "rectangle-blue-light",
+      "label": "Instances",
+      "sublabel": "N instances of a capability",
+      "lane": "L",
+      "section": "Platform with capabilities",
+      "x": 474,
+      "y": 211,
+      "w": 200,
+      "h": 60
+    },
+    {
+      "id": "capi",
+      "type": "rectangle-blue-light",
+      "label": "Consumer API",
+      "sublabel": "discover & use",
+      "lane": "L",
+      "x": 746,
+      "y": 155,
+      "w": 150,
+      "h": 56
+    },
+    {
+      "id": "prog",
+      "type": "rectangle-blue-light",
+      "label": "Programmatic",
+      "icon": "code",
+      "lane": "L",
+      "section": "Capability consumers",
+      "x": 968,
+      "y": 104,
+      "w": 140,
+      "h": 44
+    },
+    {
+      "id": "cagent",
+      "type": "rectangle-blue-light",
+      "label": "AI agent",
+      "icon": "ai-agent",
+      "lane": "L",
+      "section": "Capability consumers",
+      "x": 968,
+      "y": 178,
+      "w": 140,
+      "h": 44
+    },
+    {
+      "id": "portal",
+      "type": "rectangle-blue-light",
+      "label": "Portal",
+      "icon": "computer",
+      "lane": "L",
+      "section": "Capability consumers",
+      "x": 968,
+      "y": 252,
+      "w": 140,
+      "h": 44
+    }
+  ],
+  "edges": [
+    {
+      "source": "section:Capability producers",
+      "target": "papi",
+      "type": "provides",
+      "exit": "right",
+      "entry": "left"
+    },
+    {
+      "source": "papi",
+      "target": "section:Platform with capabilities",
+      "type": "provides",
+      "exit": "right",
+      "entry": "left"
+    },
+    {
+      "source": "definition",
+      "target": "instances",
+      "type": "provides",
+      "exit": "bottom",
+      "entry": "top"
+    },
+    {
+      "source": "section:Capability consumers",
+      "target": "capi",
+      "type": "provides",
+      "exit": "left",
+      "entry": "right"
+    },
+    {
+      "source": "capi",
+      "target": "section:Platform with capabilities",
+      "type": "provides",
+      "exit": "left",
+      "entry": "right"
+    }
+  ]
+}

@@ -140,3 +140,11 @@ size. No titles inside the image (the document caption carries it), sublabels
 ≤ 4 words, no red "fails the factor" callouts (the document states the cost
 of failing; the figure shows the key point), and run
 `scripts/restyle-diagram.py` after generating.
+
+Landscape variants live beside the portrait spec as `<name>-landscape.spec.json`
+(tab name "… (landscape)"), never replacing it. Lay them out `LR` with explicit
+`x`/`y` so arrows stay straight: give every row the same centre line, remember a
+container adds 24 padding on each side plus a 34 header, and fan-ins from a
+group are cleaner as one edge from `section:<label>` than one edge per box. On
+the `policy` hexagon in `LR`, use entry `top` for the left vertex and `bottom`
+for the right one.

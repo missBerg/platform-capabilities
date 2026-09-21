@@ -72,10 +72,13 @@ pre-loaded** via the `clibs` URL parameter:
 
 | Diagram | Open in diagrams.net (libraries pre-loaded) |
 | ------- | -------------------------------------------- |
+| `centralized-friction-loop-landscape.drawio` | [Open](https://app.diagrams.net/?clibs=Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components-sketch.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons-sketch.xml#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fdiagrams%2Fcentralized-friction-loop-landscape.drawio) |
 | `centralized-friction-loop.drawio` | [Open](https://app.diagrams.net/?clibs=Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components-sketch.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons-sketch.xml#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fdiagrams%2Fcentralized-friction-loop.drawio) |
 | `challenge-central-bottleneck.drawio` | [Open](https://app.diagrams.net/?clibs=Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components-sketch.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons-sketch.xml#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fdiagrams%2Fchallenge-central-bottleneck.drawio) |
+| `ecosystem-architecture-lineage-landscape.drawio` | [Open](https://app.diagrams.net/?clibs=Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components-sketch.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons-sketch.xml#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fdiagrams%2Fecosystem-architecture-lineage-landscape.drawio) |
 | `ecosystem-architecture-lineage.drawio` | [Open](https://app.diagrams.net/?clibs=Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components-sketch.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons-sketch.xml#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fdiagrams%2Fecosystem-architecture-lineage.drawio) |
 | `ecosystem-value-exchange.drawio` | [Open](https://app.diagrams.net/?clibs=Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components-sketch.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons-sketch.xml#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fdiagrams%2Fecosystem-value-exchange.drawio) |
+| `factor-1-defined-contract-landscape.drawio` | [Open](https://app.diagrams.net/?clibs=Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components-sketch.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons-sketch.xml#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fdiagrams%2Ffactor-1-defined-contract-landscape.drawio) |
 | `factor-1-defined-contract.drawio` | [Open](https://app.diagrams.net/?clibs=Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components-sketch.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons-sketch.xml#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fdiagrams%2Ffactor-1-defined-contract.drawio) |
 | `factor-2-declarative-inputs.drawio` | [Open](https://app.diagrams.net/?clibs=Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components-sketch.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons-sketch.xml#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fdiagrams%2Ffactor-2-declarative-inputs.drawio) |
 | `factor-3-encapsulated-dependencies.drawio` | [Open](https://app.diagrams.net/?clibs=Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components-sketch.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons-sketch.xml#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fdiagrams%2Ffactor-3-encapsulated-dependencies.drawio) |
@@ -83,104 +86,8 @@ pre-loaded** via the `clibs` URL parameter:
 | `factor-5-operational-evidence.drawio` | [Open](https://app.diagrams.net/?clibs=Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components-sketch.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons-sketch.xml#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fdiagrams%2Ffactor-5-operational-evidence.drawio) |
 | `factors-overview.drawio` | [Open](https://app.diagrams.net/?clibs=Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components-sketch.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons-sketch.xml#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fdiagrams%2Ffactors-overview.drawio) |
 | `factors-to-outcomes.drawio` | [Open](https://app.diagrams.net/?clibs=Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components-sketch.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons-sketch.xml#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fdiagrams%2Ffactors-to-outcomes.drawio) |
+| `participation-contract-landscape.drawio` | [Open](https://app.diagrams.net/?clibs=Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components-sketch.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons-sketch.xml#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fdiagrams%2Fparticipation-contract-landscape.drawio) |
 | `participation-contract.drawio` | [Open](https://app.diagrams.net/?clibs=Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components-sketch.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons-sketch.xml#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fdiagrams%2Fparticipation-contract.drawio) |
 | `pcf-community-draft.drawio` | [Open](https://app.diagrams.net/?clibs=Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components-sketch.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons-sketch.xml#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fdiagrams%2Fpcf-community-draft.drawio) |
+| `platform-with-capabilities-landscape.drawio` | [Open](https://app.diagrams.net/?clibs=Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components-sketch.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons-sketch.xml#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fdiagrams%2Fplatform-with-capabilities-landscape.drawio) |
 | `platform-with-capabilities.drawio` | [Open](https://app.diagrams.net/?clibs=Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-components-sketch.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fpcf-icons-sketch.xml#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FmissBerg%2Fplatform-capabilities%2Fmain%2Fdiagrams%2Fplatform-with-capabilities.drawio) |
-
-> Opened this way the diagram loads read-only from GitHub — use **File → Save
-> as** (or *Make a Copy*) to start editing your own version. Add new diagrams to
-> `diagrams/` and run `python3 scripts/make-open-links.py` to regenerate this
-> table.
-
-### Edit in VS Code (round-trips to the repo)
-
-The repo ships a [`.vscode/settings.json`](.vscode/settings.json) that wires the
-four PCF libraries into the **[Draw.io Integration](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio)**
-extension (`hediet.vscode-drawio`).
-
-1. Install the extension and clone this repo.
-2. Open any `diagrams/*.drawio` file — it opens in the embedded Draw.io editor.
-3. The PCF libraries appear in the shapes panel (look for the **PCF — …**
-   entries). Edits save straight back to the file in your clone, so diagrams
-   stay version-controlled.
-
-## Generate a diagram from a spec
-
-Prefer not to drag shapes around by hand? Describe a diagram as a small JSON
-spec and let the generator lay it out with the PCF styles. It parses
-`pcf-components.xml` / `pcf-icons.xml` as the source of truth, so output never
-drifts from the library.
-
-```bash
-# 1. write a spec (see examples/platform-from-spec.spec.json for a full example)
-# 2. generate the .drawio
-python3 scripts/build-diagram.py examples/platform-from-spec.spec.json
-# 3. render to an image and review it
-python3 scripts/render.py examples/platform-from-spec.drawio       # -> .png
-```
-
-A spec lists `nodes` (each with a component `type` or an `icon`), `edges`
-(`provides` / `depends` / `exchanges` / `reconciles`), and `lanes` that drive a
-clean left-to-right or top-down layout; `section` groups wrap nodes in a
-container. Full schema and the type/icon slug lists live in
-[`.claude/skills/pcf-diagram/SKILL.md`](.claude/skills/pcf-diagram/SKILL.md).
-
-Rendering needs the draw.io desktop app (`brew install --cask drawio`); the
-generator itself is pure Python stdlib. Validate the libraries with
-`python3 scripts/build-diagram.py --self-check`.
-
-## What's inside
-
-### Components (`pcf-components.xml`)
-
-Capability, Platform, Sub-Capability, Capability Group, Capability Consumer,
-Capability Owner, Service, External System, Data Store, Consumer API,
-Producer API, Fleet, Desired vs Actual State, Outcome, Decision, Process Step,
-Event, Start/End, Policy, Documentation, Note, Open Question, Reference,
-Risk/Gap, Section/Layer, Swimlane, Tag, Title block, four edge styles
-(provides / depends-on / exchanges / reconciles), and a set of plain
-coloured rectangles.
-
-### Icons (`pcf-icons.xml`)
-
-| Group      | Icons                                                                                     |
-| ---------- | ----------------------------------------------------------------------------------------- |
-| `actors`   | ai-agent, bot, human, scheduled-job, team                                                 |
-| `callouts` | danger, info, note, question, success, tip, warning                                       |
-| `ops`      | bell, clock, cloud, code, cog, computer, dashboard, gear, key, lock, pipeline, shield, webhook |
-| `status`   | degraded, deprecated, failed, healthy, pending                                            |
-
-## Rebuilding the icon libraries
-
-The icon `.xml` files are generated from the source SVGs in `icons/`. After
-adding or editing an SVG, regenerate both clean and sketch libraries:
-
-```bash
-python3 scripts/build-icon-library.py
-```
-
-This bundles every SVG under `icons/<group>/` into `pcf-icons.xml` and
-`pcf-icons-sketch.xml`. Conventions:
-
-- Keep icons on a `48×48` `viewBox`.
-- Use the PCF blue `#2E5C9E` as the primary fill — the build emits a yellow
-  (`#B5915A`) colour variant automatically for any icon that uses it.
-- Group SVGs into one of `actors`, `callouts`, `ops`, `status`.
-
-## Repository layout
-
-```
-icons/                   Source SVGs (actors, callouts, ops, status)
-scripts/                 build-diagram.py      — spec.json -> .drawio generator
-                         render.py             — .drawio -> PNG/SVG (draw.io CLI)
-                         build-icon-library.py — bundles SVGs into libraries
-                         make-open-links.py    — generates diagrams.net deep links
-diagrams/                Paper figures (spec + .drawio); see diagrams/REVIEW-2026-09-17.md
-examples/                Library demo diagrams
-.vscode/settings.json    Wires the libraries into the VS Code Draw.io extension
-pcf-components.xml        Component shape library (clean)
-pcf-components-sketch.xml Component shape library (sketch)
-pcf-icons.xml             Icon library (clean, generated)
-pcf-icons-sketch.xml      Icon library (sketch, generated)
-pcf-theme.json            Draw.io configuration: styles + libraries + fonts
-```

@@ -1,0 +1,160 @@
+{
+  "name": "Fig 5 \u2013 Participation contract (landscape)",
+  "flavour": "clean",
+  "direction": "LR",
+  "nodes": [
+    {
+      "id": "cap",
+      "type": "capability",
+      "label": "Capability",
+      "lane": "L",
+      "x": 40,
+      "y": 40,
+      "w": 220,
+      "h": 64,
+      "sublabel": "needs a platform to host it",
+      "icon": "cog"
+    },
+    {
+      "id": "contract",
+      "type": "policy",
+      "label": "Participation contract",
+      "lane": "L",
+      "x": 370,
+      "y": 37,
+      "w": 240,
+      "h": 70,
+      "icon": "key"
+    },
+    {
+      "id": "plat",
+      "type": "platform",
+      "label": "Platform",
+      "lane": "L",
+      "x": 720,
+      "y": 40,
+      "w": 220,
+      "h": 64,
+      "sublabel": "needs capabilities it can sustain"
+    },
+    {
+      "id": "cp1",
+      "type": "sub-capability",
+      "label": "Product-scoped",
+      "lane": "L",
+      "x": 64,
+      "y": 192,
+      "w": 172,
+      "h": 40,
+      "section": "Capability principles"
+    },
+    {
+      "id": "cp2",
+      "type": "sub-capability",
+      "label": "Self-service",
+      "lane": "L",
+      "x": 64,
+      "y": 248,
+      "w": 172,
+      "h": 40,
+      "section": "Capability principles"
+    },
+    {
+      "id": "cp3",
+      "type": "sub-capability",
+      "label": "Operationally owned",
+      "lane": "L",
+      "x": 64,
+      "y": 304,
+      "w": 172,
+      "h": 40,
+      "section": "Capability principles"
+    },
+    {
+      "id": "pp1",
+      "type": "tag-blue",
+      "label": "Extensible",
+      "lane": "L",
+      "x": 672,
+      "y": 192,
+      "w": 150,
+      "h": 40,
+      "section": "Platform principles"
+    },
+    {
+      "id": "pp2",
+      "type": "tag-blue",
+      "label": "Composable",
+      "lane": "L",
+      "x": 838,
+      "y": 192,
+      "w": 150,
+      "h": 40,
+      "section": "Platform principles"
+    },
+    {
+      "id": "pp3",
+      "type": "tag-blue",
+      "label": "Declarative",
+      "lane": "L",
+      "x": 672,
+      "y": 248,
+      "w": 150,
+      "h": 40,
+      "section": "Platform principles"
+    },
+    {
+      "id": "pp4",
+      "type": "tag-blue",
+      "label": "Governable",
+      "lane": "L",
+      "x": 838,
+      "y": 248,
+      "w": 150,
+      "h": 40,
+      "section": "Platform principles"
+    },
+    {
+      "id": "pp5",
+      "type": "tag-blue",
+      "label": "Observable",
+      "lane": "L",
+      "x": 672,
+      "y": 304,
+      "w": 150,
+      "h": 40,
+      "section": "Platform principles"
+    },
+    {
+      "id": "pp6",
+      "type": "tag-blue",
+      "label": "Stable",
+      "lane": "L",
+      "x": 838,
+      "y": 304,
+      "w": 150,
+      "h": 40,
+      "section": "Platform principles"
+    }
+  ],
+  "edges": [
+    {
+      "source": "cap",
+      "target": "contract",
+      "type": "exchanges",
+      "label": "adheres to",
+      "exit": "right",
+      "entry": "top",
+      "labelOffset": -14
+    },
+    {
+      "source": "plat",
+      "target": "contract",
+      "type": "exchanges",
+      "label": "commits to support",
+      "exit": "left",
+      "entry": "bottom",
+      "labelOffset": -14
+    }
+  ]
+}

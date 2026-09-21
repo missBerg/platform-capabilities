@@ -1,0 +1,135 @@
+{
+  "name": "Fig 7 \u2013 Defined Contract (landscape)",
+  "flavour": "clean",
+  "direction": "LR",
+  "nodes": [
+    {
+      "id": "cli",
+      "type": "rectangle-blue-light",
+      "label": "CLI",
+      "lane": "L",
+      "x": 64,
+      "y": 98,
+      "w": 150,
+      "h": 44,
+      "icon": "computer",
+      "section": "Interface choices"
+    },
+    {
+      "id": "portal",
+      "type": "rectangle-blue-light",
+      "label": "Web portal",
+      "lane": "L",
+      "x": 64,
+      "y": 158,
+      "w": 150,
+      "h": 44,
+      "icon": "dashboard",
+      "section": "Interface choices"
+    },
+    {
+      "id": "idp",
+      "type": "rectangle-blue-light",
+      "label": "Dev portal",
+      "lane": "L",
+      "x": 64,
+      "y": 218,
+      "w": 150,
+      "h": 44,
+      "icon": "code",
+      "section": "Interface choices"
+    },
+    {
+      "id": "agent",
+      "type": "rectangle-blue-light",
+      "label": "AI agent",
+      "lane": "L",
+      "x": 64,
+      "y": 278,
+      "w": 150,
+      "h": 44,
+      "icon": "ai-agent",
+      "section": "Interface choices"
+    },
+    {
+      "id": "api",
+      "type": "sub-capability",
+      "label": "One versioned API",
+      "lane": "L",
+      "x": 298,
+      "y": 158,
+      "w": 220,
+      "h": 70,
+      "sublabel": "provision, configure, update, observe",
+      "icon": "key"
+    },
+    {
+      "id": "cap",
+      "type": "capability",
+      "label": "Capability",
+      "lane": "L",
+      "x": 578,
+      "y": 158,
+      "w": 220,
+      "h": 70,
+      "sublabel": "implementation is the producer's choice",
+      "icon": "cog"
+    },
+    {
+      "id": "dev",
+      "type": "rectangle-grey-light",
+      "label": "Dev",
+      "lane": "L",
+      "x": 882,
+      "y": 128,
+      "w": 220,
+      "h": 44,
+      "section": "Same API in every environment"
+    },
+    {
+      "id": "staging",
+      "type": "rectangle-grey-light",
+      "label": "Staging",
+      "lane": "L",
+      "x": 882,
+      "y": 188,
+      "w": 220,
+      "h": 44,
+      "section": "Same API in every environment"
+    },
+    {
+      "id": "prod",
+      "type": "rectangle-grey-light",
+      "label": "Production",
+      "lane": "L",
+      "x": 882,
+      "y": 248,
+      "w": 220,
+      "h": 44,
+      "section": "Same API in every environment"
+    }
+  ],
+  "edges": [
+    {
+      "source": "section:Interface choices",
+      "target": "api",
+      "type": "provides",
+      "exit": "right",
+      "entry": "left"
+    },
+    {
+      "source": "api",
+      "target": "cap",
+      "type": "provides",
+      "exit": "right",
+      "entry": "left"
+    },
+    {
+      "source": "cap",
+      "target": "section:Same API in every environment",
+      "type": "provides",
+      "exit": "right",
+      "entry": "left"
+    }
+  ]
+}

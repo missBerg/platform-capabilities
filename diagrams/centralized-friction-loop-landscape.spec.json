@@ -1,0 +1,113 @@
+{
+  "name": "Fig 2 \u2013 Friction chain (landscape)",
+  "flavour": "clean",
+  "direction": "LR",
+  "nodes": [
+    {
+      "id": "hard",
+      "type": "platform",
+      "label": "Integration is hard",
+      "lane": "L",
+      "x": 40,
+      "y": 103,
+      "w": 230,
+      "h": 84,
+      "sublabel": "central codebases and processes",
+      "icon": "clock"
+    },
+    {
+      "id": "outside",
+      "type": "external-system",
+      "label": "Specialists stop contributing",
+      "lane": "L",
+      "x": 320,
+      "y": 103,
+      "w": 230,
+      "h": 84,
+      "sublabel": "build outside, or reinvent in their domain"
+    },
+    {
+      "id": "lose",
+      "type": "rectangle-grey-light",
+      "label": "Platform loses the contribution",
+      "lane": "L",
+      "x": 600,
+      "y": 103,
+      "w": 230,
+      "h": 84,
+      "sublabel": "the best implementation stays out"
+    },
+    {
+      "id": "c1",
+      "type": "rectangle-grey-light",
+      "label": "Incompatible contracts",
+      "lane": "L",
+      "x": 914,
+      "y": 98,
+      "w": 200,
+      "h": 56,
+      "sublabel": "fragmentation",
+      "icon": "warning",
+      "section": "The organization pays"
+    },
+    {
+      "id": "c2",
+      "type": "rectangle-grey-light",
+      "label": "Inconsistent experience",
+      "lane": "L",
+      "x": 1130,
+      "y": 98,
+      "w": 200,
+      "h": 56,
+      "icon": "warning",
+      "section": "The organization pays"
+    },
+    {
+      "id": "c3",
+      "type": "rectangle-grey-light",
+      "label": "Duplicated effort",
+      "lane": "L",
+      "x": 914,
+      "y": 170,
+      "w": 200,
+      "h": 56,
+      "icon": "warning",
+      "section": "The organization pays"
+    },
+    {
+      "id": "c4",
+      "type": "rectangle-grey-light",
+      "label": "Multiplied operational load",
+      "lane": "L",
+      "x": 1130,
+      "y": 170,
+      "w": 200,
+      "h": 56,
+      "icon": "warning",
+      "section": "The organization pays"
+    }
+  ],
+  "edges": [
+    {
+      "source": "hard",
+      "target": "outside",
+      "type": "provides",
+      "exit": "right",
+      "entry": "left"
+    },
+    {
+      "source": "outside",
+      "target": "lose",
+      "type": "provides",
+      "exit": "right",
+      "entry": "left"
+    },
+    {
+      "source": "lose",
+      "target": "section:The organization pays",
+      "type": "provides",
+      "exit": "right",
+      "entry": "left"
+    }
+  ]
+}
