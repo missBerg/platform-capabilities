@@ -8,6 +8,7 @@ cut-off labels, or routing problems before committing.
     python3 scripts/render.py diagrams/foo.drawio                # -> foo.png
     python3 scripts/render.py diagrams/foo.drawio --format svg   # -> foo.svg
     python3 scripts/render.py diagrams/foo.drawio --scale 3
+    python3 scripts/render.py diagrams/foo.drawio --transparent --output out/fig.png
 
 Requires the draw.io desktop app (`brew install --cask drawio`). The binary is
 located automatically; override with the DRAWIO_BIN environment variable.
@@ -64,10 +65,14 @@ def pdf_report(infile: Path) -> None:
     print(f"pdf-check: width {width:.0f} units, smallest font {min(fonts)}px -> {pt:.1f}pt at {PDF_COLUMN_PT}pt column{flag}")
 
 
-def export(binary: str, infile: Path, fmt: str, scale: str, border: str) -> int:
-    out = infile.with_suffix(f".{fmt}")
+def export(binary: str, infile: Path, fmt: str, scale: str, border: str,
+           transparent: bool = False, out: Path | None = None) -> int:
+    out = out or infile.with_suffix(f".{fmt}")
     cmd = [binary, "--export", "--format", fmt, "--scale", scale,
-           "--border", border, "--output", str(out), str(infile)]
+           "--border", border, "--output", str(out)]
+    if transparent and fmt == "png":
+        cmd.append("--transparent")
+    cmd.append(str(infile))
     proc = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
     if proc.returncode != 0:
         sys.stderr.write(proc.stdout + proc.stderr)
@@ -88,7 +93,7 @@ def main() -> int:
         print(f"no such file: {infile}")
         return 1
     fmt, scale, border = "png", "2", "20"
-    pdf_check = False
+    pdf_check, transparent, out = False, False, None
     i = 1
     while i < len(args):
         if args[i] == "--format":
@@ -99,6 +104,10 @@ def main() -> int:
             border = args[i + 1]; i += 2
         elif args[i] == "--pdf-check":
             pdf_check = True; i += 1
+        elif args[i] == "--transparent":
+            transparent = True; i += 1
+        elif args[i] == "--output":
+            out = Path(args[i + 1]); i += 2
         else:
             print(f"unknown argument: {args[i]}"); return 2
     if pdf_check:
@@ -108,7 +117,7 @@ def main() -> int:
         print("draw.io not found. Install it with:  brew install --cask drawio\n"
               "or set DRAWIO_BIN to the executable path.")
         return 1
-    return export(binary, infile, fmt, scale, border)
+    return export(binary, infile, fmt, scale, border, transparent, out)
 
 
 if __name__ == "__main__":
