@@ -1,0 +1,97 @@
+{
+  "name": "Ownership matrix (built by x maintained by)",
+  "flavour": "clean",
+  "direction": "TB",
+  "laneGap": 16,
+  "rowGap": 16,
+  "lanes": [
+    "H",
+    "R1",
+    "R2"
+  ],
+  "nodes": [
+    {
+      "id": "corner",
+      "type": "spacer",
+      "lane": "H",
+      "w": 200,
+      "h": 10
+    },
+    {
+      "id": "hL",
+      "type": "tag-blue",
+      "label": "Maintained by platform team",
+      "lane": "H",
+      "w": 230,
+      "h": 34
+    },
+    {
+      "id": "hR",
+      "type": "tag-blue",
+      "label": "Maintained by domain experts",
+      "lane": "H",
+      "w": 230,
+      "h": 34
+    },
+    {
+      "id": "r1",
+      "type": "tag-blue",
+      "label": "Built by domain experts",
+      "lane": "R1",
+      "w": 200,
+      "h": 34
+    },
+    {
+      "id": "c11",
+      "type": "rectangle-yellow-light",
+      "label": "Sourced production",
+      "sublabel": "platform team maintains\ncode it did not write",
+      "icon": "warning",
+      "lane": "R1",
+      "w": 230,
+      "h": 84
+    },
+    {
+      "id": "c12",
+      "type": "rectangle-blue-light",
+      "label": "Ecosystem",
+      "sublabel": "platform team enables\ndomain experts",
+      "icon": "success",
+      "lane": "R1",
+      "w": 230,
+      "h": 84,
+      "styleExtra": "fillColor=#EDF4ED;strokeColor=#5A7A5A;fontColor=#3F5A3F"
+    },
+    {
+      "id": "r2",
+      "type": "tag-blue",
+      "label": "Built by platform team",
+      "lane": "R2",
+      "w": 200,
+      "h": 34
+    },
+    {
+      "id": "c21",
+      "type": "rectangle-blue-light",
+      "label": "Central bottleneck",
+      "sublabel": "every request queues\non one team",
+      "icon": "clock",
+      "iconColor": "red",
+      "lane": "R2",
+      "w": 230,
+      "h": 84,
+      "styleExtra": "fillColor=#F7ECEC;strokeColor=#A85959;fontColor=#7A3F3F"
+    },
+    {
+      "id": "c22",
+      "type": "rectangle-yellow-light",
+      "label": "Friction chain",
+      "sublabel": "domain experts must learn\nplatform tooling to maintain it",
+      "icon": "warning",
+      "lane": "R2",
+      "w": 230,
+      "h": 84
+    }
+  ],
+  "edges": []
+}

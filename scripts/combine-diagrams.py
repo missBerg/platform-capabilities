@@ -31,6 +31,7 @@ PREFERRED = [
     "centralized-friction-loop",
     "centralized-friction-loop-landscape",
     "platform-delivery-matrix",
+    "ownership-matrix",
     "ecosystem-architecture-lineage",
     "ecosystem-architecture-lineage-landscape",
     "platform-with-capabilities",
