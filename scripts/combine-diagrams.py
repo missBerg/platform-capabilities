@@ -30,7 +30,6 @@ ATTR_RE = re.compile(r'(\w+)\s*=\s*"([^"]*)"')
 PREFERRED = [
     "centralized-friction-loop",
     "centralized-friction-loop-landscape",
-    "platform-delivery-matrix",
     "ownership-matrix",
     "ecosystem-architecture-lineage",
     "ecosystem-architecture-lineage-landscape",
