@@ -25,17 +25,17 @@ DIAGRAM_RE = re.compile(r"<diagram\b[^>]*>.*?</diagram>", re.DOTALL)
 OPEN_TAG_RE = re.compile(r"<diagram\b[^>]*>", re.DOTALL)
 ATTR_RE = re.compile(r'(\w+)\s*=\s*"([^"]*)"')
 
-# Preferred tab order: paper order (limitations, ecosystem model, contract,
+# Preferred tab order: paper order (limitations, marketplace model, contract,
 # then the five factors). Files not listed here sort after these, alphabetically.
 PREFERRED = [
     "centralized-friction-loop",
     "centralized-friction-loop-landscape",
     "ownership-matrix",
-    "ecosystem-architecture-lineage",
-    "ecosystem-architecture-lineage-landscape",
-    "platform-with-capabilities",
-    "platform-with-capabilities-landscape",
-    "ecosystem-value-exchange",
+    "marketplace-model-composition",
+    "marketplace-model-composition-landscape",
+    "capability-marketplace-flow",
+    "capability-marketplace-flow-landscape",
+    "marketplace-roles-and-exchanges",
     "participation-contract",
     "participation-contract-landscape",
     "factors-overview",
@@ -43,7 +43,7 @@ PREFERRED = [
     "factor-1-defined-contract-landscape",
     "factor-2-declarative-inputs",
     "factor-3-encapsulated-dependencies",
-    "factor-4-stable-reconciliation",
+    "factor-4-safe-reconciliation",
     "factor-5-operational-evidence",
     "factors-to-outcomes",
 ]

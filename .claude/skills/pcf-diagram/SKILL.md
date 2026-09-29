@@ -131,7 +131,7 @@ carry inline, so no web font is downloaded.
 - An edge `source`/`target` may be `"section:<label>"` to end on a container
   (e.g. a chain that lands on a dashed group of results).
 - Edge labels may contain `\n` for a second line (object on line one, the
-  exchange on line two, as in `ecosystem-value-exchange`).
+  exchange on line two, as in `marketplace-roles-and-exchanges`).
 - Node `x` / `y` place a node explicitly, ignoring the lane grid, for
   compositions the grid cannot express (a true triangle, a ring). Everything
   else keeps the automatic layout.

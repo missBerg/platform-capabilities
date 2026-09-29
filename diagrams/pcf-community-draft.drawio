@@ -69,7 +69,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="ecosystem-architecture-lineage" name="Fig 2 – Marketplace model lineage">
+  <diagram id="marketplace-model-composition" name="Fig 2 – Marketplace model lineage">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -84,7 +84,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="ecosystem-architecture-lineage-landscape" name="Fig 2 – Marketplace model lineage (landscape)">
+  <diagram id="marketplace-model-composition-landscape" name="Fig 2 – Marketplace model lineage (landscape)">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1240" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -99,7 +99,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="platform-with-capabilities" name="Marketplace of capabilities">
+  <diagram id="capability-marketplace-flow" name="Marketplace of capabilities">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -132,7 +132,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="platform-with-capabilities-landscape" name="Marketplace of capabilities (landscape)">
+  <diagram id="capability-marketplace-flow-landscape" name="Marketplace of capabilities (landscape)">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1180" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -165,7 +165,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="ecosystem-value-exchange" name="Fig 3 – Three roles and their exchanges">
+  <diagram id="marketplace-roles-and-exchanges" name="Fig 3 – Three roles and their exchanges">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -357,7 +357,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="factor-4-stable-reconciliation" name="Fig 9 – Safe Reconciliation">
+  <diagram id="factor-4-safe-reconciliation" name="Fig 9 – Safe Reconciliation">
     <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
