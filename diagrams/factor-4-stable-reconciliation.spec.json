@@ -1,5 +1,5 @@
 {
-  "name": "Fig 9 \u2013 Stable Reconciliation",
+  "name": "Fig 9 \u2013 Safe Reconciliation",
   "flavour": "clean",
   "direction": "TB",
   "laneGap": 16,
@@ -55,7 +55,7 @@
     {
       "id": "c12",
       "type": "rectangle-blue-light",
-      "label": "Fails Stable Reconciliation",
+      "label": "Fails Safe Reconciliation",
       "sublabel": "applied twice, two of one thing",
       "icon": "warning",
       "lane": "R1",

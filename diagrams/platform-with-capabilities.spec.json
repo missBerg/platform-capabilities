@@ -1,5 +1,5 @@
 {
-  "name": "Platform with capabilities",
+  "name": "Marketplace of capabilities",
   "flavour": "clean",
   "direction": "TB",
   "laneGap": 20,
@@ -92,7 +92,7 @@
       "label": "Capability definition",
       "icon": "cog",
       "lane": "Definition",
-      "section": "Platform with capabilities",
+      "section": "Marketplace of capabilities",
       "w": 200,
       "h": 52
     },
@@ -109,7 +109,7 @@
       "label": "Instances",
       "sublabel": "N instances of a capability",
       "lane": "Instances",
-      "section": "Platform with capabilities",
+      "section": "Marketplace of capabilities",
       "w": 200,
       "h": 60
     },
@@ -183,7 +183,7 @@
     },
     {
       "source": "papi",
-      "target": "section:Platform with capabilities",
+      "target": "section:Marketplace of capabilities",
       "type": "provides",
       "label": "create & manage",
       "exit": "bottom",
@@ -206,7 +206,7 @@
     },
     {
       "source": "capi",
-      "target": "section:Platform with capabilities",
+      "target": "section:Marketplace of capabilities",
       "type": "provides",
       "label": "discover & use",
       "exit": "top",

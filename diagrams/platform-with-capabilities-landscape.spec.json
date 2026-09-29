@@ -1,5 +1,5 @@
 {
-  "name": "Platform with capabilities (landscape)",
+  "name": "Marketplace of capabilities (landscape)",
   "flavour": "clean",
   "direction": "LR",
   "nodes": [
@@ -59,7 +59,7 @@
       "label": "Capability definition",
       "icon": "cog",
       "lane": "L",
-      "section": "Platform with capabilities",
+      "section": "Marketplace of capabilities",
       "x": 474,
       "y": 129,
       "w": 200,
@@ -71,7 +71,7 @@
       "label": "Instances",
       "sublabel": "N instances of a capability",
       "lane": "L",
-      "section": "Platform with capabilities",
+      "section": "Marketplace of capabilities",
       "x": 474,
       "y": 211,
       "w": 200,
@@ -135,7 +135,7 @@
     },
     {
       "source": "papi",
-      "target": "section:Platform with capabilities",
+      "target": "section:Marketplace of capabilities",
       "type": "provides",
       "exit": "right",
       "entry": "left"
@@ -156,7 +156,7 @@
     },
     {
       "source": "capi",
-      "target": "section:Platform with capabilities",
+      "target": "section:Marketplace of capabilities",
       "type": "provides",
       "exit": "left",
       "entry": "right"

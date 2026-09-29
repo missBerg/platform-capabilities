@@ -1,5 +1,5 @@
 {
-  "name": "Fig 2 \u2013 Ecosystem model lineage",
+  "name": "Fig 2 \u2013 Marketplace model lineage",
   "flavour": "clean",
   "direction": "TB",
   "laneGap": 30,
@@ -71,7 +71,7 @@
     {
       "id": "platform",
       "type": "platform",
-      "label": "Platform ecosystem model",
+      "label": "Platform marketplace model",
       "sublabel": "experts contribute and operate, consumers self-serve",
       "lane": "C",
       "w": 360,

@@ -40,7 +40,7 @@
     {
       "id": "f4",
       "type": "sub-capability",
-      "label": "4. Stable Reconciliation",
+      "label": "4. Safe Reconciliation",
       "icon": "gear",
       "lane": "Four",
       "w": 124,
